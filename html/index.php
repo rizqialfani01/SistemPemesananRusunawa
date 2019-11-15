@@ -186,20 +186,18 @@
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="gedunga">
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="gedungb">
                                     <div class="form-group">
-                                        <label class="col-sm-12">Select Country</label>
-                                        <div class="col-sm-12">
+                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
+                                        <div class="col-sm-2">
                                             <select class="form-control form-control-line">
-                                                <option>London</option>
-                                                <option>India</option>
-                                                <option>Usa</option>
-                                                <option>Canada</option>
-                                                <option>Thailand</option>
+                                                <option>Lantai 2</option>
+                                                <option>Lantai 3</option>
+                                                <option>Lantai 4</option>
                                             </select>
                                         </div>
                                     </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedungb">
                                     <?php
                                         $server = "localhost";
                                         $user = "root";
