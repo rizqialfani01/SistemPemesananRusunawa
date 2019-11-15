@@ -208,7 +208,7 @@
                                         $seat = mysqli_query($conn,"SELECT * FROM kamar WHERE lantai='B2'");
                                         while ($row = mysqli_fetch_assoc($seat)) {
                                             //echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
-                                            echo "<div class='outer-seat' id='div-inline'><div class='inner-seat' style='text-align: center;'>" . $row['no_kamar'] . "</div></div>";
+                                            echo "<div class='outer-seat' id='div-inline' style='margin-top: 50px;'><div class='inner-seat' style='text-align: center;'>" . $row['no_kamar'] . "</div></div>";
                                         }
                                     ?>
                                 </div>
