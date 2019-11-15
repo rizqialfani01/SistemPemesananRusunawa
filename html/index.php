@@ -187,7 +187,7 @@
                                 <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="gedunga">
                                 </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedungb">
+                                <div role="tabpanel" class="tab-pane fade" id="gedungb" style="width: 1200px;">
                                     <div class="form-group">
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
