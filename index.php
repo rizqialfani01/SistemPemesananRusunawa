@@ -9,10 +9,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <title>Elegant Admin Template - The Ultimate Multipurpose admin template</title>
+    <!-- This page CSS -->
+    <!-- chartist CSS -->
+    <link href="assets/node_modules/morrisjs/morris.css" rel="stylesheet">
+    <!--c3 plugins CSS -->
+    <link href="assets/node_modules/c3-master/c3.min.css" rel="stylesheet">
+    <link href="assets/icons/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/icons/themify-icons/themify-icons.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="dist/css/style.css" rel="stylesheet">
+    <!-- Dashboard 1 Page CSS -->
+    <link href="dist/css/pages/dashboard1.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -48,16 +57,16 @@
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                             <!-- Light Logo icon -->
-                            <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                            <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
                          <!-- dark Logo text -->
-                         <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                         <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
                          <!-- Light Logo text -->    
-                         <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+                         <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -83,7 +92,7 @@
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user" class="img-circle" width="30"></a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" alt="user" class="img-circle" width="30"></a>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -100,7 +109,7 @@
         <!-- ============================================================== -->
         <aside class="left-sidebar">
             <div class="d-flex no-block nav-text-box align-items-center">
-                <span><img src="../assets/images/logo-icon.png" alt="elegant admin template"></span>
+                <span><img src="assets/images/logo-icon.png" alt="elegant admin template"></span>
                 <a class="waves-effect waves-dark ml-auto hidden-sm-down" href="javascript:void(0)"><i class="ti-menu"></i></a>
                 <a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
             </div>
@@ -137,13 +146,13 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h4 class="text-themecolor">Table Basic</h4>
+                        <h4 class="text-themecolor">Dashboard</h4>
                     </div>
                     <div class="col-md-7 align-self-center text-right">
                         <div class="d-flex justify-content-end align-items-center">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                                <li class="breadcrumb-item active">Table Basic</li>
+                                <li class="breadcrumb-item active">Dashboard</li>
                             </ol>
                         </div>
                     </div>
@@ -152,79 +161,141 @@
                 <!-- End Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
                 <!-- ============================================================== -->
-                <!-- Start Page Content -->
+                <!-- Yearly Sales -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card oh">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#gedunga" role="tab" data-toggle="tab">Gedung A</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#gedungb" role="tab" data-toggle="tab">Gedung B</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#gedungc" role="tab" data-toggle="tab">Gedung C</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#gedungd" role="tab" data-toggle="tab">Gedung D</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#gedunge" role="tab" data-toggle="tab">Gedung E</a>
+                                </li>
+                                </ul>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="gedunga">
+                                    <div class="form-group">
+                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
+                                        <div class="col-sm-2">
+                                            <select class="form-control form-control-line">
+                                                <option value="lantai2">Lantai 2</option>
+                                                <option value="lantai3">Lantai 3</option>
+                                                <option value="lantai4">Lantai 4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="gedungb" style="width: 1200px;">
+                                    <div class="form-group">
+                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
+                                        <div class="col-sm-2">
+                                            <select class="form-control form-control-line">
+                                                <option value="lantai2">Lantai 2</option>
+                                                <option value="lantai3">Lantai 3</option>
+                                                <option value="lantai4">Lantai 4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <?php
+                                        $server = "localhost";
+                                        $user = "root";
+                                        $password = "";
+                                        $wilayah = "rusunawa";
+                                        $conn = mysqli_connect($server, $user, $password, $wilayah);
+
+                                        $seat = mysqli_query($conn,"SELECT * FROM kamar WHERE lantai='B2'");
+                                        while ($row = mysqli_fetch_assoc($seat)) {
+                                            //echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
+                                            echo "<div class='outer-seat' id='div-inline' style='margin-top: 50px;'><div class='inner-seat' style='text-align: center;'>" . $row['no_kamar'] . "</div></div>";
+                                        }
+                                    ?>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="gedungc">
+                                    <div class="form-group">
+                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
+                                        <div class="col-sm-2">
+                                            <select class="form-control form-control-line">
+                                                <option value="lantai2">Lantai 2</option>
+                                                <option value="lantai3">Lantai 3</option>
+                                                <option value="lantai4">Lantai 4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="gedungd">
+                                    <div class="form-group">
+                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
+                                        <div class="col-sm-2">
+                                            <select class="form-control form-control-line">
+                                                <option value="lantai2">Lantai 2</option>
+                                                <option value="lantai3">Lantai 3</option>
+                                                <option value="lantai4">Lantai 4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="gedunge">
+                                    <div class="form-group">
+                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
+                                        <div class="col-sm-2">
+                                            <select class="form-control form-control-line">
+                                                <option value="lantai2">Lantai 2</option>
+                                                <option value="lantai3">Lantai 3</option>
+                                                <option value="lantai4">Lantai 4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="card-body bg-light">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- News -->
                 <!-- ============================================================== -->
                 <div class="row">
                     <!-- column -->
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Basic Table</h4>
-                                <h6 class="card-subtitle">Add class <code>.table</code></h6>
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
-                                                <th>Role</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Deshmukh</td>
-                                                <td>Prohaska</td>
-                                                <td>@Genelia</td>
-                                                <td><span class="label label-danger">admin</span> </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Deshmukh</td>
-                                                <td>Gaylord</td>
-                                                <td>@Ritesh</td>
-                                                <td><span class="label label-info">member</span> </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Sanghani</td>
-                                                <td>Gusikowski</td>
-                                                <td>@Govinda</td>
-                                                <td><span class="label label-warning">developer</span> </td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Roshan</td>
-                                                <td>Rogahn</td>
-                                                <td>@Hritik</td>
-                                                <td><span class="label label-success">supporter</span> </td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Joshi</td>
-                                                <td>Hickle</td>
-                                                <td>@Maruti</td>
-                                                <td><span class="label label-info">member</span> </td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Nigam</td>
-                                                <td>Eichmann</td>
-                                                <td>@Sonu</td>
-                                                <td><span class="label label-success">supporter</span> </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- ============================================================== -->
-                <!-- End PAge Content -->
+                <!-- To do chat and message -->
                 <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
@@ -249,21 +320,30 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="../assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="../assets/node_modules/popper/popper.min.js"></script>
-    <script src="../assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap popper Core JavaScript -->
+    <script src="assets/node_modules/popper/popper.min.js"></script>
+    <script src="assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
     <script src="dist/js/perfect-scrollbar.jquery.min.js"></script>
     <!--Wave Effects -->
     <script src="dist/js/waves.js"></script>
     <!--Menu sidebar -->
     <script src="dist/js/sidebarmenu.js"></script>
-    <!--stickey kit -->
-    <script src="../assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
-    <script src="../assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
     <!--Custom JavaScript -->
     <script src="dist/js/custom.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugins -->
+    <!-- ============================================================== -->
+    <!--morris JavaScript -->
+    <script src="assets/node_modules/raphael/raphael-min.js"></script>
+    <script src="assets/node_modules/morrisjs/morris.min.js"></script>
+    <script src="assets/node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <!--c3 JavaScript -->
+    <script src="assets/node_modules/d3/d3.min.js"></script>
+    <script src="assets/node_modules/c3-master/c3.min.js"></script>
+    <!-- Chart JS -->
+    <script src="dist/js/dashboard1.js"></script>
 </body>
 
 </html>

@@ -11,11 +11,11 @@ File: scss
 
 
 // Import Bootstrap source files
-@import "../../../assets/node_modules/bootstrap/scss/bootstrap";
+@import "assets/node_modules/bootstrap/scss/bootstrap";
 
 //This is for the icons
-@import '../../../assets/icons/font-awesome/css/font-awesome.min.css';
-@import '../../../assets/icons/themify-icons/themify-icons.css'; 
+@import 'assets/icons/font-awesome/css/font-awesome.min.css';
+@import 'assets/icons/themify-icons/themify-icons.css'; 
 
 
 //This is the core files
