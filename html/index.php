@@ -186,15 +186,25 @@
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="gedunga">
+                                    <div class="form-group">
+                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
+                                        <div class="col-sm-2">
+                                            <select class="form-control form-control-line">
+                                                <option value="lantai2">Lantai 2</option>
+                                                <option value="lantai3">Lantai 3</option>
+                                                <option value="lantai4">Lantai 4</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane fade" id="gedungb" style="width: 1200px;">
                                     <div class="form-group">
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
                                             <select class="form-control form-control-line">
-                                                <option>Lantai 2</option>
-                                                <option>Lantai 3</option>
-                                                <option>Lantai 4</option>
+                                                <option value="lantai2">Lantai 2</option>
+                                                <option value="lantai3">Lantai 3</option>
+                                                <option value="lantai4">Lantai 4</option>
                                             </select>
                                         </div>
                                     </div>
@@ -212,9 +222,42 @@
                                         }
                                     ?>
                                 </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedungc">Ini Halaman Setting</div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedungd">Ini Halaman Profile</div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedunge">Ini Halaman Setting</div>
+                                <div role="tabpanel" class="tab-pane fade" id="gedungc">
+                                    <div class="form-group">
+                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
+                                        <div class="col-sm-2">
+                                            <select class="form-control form-control-line">
+                                                <option value="lantai2">Lantai 2</option>
+                                                <option value="lantai3">Lantai 3</option>
+                                                <option value="lantai4">Lantai 4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="gedungd">
+                                    <div class="form-group">
+                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
+                                        <div class="col-sm-2">
+                                            <select class="form-control form-control-line">
+                                                <option value="lantai2">Lantai 2</option>
+                                                <option value="lantai3">Lantai 3</option>
+                                                <option value="lantai4">Lantai 4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="gedunge">
+                                    <div class="form-group">
+                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
+                                        <div class="col-sm-2">
+                                            <select class="form-control form-control-line">
+                                                <option value="lantai2">Lantai 2</option>
+                                                <option value="lantai3">Lantai 3</option>
+                                                <option value="lantai4">Lantai 4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
                                 </div>
                             </div>
                             <div class="card-body bg-light">
