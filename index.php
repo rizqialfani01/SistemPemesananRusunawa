@@ -118,11 +118,12 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="index.php" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i class="fa fa-user-circle-o"></i><span class="hide-menu">Profile</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="table-basic.html" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu"></span>Tables</a></li>
+                        <li> <a class="waves-effect waves-dark" href="index.php" aria-expanded="false"><i class="fa fa-home"></i><span class="hide-menu">Daftar Kamar</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="table-basic.html" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
                         <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i class="fa fa-question-circle"></i><span class="hide-menu"></span>404</a></li>
                         <div class="text-center m-t-30">
+                            <a href="#" class="btn waves-effect waves-light btn-danger hidden-md-down"> Logout</a>
                         </div>
                     </ul>
                 </nav>
@@ -192,6 +193,7 @@
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
                                             <select class="form-control form-control-line">
+                                                <option value="semualantai">Semua Lantai</option>
                                                 <option value="lantai2">Lantai 2</option>
                                                 <option value="lantai3">Lantai 3</option>
                                                 <option value="lantai4">Lantai 4</option>
@@ -204,6 +206,7 @@
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
                                             <select class="form-control form-control-line">
+                                                <option value="semualantai">Semua Lantai</option>
                                                 <option value="lantai1">Lantai 1</option>
                                                 <option value="lantai2">Lantai 2</option>
                                                 <option value="lantai3">Lantai 3</option>
@@ -221,7 +224,7 @@
                                         $seat = mysqli_query($conn,"SELECT * FROM kamar WHERE lantai='B2'");
                                         while ($row = mysqli_fetch_assoc($seat)) {
                                             //echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
-                                            echo "<div class='outer-seat' id='div-inline' style='margin-top: 50px;'><div class='inner-seat' style='text-align: center;'>" . $row['no_kamar'] . "</div></div>";
+                                            echo "<div class='outer-seat' id='div-inline'><div class='inner-seat' style='text-align: center;'>" . $row['no_kamar'] . "</div></div>";
                                         }
                                     ?>
                                 </div>
@@ -230,6 +233,7 @@
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
                                             <select class="form-control form-control-line">
+                                                <option value="semualantai">Semua Lantai</option>
                                                 <option value="lantai1">Lantai 1</option>
                                                 <option value="lantai2">Lantai 2</option>
                                                 <option value="lantai3">Lantai 3</option>
@@ -243,6 +247,7 @@
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
                                             <select class="form-control form-control-line">
+                                                <option value="semualantai">Semua Lantai</option>
                                                 <option value="lantai2">Lantai 2</option>
                                                 <option value="lantai3">Lantai 3</option>
                                                 <option value="lantai4">Lantai 4</option>
@@ -255,6 +260,7 @@
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
                                             <select class="form-control form-control-line">
+                                                <option value="semualantai">Semua Lantai</option>
                                                 <option value="lantai1">Lantai 1</option>
                                                 <option value="lantai2">Lantai 2</option>
                                                 <option value="lantai3">Lantai 3</option>
@@ -312,8 +318,8 @@
         <!-- footer -->
         <!-- ============================================================== -->
         <footer class="footer">
-            Teknik Komputer Undip
-            Copyright wrappixel.com
+            Teknik Komputer Undip <br>
+            Design by wrappixel.com
         </footer>
         <!-- ============================================================== -->
         <!-- End footer -->
@@ -325,6 +331,7 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
+
     <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap popper Core JavaScript -->
     <script src="assets/node_modules/popper/popper.min.js"></script>
