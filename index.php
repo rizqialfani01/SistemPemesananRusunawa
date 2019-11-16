@@ -217,6 +217,7 @@
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
                                             <select id="gedung_A" class="form-control form-control-line">
+                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
                                                 <option value="A0">Semua Lantai</option>
                                                 <option value="A2">Lantai 2</option>
                                                 <option value="A3">Lantai 3</option>
@@ -232,6 +233,7 @@
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
                                             <select class="form-control form-control-line">
+                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
                                                 <option value="semualantai">Semua Lantai</option>
                                                 <option value="lantai1">Lantai 1</option>
                                                 <option value="lantai2">Lantai 2</option>
@@ -261,6 +263,7 @@
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
                                             <select class="form-control form-control-line">
+                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
                                                 <option value="semualantai">Semua Lantai</option>
                                                 <option value="lantai1">Lantai 1</option>
                                                 <option value="lantai2">Lantai 2</option>
@@ -275,6 +278,7 @@
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
                                             <select class="form-control form-control-line">
+                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
                                                 <option value="semualantai">Semua Lantai</option>
                                                 <option value="lantai2">Lantai 2</option>
                                                 <option value="lantai3">Lantai 3</option>
@@ -288,6 +292,7 @@
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
                                             <select class="form-control form-control-line">
+                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
                                                 <option value="semualantai">Semua Lantai</option>
                                                 <option value="lantai1">Lantai 1</option>
                                                 <option value="lantai2">Lantai 2</option>
