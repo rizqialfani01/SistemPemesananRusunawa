@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-    <title>Elegant Admin Template - The Ultimate Multipurpose admin template</title>
+    <title>Sistem Penyewaan Rusunawa</title>
     <!-- This page CSS -->
     <!-- chartist CSS -->
     <link href="assets/node_modules/morrisjs/morris.css" rel="stylesheet">
@@ -37,7 +37,7 @@
     <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">Elegant admin</p>
+            <p class="loader__label">Sistem Penyewaan Rusunawa</p>
         </div>
     </div>
     <!-- ============================================================== -->
@@ -204,6 +204,7 @@
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
                                             <select class="form-control form-control-line">
+                                                <option value="lantai1">Lantai 1</option>
                                                 <option value="lantai2">Lantai 2</option>
                                                 <option value="lantai3">Lantai 3</option>
                                                 <option value="lantai4">Lantai 4</option>
@@ -229,6 +230,7 @@
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
                                             <select class="form-control form-control-line">
+                                                <option value="lantai1">Lantai 1</option>
                                                 <option value="lantai2">Lantai 2</option>
                                                 <option value="lantai3">Lantai 3</option>
                                                 <option value="lantai4">Lantai 4</option>
@@ -253,9 +255,11 @@
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
                                             <select class="form-control form-control-line">
+                                                <option value="lantai1">Lantai 1</option>
                                                 <option value="lantai2">Lantai 2</option>
                                                 <option value="lantai3">Lantai 3</option>
                                                 <option value="lantai4">Lantai 4</option>
+                                                <option value="lantai5">Lantai 5</option>
                                             </select>
                                         </div>
                                     </div>
@@ -308,7 +312,8 @@
         <!-- footer -->
         <!-- ============================================================== -->
         <footer class="footer">
-            © 2018 Elegent Admin by wrappixel.com
+            Teknik Komputer Undip
+            Copyright wrappixel.com
         </footer>
         <!-- ============================================================== -->
         <!-- End footer -->
