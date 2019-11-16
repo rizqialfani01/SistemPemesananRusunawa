@@ -214,19 +214,21 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <?php
-                                        $server = "localhost";
-                                        $user = "root";
-                                        $password = "";
-                                        $wilayah = "rusunawa";
-                                        $conn = mysqli_connect($server, $user, $password, $wilayah);
+                                    <div class="card-body" style="padding-left: 10px;">
+                                        <?php
+                                            $server = "localhost";
+                                            $user = "root";
+                                            $password = "";
+                                            $wilayah = "rusunawa";
+                                            $conn = mysqli_connect($server, $user, $password, $wilayah);
 
-                                        $seat = mysqli_query($conn,"SELECT * FROM kamar WHERE lantai='B2'");
-                                        while ($row = mysqli_fetch_assoc($seat)) {
-                                            //echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
-                                            echo "<div class='outer-seat' id='div-inline'><div class='inner-seat' style='text-align: center;'>" . $row['no_kamar'] . "</div></div>";
-                                        }
-                                    ?>
+                                            $seat = mysqli_query($conn,"SELECT * FROM kamar WHERE lantai='B2'");
+                                            while ($row = mysqli_fetch_assoc($seat)) {
+                                                //echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
+                                                echo "<div class='outer-seat' id='div-inline'><div class='inner-seat' style='text-align: center;'>" . $row['no_kamar'] . "</div></div>";
+                                            }
+                                        ?>
+                                    </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane fade" id="gedungc">
                                     <div class="form-group">
@@ -331,7 +333,15 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
+    <script id="rendered-js">
+        $(".outer-seat").on("click", function() {
+            $(this).toggleClass('selected-outerColor');
+        });
 
+        $(".inner-seat").on("click", function() {
+            $(this).toggleClass('selected-innerColor');
+        });
+    </script>
     <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap popper Core JavaScript -->
     <script src="assets/node_modules/popper/popper.min.js"></script>
