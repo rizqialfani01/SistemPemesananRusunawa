@@ -28,6 +28,23 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+    <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#gedung_A").change(function(){
+            var gedung_A = $("#gedung_A").val();
+                $.ajax({
+                    type: 'POST',
+                    url: "get_lantai_A.php",
+                    data: {gedung_A: gedung_A},
+                    cache: false,
+                    success: function(msg){
+                    $("#lantai_A").html(msg);
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 
 <body class="skin-default-dark fixed-layout">
@@ -188,17 +205,19 @@
 
                                 <!-- Tab panes -->
                                 <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="gedunga">
+                                <div role="tabpanel" class="tab-pane active" id="gedunga" style="width: 1100px">
                                     <div class="form-group">
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
-                                            <select class="form-control form-control-line">
-                                                <option value="semualantai">Semua Lantai</option>
-                                                <option value="lantai2">Lantai 2</option>
-                                                <option value="lantai3">Lantai 3</option>
-                                                <option value="lantai4">Lantai 4</option>
+                                            <select id="gedung_A" class="form-control form-control-line">
+                                                <option value="A0">Semua Lantai</option>
+                                                <option value="A2">Lantai 2</option>
+                                                <option value="A3">Lantai 3</option>
+                                                <option value="A4">Lantai 4</option>
                                             </select>
                                         </div>
+                                    </div>
+                                    <div id="lantai_A" class="card-body" style="padding-left: 10px;">
                                     </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane fade" id="gedungb" style="width: 1200px;">
@@ -342,7 +361,6 @@
             $(this).toggleClass('selected-innerColor');
         });
     </script>
-    <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap popper Core JavaScript -->
     <script src="assets/node_modules/popper/popper.min.js"></script>
     <script src="assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
