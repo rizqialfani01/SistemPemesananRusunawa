@@ -28,6 +28,13 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+    <script type="text/javascript">
+        function selectedRoom(){
+            $(".room").on("click", function() {
+                $(this).toggleClass('selected');
+            });
+        }    
+    </script>
 </head>
 
 <body class="skin-default-dark fixed-layout">
@@ -225,7 +232,7 @@
                                             $seat = mysqli_query($conn,"SELECT * FROM kamar WHERE lantai='B2'");
                                             while ($row = mysqli_fetch_assoc($seat)) {
                                                 //echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
-                                                echo "<div class='outer-seat' id='div-inline'><div class='inner-seat' style='text-align: center;'>" . $row['no_kamar'] . "</div></div>";
+                                                echo "<div class='room available2' id='div-inline' onclick='selectedRoom()'>" . $row['no_kamar'] . "</div>";
                                             }
                                         ?>
                                     </div>
@@ -333,15 +340,7 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script id="rendered-js">
-        $(".outer-seat").on("click", function() {
-            $(this).toggleClass('selected-outerColor');
-        });
 
-        $(".inner-seat").on("click", function() {
-            $(this).toggleClass('selected-innerColor');
-        });
-    </script>
     <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap popper Core JavaScript -->
     <script src="assets/node_modules/popper/popper.min.js"></script>
