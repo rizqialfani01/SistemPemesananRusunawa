@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon1.png">
     <title>Sistem Penyewaan Rusunawa</title>
     <!-- This page CSS -->
     <!-- chartist CSS -->
@@ -133,7 +133,7 @@
         <!-- ============================================================== -->
         <aside class="left-sidebar">
             <div class="d-flex no-block nav-text-box align-items-center">
-                <span><img src="assets/images/logo-icon.png" alt="elegant admin template" width="40" height="40"></span>
+                <span><img src="assets/images/logo-light-text1.png" alt="elegant admin template" width="200" height="45"></span>
                 <a class="waves-effect waves-dark ml-auto hidden-sm-down" href="javascript:void(0)"><i class="ti-menu"></i></a>
                 <a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
             </div>
