@@ -29,29 +29,6 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
     <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#gedung_A").change(function(){
-            var gedung_A = $("#gedung_A").val();
-                $.ajax({
-                    type: 'POST',
-                    url: "get_lantai_A.php",
-                    data: {gedung_A: gedung_A},
-                    cache: false,
-                    success: function(msg){
-                    $("#lantai_A").html(msg);
-                    }
-                });
-            });
-        });
-    </script>
-    <script type="text/javascript">
-        function selectedRoom(){
-            $(".room").on("click", function() {
-                $(this).toggleClass('selected');
-            });
-        }    
-    </script>
 </head>
 
 <body class="skin-default-dark fixed-layout">
@@ -95,34 +72,6 @@
                 <!-- ============================================================== -->
                 <!-- End Logo -->
                 <!-- ============================================================== -->
-                <div class="navbar-collapse">
-                    <!-- ============================================================== -->
-                    <!-- toggle and nav items -->
-                    <!-- ============================================================== -->
-                    <ul class="navbar-nav mr-auto">
-                        <!-- This is  -->
-                        <li class="nav-item hidden-sm-up"> <a class="nav-link nav-toggler waves-effect waves-light" href="javascript:void(0)"><i class="ti-menu"></i></a></li>
-                        <!-- ============================================================== -->
-                        <!-- Search -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
-                            <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="fa fa-times"></i></a>
-                            </form>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav my-lg-0">
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" alt="user" class="img-circle" width="30"></a>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                    </ul>
-                </div>
             </nav>
         </header>
         <!-- ============================================================== -->
@@ -143,11 +92,11 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li> <a class="waves-effect waves-dark" href="index.php" aria-expanded="false"><i class="fa fa-home"></i><span class="hide-menu">Daftar Kamar</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="table-basic.html" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
+                        <li> <a class="waves-effect waves-dark" href="penghuni.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="laporan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
                         <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i class="fa fa-question-circle"></i><span class="hide-menu"></span>404</a></li>
                         <div class="text-center m-t-30">
-                            <a href="#" class="btn waves-effect waves-light btn-danger hidden-md-down"> Logout</a>
+                            <a href="#" class="btn waves-effect waves-light btn-danger hidden-md-down">Logout</a>
                         </div>
                     </ul>
                 </nav>
@@ -171,13 +120,14 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h4 class="text-themecolor">Profile</h4>
+                        <h4 class="text-themecolor">Edit Data Penghuni</h4>
                     </div>
                     <div class="col-md-7 align-self-center text-right">
                         <div class="d-flex justify-content-end align-items-center">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                                <li class="breadcrumb-item active">Profile</li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0)">Beranda</a></li>
+                                <li class="breadcrumb-item"><a href="pages-profile.html">Daftar Kamar</a></li>
+                                <li class="breadcrumb-item active">Edit Data Penghuni</li>
                             </ol>
                         </div>
                     </div>
@@ -189,40 +139,97 @@
                 <!-- Yearly Sales -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card oh">
-                            <div class="card-body">
-                            </div>
-                            <div class="card-body bg-light">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- News -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <!-- column -->
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- To do chat and message -->
-                <!-- ============================================================== -->
-                <div class="row">
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
+                                <div class="d-flex m-b-30 align-items-center no-block">
+                                    <h4 class="card-title ">Penghuni 1</h5>
+                                    <div class="ml-auto">
+                                        <ul class="list-inline font-12">
+                                            <a class="btn btn-dark btn-circle fa fa-check"></a>
+                                            <a class="btn btn-dark btn-circle fa fa-trash"></a>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <form class="form-horizontal form-material">
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Nama</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">NIM</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="NIM Penghuni" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">No. Telp</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Nomor Telepon Penghuni" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Departemen</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Departemen" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Masa Huni</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Masa Huni" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
+                                <div class="d-flex m-b-30 align-items-center no-block">
+                                    <h4 class="card-title ">Penghuni 2</h5>
+                                    <div class="ml-auto">
+                                        <ul class="list-inline font-12">
+                                            <a class="btn btn-dark btn-circle fa fa-check"></a>
+                                            <a class="btn btn-dark btn-circle fa fa-trash"></a>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <form class="form-horizontal form-material">
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Nama</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">NIM</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="NIM Penghuni" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">No. Telp</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Nomor Telepon Penghuni" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Departemen</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Departemen" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Masa Huni</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Masa Huni" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

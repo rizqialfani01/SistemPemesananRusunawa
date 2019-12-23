@@ -143,11 +143,11 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li> <a class="waves-effect waves-dark" href="index.php" aria-expanded="false"><i class="fa fa-home"></i><span class="hide-menu">Daftar Kamar</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="table-basic.html" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
+                        <li> <a class="waves-effect waves-dark" href="penghuni.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="laporan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
                         <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i class="fa fa-question-circle"></i><span class="hide-menu"></span>404</a></li>
                         <div class="text-center m-t-30">
-                            <a href="#" class="btn waves-effect waves-light btn-danger hidden-md-down"> Logout</a>
+                            <a href="#" class="btn waves-effect waves-light btn-danger hidden-md-down">Logout</a>
                         </div>
                     </ul>
                 </nav>
@@ -176,7 +176,7 @@
                     <div class="col-md-7 align-self-center text-right">
                         <div class="d-flex justify-content-end align-items-center">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0)">Beranda</a></li>
                                 <li class="breadcrumb-item active">Laporan Keuangan</li>
                             </ol>
                         </div>
@@ -189,66 +189,40 @@
                 <!-- Yearly Sales -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-lg-4 col-xlg-3 col-md-5">
+                    <div class="col-lg-12">
+                        <div class="card oh">
+                            <div class="card-body">
+                            </div>
+                            <div class="card-body bg-light">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- News -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- column -->
+                    <div class="col-12">
                         <div class="card">
                             <div class="card-body">
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-8 col-xlg-9 col-md-7">
+                </div>
+                <!-- ============================================================== -->
+                <!-- To do chat and message -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <div class="card-body">
-                                    <form class="form-horizontal form-material">
-                                        <div class="form-group">
-                                            <label class="col-md-12">Full Name</label>
-                                            <div class="col-md-12">
-                                                <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="example-email" class="col-md-12">Email</label>
-                                            <div class="col-md-12">
-                                                <input type="email" placeholder="johnathan@admin.com" class="form-control form-control-line" name="example-email" id="example-email">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-12">Password</label>
-                                            <div class="col-md-12">
-                                                <input type="password" value="password" class="form-control form-control-line">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-12">Phone No</label>
-                                            <div class="col-md-12">
-                                                <input type="text" placeholder="123 456 7890" class="form-control form-control-line">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-12">Message</label>
-                                            <div class="col-md-12">
-                                                <textarea rows="5" class="form-control form-control-line"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-12">Select Country</label>
-                                            <div class="col-sm-12">
-                                                <select class="form-control form-control-line">
-                                                    <option>London</option>
-                                                    <option>India</option>
-                                                    <option>Usa</option>
-                                                    <option>Canada</option>
-                                                    <option>Thailand</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-sm-12">
-                                                <button class="btn btn-success">Update Profile</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
                             </div>
                         </div>
                     </div>
