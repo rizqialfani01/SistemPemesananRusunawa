@@ -1,0 +1,14 @@
+<?php
+	include "config.php";
+
+	echo "<option disabled='disabled' selected='selected'>Pilih Prodi</option>";
+
+	$stmt = $conn->prepare("SELECT * FROM prodi WHERE id_fakultas=? ORDER BY nama ASC");
+	$stmt->bind_param("i", $_POST['id_fakultas']);
+	$stmt->execute();
+	$result = $stmt->get_result();
+	while($row = $result->fetch_assoc()) {
+		echo "<option value='".$row['id_prodi']."'>".$row['nama']."</option>";
+	}
+	$stmt->close();
+?>

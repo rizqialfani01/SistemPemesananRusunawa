@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Nov 2019 pada 14.59
--- Versi server: 10.4.6-MariaDB
--- Versi PHP: 7.3.9
+-- Waktu pembuatan: 23 Des 2019 pada 17.09
+-- Versi server: 10.4.10-MariaDB
+-- Versi PHP: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,24 @@ SET time_zone = "+00:00";
 --
 -- Database: `rusunawa`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `admin`
+--
+
+CREATE TABLE `admin` (
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `admin`
+--
+
+INSERT INTO `admin` (`username`, `password`) VALUES
+('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997');
 
 -- --------------------------------------------------------
 
@@ -660,7 +678,7 @@ INSERT INTO `prodi` (`id_fakultas`, `id_prodi`, `nama`) VALUES
 (4, 404, 'S1 Ilmu Komunikasi'),
 (4, 405, 'S1 Ilmu Pemerintahan'),
 (5, 501, 'S1 Kedokteran'),
-(5, 502, 'S1 Kedokteran'),
+(5, 502, 'S1 Kedokteran Gigi'),
 (5, 503, 'S1 Gizi'),
 (5, 504, 'S1 Keperawatan'),
 (6, 601, 'S1 Kesehatan Masyarakat'),
@@ -694,38 +712,38 @@ INSERT INTO `prodi` (`id_fakultas`, `id_prodi`, `nama`) VALUES
 (10, 1011, 'S1 Teknik Perkapalan'),
 (10, 1012, 'S1 Teknik Sipil'),
 (11, 1101, 'S1 Psikologi'),
-(12, 1201, 'S1 D4 Teknologi Rekayasa Kimia Industri'),
-(12, 1202, 'S1 D4 Teknologi Rekayasa Otomasi'),
-(12, 1203, 'S1 D4 Rekayasa Perancangan Mekanik'),
-(12, 1204, 'S1 D4 Teknologi Rekayasa Konstruksi Perkapalan'),
-(12, 1205, 'S1 D4 Teknik Listrik Industri'),
-(12, 1206, 'S1 D3 Teknologi Kimia'),
-(12, 1207, 'S1 D3 Teknologi Elektronika'),
-(12, 1208, 'S1 D3 Teknologi Mesin'),
-(12, 1209, 'S1 D3 Teknologi Perancangan dan Konstruksi Kapal'),
-(12, 1210, 'S1 D3 Teknologi Instrumentasi'),
-(12, 1211, 'S1 D4 Perencanaan Tata Ruang dan Pertanahan'),
-(12, 1212, 'S1 D4 Teknik Infrastruktur Sipil dan Perancangan A'),
-(12, 1213, 'S1 D3 Teknologi Sipil'),
-(12, 1214, 'S1 D3 Perencanaan Tata Ruang Wilayah dan Kota'),
-(12, 1215, 'S1 D3 Gambar Arsitektur'),
-(12, 1216, 'S1 D3 Administrasi Pertanahan'),
-(12, 1217, 'S1 D4 Akuntansi Perpajakan'),
-(12, 1218, 'S1 D4 Manajemen dan Administrasi Logistik'),
-(12, 1219, 'S1 D3 Manajemen'),
-(12, 1220, 'S1 D3 Administrasi Pajak'),
-(12, 1221, 'S1 D3 Akuntansi'),
-(12, 1222, 'S1 D3 Usaha Budidaya Ternak'),
-(12, 1223, 'S1 D3 Manajemen Pemasaran'),
-(12, 1224, 'S1 D3 Keuangan Publik'),
-(12, 1225, 'S1 D3 Hubungan Masyarakat'),
-(12, 1226, 'S1 D3 Administrasi Perkantoran'),
-(12, 1227, 'S1 D4 Bahasa Asing dan Terapan'),
-(12, 1228, 'S1 D4 Informasi dan Humas'),
-(12, 1229, 'S1 D3 Perpustakaan dan Informasi'),
-(12, 1230, 'S1 D3 Kearsipan'),
-(12, 1231, 'S1 D3 Bahasa Inggris'),
-(12, 1232, 'S1 D3 Bahasa Jepang'),
+(12, 1201, 'D4 Teknologi Rekayasa Kimia Industri'),
+(12, 1202, 'D4 Teknologi Rekayasa Otomasi'),
+(12, 1203, 'D4 Rekayasa Perancangan Mekanik'),
+(12, 1204, 'D4 Teknologi Rekayasa Konstruksi Perkapalan'),
+(12, 1205, 'D4 Teknik Listrik Industri'),
+(12, 1206, 'D3 Teknologi Kimia'),
+(12, 1207, 'D3 Teknologi Elektronika'),
+(12, 1208, 'D3 Teknologi Mesin'),
+(12, 1209, 'D3 Teknologi Perancangan dan Konstruksi Kapal'),
+(12, 1210, 'D3 Teknologi Instrumentasi'),
+(12, 1211, 'D4 Perencanaan Tata Ruang dan Pertanahan'),
+(12, 1212, 'D4 Teknik Infrastruktur Sipil dan Perancangan A'),
+(12, 1213, 'D3 Teknologi Sipil'),
+(12, 1214, 'D3 Perencanaan Tata Ruang Wilayah dan Kota'),
+(12, 1215, 'D3 Gambar Arsitektur'),
+(12, 1216, 'D3 Administrasi Pertanahan'),
+(12, 1217, 'D4 Akuntansi Perpajakan'),
+(12, 1218, 'D4 Manajemen dan Administrasi Logistik'),
+(12, 1219, 'D3 Manajemen'),
+(12, 1220, 'D3 Administrasi Pajak'),
+(12, 1221, 'D3 Akuntansi'),
+(12, 1222, 'D3 Usaha Budidaya Ternak'),
+(12, 1223, 'D3 Manajemen Pemasaran'),
+(12, 1224, 'D3 Keuangan Publik'),
+(12, 1225, 'D3 Hubungan Masyarakat'),
+(12, 1226, 'D3 Administrasi Perkantoran'),
+(12, 1227, 'D4 Bahasa Asing dan Terapan'),
+(12, 1228, 'D4 Informasi dan Humas'),
+(12, 1229, 'D3 Perpustakaan dan Informasi'),
+(12, 1230, 'D3 Kearsipan'),
+(12, 1231, 'D3 Bahasa Inggris'),
+(12, 1232, 'D3 Bahasa Jepang'),
 (13, 1301, 'Doktor Ilmu Lingkungan'),
 (13, 1302, 'Magister Ilmu Lingkungan'),
 (13, 1303, 'Magister Epidemiologi'),

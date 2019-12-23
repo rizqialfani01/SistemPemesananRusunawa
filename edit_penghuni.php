@@ -1,3 +1,12 @@
+<?php
+    include "config.php";
+
+    session_start();
+    if($_SESSION['status']!="login_rusunawa"){
+        header("location: login?pesan=belum_login");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,8 +36,40 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+    <![endif]-->
     <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#fakultas").change(function(){
+            var fakultas = $("#fakultas").val();
+                $.ajax({
+                    type: 'POST',
+                    url: "..php",
+                    data: {id_fakultas: fakultas},
+                    cache: false,
+                    success: function(msg){
+                    $("#prodi").html(msg);
+                    }
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#fakultas2").change(function(){
+            var fakultas = $("#fakultas2").val();
+                $.ajax({
+                    type: 'POST',
+                    url: "..php",
+                    data: {id_fakultas: fakultas},
+                    cache: false,
+                    success: function(msg){
+                    $("#prodi2").html(msg);
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 
 <body class="skin-default-dark fixed-layout">
@@ -171,9 +212,27 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Departemen</label>
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Fakultas</label>
                                         <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Departemen" class="form-control form-control-line">
+                                            <select class="form-control form-control-line" name="fakultas" id="fakultas">
+                                                <option disabled="disabled" selected>Pilih Fakultas</option>
+                                                <!-- Menampilkan Fakultas dari database -->
+                                                <?php
+                                                    $data_prov = $conn->query("SELECT * FROM fakultas ORDER BY nama ASC");
+                                                    while($row = $data_prov->fetch_assoc()) {
+                                                        echo "<option value='".$row['id_fakultas']."'>".$row['nama']."</option>";
+                                                    }
+                                                    $data_prov->close();
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Prodi</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <select class="form-control form-control-line" name="prodi" id="prodi">
+                                                <option disabled="disabled" selected>Silakan Pilih Fakultas Terlebih Dahulu</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -218,9 +277,27 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Departemen</label>
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Fakultas</label>
                                         <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Departemen" class="form-control form-control-line">
+                                            <select class="form-control form-control-line" name="fakultas2" id="fakultas2">
+                                                <option disabled="disabled" selected>Pilih Fakultas</option>
+                                                <!-- Menampilkan Fakultas dari database -->
+                                                <?php
+                                                    $data_prov = $conn->query("SELECT * FROM fakultas ORDER BY nama ASC");
+                                                    while($row = $data_prov->fetch_assoc()) {
+                                                        echo "<option value='".$row['id_fakultas']."'>".$row['nama']."</option>";
+                                                    }
+                                                    $data_prov->close();
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Prodi</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <select class="form-control form-control-line" name="prodi2" id="prodi2">
+                                                <option disabled="disabled" selected>Silakan Pilih Fakultas Terlebih Dahulu</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
