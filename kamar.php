@@ -152,13 +152,13 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h4 class="text-themecolor">Daftar Kamar</h4>
+                        <h4 class="text-themecolor">Pilih Kamar</h4>
                     </div>
                     <div class="col-md-7 align-self-center text-right">
                         <div class="d-flex justify-content-end align-items-center">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="javascript:void(0)">Beranda</a></li>
-                                <li class="breadcrumb-item active">Daftar Kamar</li>
+                                <li class="breadcrumb-item active">Pilih Kamar</li>
                             </ol>
                         </div>
                     </div>
@@ -174,7 +174,7 @@
                         <div class="card oh">
                             <div class="card-body">
                                 <div class="d-flex m-b-30 align-items-center no-block">
-                                    <h4 class="card-title ">Pilih Kamar</h5>
+                                    <h4 class="card-title ">Denah Kamar</h5>
                                 </div>
                                 <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
