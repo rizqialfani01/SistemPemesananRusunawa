@@ -161,14 +161,14 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h4 class="text-themecolor">Edit Data Penghuni</h4>
+                        <h4 class="text-themecolor">Tambah Data Penghuni</h4>
                     </div>
                     <div class="col-md-7 align-self-center text-right">
                         <div class="d-flex justify-content-end align-items-center">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="javascript:void(0)">Beranda</a></li>
                                 <li class="breadcrumb-item"><a href="kamar.php">Pilih Kamar</a></li>
-                                <li class="breadcrumb-item active">Edit Data Penghuni</li>
+                                <li class="breadcrumb-item active">Tambah Data Penghuni</li>
                             </ol>
                         </div>
                     </div>
@@ -188,7 +188,6 @@
                                     <div class="ml-auto">
                                         <ul class="list-inline font-12">
                                             <a class="btn btn-dark btn-circle fa fa-check"></a>
-                                            <a class="btn btn-dark btn-circle fa fa-trash"></a>
                                             <a class="btn btn-dark btn-circle fa fa-close"></a>
                                         </ul>
                                     </div>
@@ -242,6 +241,24 @@
                                             <input type="text" placeholder="Masa Huni" class="form-control form-control-line">
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Biaya</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Biaya Kamar" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Bayar</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Jumlah Bayar Dimuka" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Piutang</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Jumlah Piutang" class="form-control form-control-line">
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -254,7 +271,6 @@
                                     <div class="ml-auto">
                                         <ul class="list-inline font-12">
                                             <a class="btn btn-dark btn-circle fa fa-check"></a>
-                                            <a class="btn btn-dark btn-circle fa fa-trash"></a>
                                             <a class="btn btn-dark btn-circle fa fa-close"></a>
                                         </ul>
                                     </div>
@@ -306,6 +322,24 @@
                                         <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Masa Huni</label>
                                         <div class="col-md-9" style="float:right;">
                                             <input type="text" placeholder="Masa Huni" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Biaya</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Biaya Kamar" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Bayar</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Jumlah Bayar Dimuka" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Piutang</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Jumlah Piutang" class="form-control form-control-line">
                                         </div>
                                     </div>
                                 </form>
