@@ -152,7 +152,7 @@
                     <div class="col-md-7 align-self-center text-right">
                         <div class="d-flex justify-content-end align-items-center">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="javascript:void(0)">Beranda</a></li>
+                                <li class="breadcrumb-item"><a href="index.php">Beranda</a></li>
                                 <li class="breadcrumb-item active">Daftar Penghuni</li>
                             </ol>
                         </div>
