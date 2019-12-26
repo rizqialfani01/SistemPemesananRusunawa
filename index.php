@@ -36,7 +36,7 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<![endif]-->
     <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -123,7 +123,8 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="index.php" aria-expanded="false"><i class="fa fa-home"></i><span class="hide-menu">Daftar Kamar</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="index.php" aria-expanded="false"><i class="fa fa-home"></i><span class="hide-menu">Beranda</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="kamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Pilih Kamar</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="penghuni.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="laporan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
                         <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i class="fa fa-question-circle"></i><span class="hide-menu"></span>404</a></li>
@@ -150,210 +151,10 @@
                 <!-- ============================================================== -->
                 <!-- Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
-                <div class="row page-titles">
-                    <div class="col-md-5 align-self-center">
-                        <h4 class="text-themecolor">Daftar Kamar</h4>
-                    </div>
-                    <div class="col-md-7 align-self-center text-right">
-                        <div class="d-flex justify-content-end align-items-center">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="javascript:void(0)">Beranda</a></li>
-                                <li class="breadcrumb-item active">Daftar Kamar</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Yearly Sales -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card oh">
-                            <div class="card-body">
-                                <div class="d-flex m-b-30 align-items-center no-block">
-                                    <h4 class="card-title ">Pilih Kamar</h5>
-                                </div>
-                                <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#gedunga" role="tab" data-toggle="tab">Gedung A</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#gedungb" role="tab" data-toggle="tab">Gedung B</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#gedungc" role="tab" data-toggle="tab">Gedung C</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#gedungd" role="tab" data-toggle="tab">Gedung D</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#gedunge" role="tab" data-toggle="tab">Gedung E</a>
-                                </li>
-                                </ul>
-
-                                <!-- Tab panes -->
-                                <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="gedunga" style="width: 1100px">
-                                    <div class="form-group">
-                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
-                                        <div class="col-sm-2">
-                                            <select id="gedung_A" class="form-control form-control-line">
-                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
-                                                <option value="A0">Semua Lantai</option>
-                                                <option value="A2">Lantai 2</option>
-                                                <option value="A3">Lantai 3</option>
-                                                <option value="A4">Lantai 4</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div id="lantai_A" class="card-body" style="padding-left: 10px;">
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedungb" style="width: 1200px;">
-                                    <div class="form-group">
-                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
-                                        <div class="col-sm-2">
-                                            <select class="form-control form-control-line">
-                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
-                                                <option value="semualantai">Semua Lantai</option>
-                                                <option value="lantai1">Lantai 1</option>
-                                                <option value="lantai2">Lantai 2</option>
-                                                <option value="lantai3">Lantai 3</option>
-                                                <option value="lantai4">Lantai 4</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="card-body" style="padding-left: 10px;">
-                                        <?php
-                                            $server = "localhost";
-                                            $user = "root";
-                                            $password = "";
-                                            $wilayah = "rusunawa";
-                                            $conn = mysqli_connect($server, $user, $password, $wilayah);
-
-                                            $seat = mysqli_query($conn,"SELECT * FROM kamar WHERE lantai='B2'");
-                                            while ($row = mysqli_fetch_assoc($seat)) {
-                                                //echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
-                                                echo "<div class='room available2' id='div-inline' onclick='selectedRoom()'>" . $row['no_kamar'] . "</div>";
-                                            }
-                                        ?>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedungc">
-                                    <div class="form-group">
-                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
-                                        <div class="col-sm-2">
-                                            <select class="form-control form-control-line">
-                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
-                                                <option value="semualantai">Semua Lantai</option>
-                                                <option value="lantai1">Lantai 1</option>
-                                                <option value="lantai2">Lantai 2</option>
-                                                <option value="lantai3">Lantai 3</option>
-                                                <option value="lantai4">Lantai 4</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedungd">
-                                    <div class="form-group">
-                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
-                                        <div class="col-sm-2">
-                                            <select class="form-control form-control-line">
-                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
-                                                <option value="semualantai">Semua Lantai</option>
-                                                <option value="lantai2">Lantai 2</option>
-                                                <option value="lantai3">Lantai 3</option>
-                                                <option value="lantai4">Lantai 4</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedunge">
-                                    <div class="form-group">
-                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
-                                        <div class="col-sm-2">
-                                            <select class="form-control form-control-line">
-                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
-                                                <option value="semualantai">Semua Lantai</option>
-                                                <option value="lantai1">Lantai 1</option>
-                                                <option value="lantai2">Lantai 2</option>
-                                                <option value="lantai3">Lantai 3</option>
-                                                <option value="lantai4">Lantai 4</option>
-                                                <option value="lantai5">Lantai 5</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            <div class="card-body bg-light">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- News -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex m-b-30 align-items-center no-block">
-                                    <h4 class="card-title ">Data Penghuni 1</h5>
-                                    <div class="ml-auto">
-                                        <ul class="list-inline font-12">
-                                            <a class="btn btn-dark btn-circle fa fa-pencil" href="edit_penghuni.php"></a>
-                                            <a class="btn btn-dark btn-circle" href="#">+2</a>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <form class="form-horizontal form-material">
-                                    <div class="form-group">
-                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Nama</label>
-                                        <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line" readonly="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">NIM</label>
-                                        <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="NIM Penghuni" class="form-control form-control-line" readonly="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">No. Telp</label>
-                                        <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Nomor Telepon Penghuni" class="form-control form-control-line" readonly="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Departemen</label>
-                                        <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Departemen" class="form-control form-control-line" readonly="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Masa Huni</label>
-                                        <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Masa Huni" class="form-control form-control-line" readonly="">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex m-b-30 align-items-center no-block">
-                                    <h4 class="card-title ">Data Penghuni 2</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Page Heading -->
+                <div class="blog-title" style="text-align: center; padding: 100px">
+                    <h1 class="h1 mb-0 text-gray-800" >Selamat Datang di Halaman Pengelola</h1>
+                    <br><h1 class="h1 mb-0 text-gray-800" >Rusunawa Universitas Diponegoro</h1>
                 </div>
             </div>
             <!-- ============================================================== -->
