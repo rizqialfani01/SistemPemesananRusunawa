@@ -1,6 +1,11 @@
 <?php
 	include "config.php";
 
+    session_start();
+    if ($_SESSION['status']!="login_rusunawa"){
+        header("location: login?pesan=belum_login");
+    }
+
     if (isset($_GET['prodi'])){
         if ($_GET['prodi'] == 'y'){
             echo "<option disabled='disabled' selected='selected'>Pilih Prodi</option>";
