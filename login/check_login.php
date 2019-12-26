@@ -11,7 +11,7 @@
 	if ($row > 0){
 		$_SESSION['username'] = $_POST['username'];
 		$_SESSION['status'] = "login_rusunawa";
-		header("location: ../");
+		header("location: ../index.php");
 	}else{
 		header("location: ../login?pesan=gagal");
 	}

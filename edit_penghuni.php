@@ -44,7 +44,7 @@
             var fakultas = $("#fakultas").val();
                 $.ajax({
                     type: 'POST',
-                    url: "..php",
+                    url: "get.php?prodi=y",
                     data: {id_fakultas: fakultas},
                     cache: false,
                     success: function(msg){
@@ -60,7 +60,7 @@
             var fakultas = $("#fakultas2").val();
                 $.ajax({
                     type: 'POST',
-                    url: "..php",
+                    url: "get.php?prodi=y",
                     data: {id_fakultas: fakultas},
                     cache: false,
                     success: function(msg){

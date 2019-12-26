@@ -44,7 +44,7 @@
             var gedung_A = $("#gedung_A").val();
                 $.ajax({
                     type: 'POST',
-                    url: "get_lantai_A.php",
+                    url: "get.php?gedung=A",
                     data: {gedung_A: gedung_A},
                     cache: false,
                     success: function(msg){
@@ -55,11 +55,75 @@
         });
     </script>
     <script type="text/javascript">
+        $(document).ready(function(){
+            $("#gedung_B").change(function(){
+            var gedung_B = $("#gedung_B").val();
+                $.ajax({
+                    type: 'POST',
+                    url: "get.php?gedung=B",
+                    data: {gedung_B: gedung_B},
+                    cache: false,
+                    success: function(msg){
+                    $("#lantai_B").html(msg);
+                    }
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#gedung_C").change(function(){
+            var gedung_C = $("#gedung_C").val();
+                $.ajax({
+                    type: 'POST',
+                    url: "get.php?gedung=C",
+                    data: {gedung_C: gedung_C},
+                    cache: false,
+                    success: function(msg){
+                    $("#lantai_C").html(msg);
+                    }
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#gedung_D").change(function(){
+            var gedung_D = $("#gedung_D").val();
+                $.ajax({
+                    type: 'POST',
+                    url: "get.php?gedung=D",
+                    data: {gedung_D: gedung_D},
+                    cache: false,
+                    success: function(msg){
+                    $("#lantai_D").html(msg);
+                    }
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#gedung_E").change(function(){
+            var gedung_E = $("#gedung_E").val();
+                $.ajax({
+                    type: 'POST',
+                    url: "get.php?gedung=E",
+                    data: {gedung_E: gedung_E},
+                    cache: false,
+                    success: function(msg){
+                    $("#lantai_E").html(msg);
+                    }
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript">
         function selectedRoom(){
             $(".room").on("click", function() {
                 $(this).toggleClass('selected');
             });
-        }    
+        }
     </script>
 </head>
 
@@ -128,7 +192,7 @@
                         <li> <a class="waves-effect waves-dark" href="penghuni.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="laporan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
                         <div class="text-center m-t-30">
-                            <a href="#" class="btn waves-effect waves-light btn-danger hidden-md-down">Logout</a>
+                            <a href="logout.php" class="btn waves-effect waves-light btn-danger hidden-md-down">Logout</a>
                         </div>
                     </ul>
                 </nav>
@@ -216,75 +280,68 @@
                                     <div class="form-group">
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
-                                            <select class="form-control form-control-line">
+                                            <select id="gedung_B" class="form-control form-control-line">
                                                 <option disabled="disabled" selected="selected">Pilih Lantai</option>
-                                                <option value="semualantai">Semua Lantai</option>
-                                                <option value="lantai1">Lantai 1</option>
-                                                <option value="lantai2">Lantai 2</option>
-                                                <option value="lantai3">Lantai 3</option>
-                                                <option value="lantai4">Lantai 4</option>
+                                                <option value="B0">Semua Lantai</option>
+                                                <option value="B1">Lantai 1</option>
+                                                <option value="B2">Lantai 2</option>
+                                                <option value="B3">Lantai 3</option>
+                                                <option value="B4">Lantai 4</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="card-body" style="padding-left: 10px;">
-                                        <?php
-                                            $server = "localhost";
-                                            $user = "root";
-                                            $password = "";
-                                            $wilayah = "rusunawa";
-                                            $conn = mysqli_connect($server, $user, $password, $wilayah);
-
-                                            $seat = mysqli_query($conn,"SELECT * FROM kamar WHERE lantai='B2'");
-                                            while ($row = mysqli_fetch_assoc($seat)) {
-                                                //echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
-                                                echo "<div class='room available2' id='div-inline' onclick='selectedRoom()'>" . $row['no_kamar'] . "</div>";
-                                            }
-                                        ?>
+                                    <div id="lantai_B" class="card-body" style="padding-left: 10px;">
                                     </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane fade" id="gedungc">
                                     <div class="form-group">
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
-                                            <select class="form-control form-control-line">
+                                            <select id="gedung_C" class="form-control form-control-line">
                                                 <option disabled="disabled" selected="selected">Pilih Lantai</option>
-                                                <option value="semualantai">Semua Lantai</option>
-                                                <option value="lantai1">Lantai 1</option>
-                                                <option value="lantai2">Lantai 2</option>
-                                                <option value="lantai3">Lantai 3</option>
-                                                <option value="lantai4">Lantai 4</option>
+                                                <option value="C0">Semua Lantai</option>
+                                                <option value="C1">Lantai 1</option>
+                                                <option value="C2">Lantai 2</option>
+                                                <option value="C3">Lantai 3</option>
+                                                <option value="C4">Lantai 4</option>
                                             </select>
                                         </div>
+                                    </div>
+                                    <div id="lantai_C" class="card-body" style="padding-left: 10px;">
                                     </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane fade" id="gedungd">
                                     <div class="form-group">
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
-                                            <select class="form-control form-control-line">
+                                            <select id="gedung_D" class="form-control form-control-line">
                                                 <option disabled="disabled" selected="selected">Pilih Lantai</option>
-                                                <option value="semualantai">Semua Lantai</option>
-                                                <option value="lantai2">Lantai 2</option>
-                                                <option value="lantai3">Lantai 3</option>
-                                                <option value="lantai4">Lantai 4</option>
+                                                <option value="D0">Semua Lantai</option>
+                                                <option value="D2">Lantai 2</option>
+                                                <option value="D3">Lantai 3</option>
+                                                <option value="D4">Lantai 4</option>
                                             </select>
                                         </div>
+                                    </div>
+                                    <div id="lantai_D" class="card-body" style="padding-left: 10px;">
                                     </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane fade" id="gedunge">
                                     <div class="form-group">
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
-                                            <select class="form-control form-control-line">
+                                            <select id="gedung_E" class="form-control form-control-line">
                                                 <option disabled="disabled" selected="selected">Pilih Lantai</option>
-                                                <option value="semualantai">Semua Lantai</option>
-                                                <option value="lantai1">Lantai 1</option>
-                                                <option value="lantai2">Lantai 2</option>
-                                                <option value="lantai3">Lantai 3</option>
-                                                <option value="lantai4">Lantai 4</option>
-                                                <option value="lantai5">Lantai 5</option>
+                                                <option value="E0">Semua Lantai</option>
+                                                <option value="E1">Lantai 1</option>
+                                                <option value="E2">Lantai 2</option>
+                                                <option value="E3">Lantai 3</option>
+                                                <option value="E4">Lantai 4</option>
+                                                <option value="E5">Lantai 5</option>
                                             </select>
                                         </div>
+                                    </div>
+                                    <div id="lantai_E" class="card-body" style="padding-left: 10px;">
                                     </div>
                                 </div>
                                 </div>

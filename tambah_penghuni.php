@@ -44,7 +44,7 @@
             var fakultas = $("#fakultas").val();
                 $.ajax({
                     type: 'POST',
-                    url: "..php",
+                    url: "get.php?prodi=y",
                     data: {id_fakultas: fakultas},
                     cache: false,
                     success: function(msg){
@@ -60,7 +60,7 @@
             var fakultas = $("#fakultas2").val();
                 $.ajax({
                     type: 'POST',
-                    url: "..php",
+                    url: "get.php?prodi=y",
                     data: {id_fakultas: fakultas},
                     cache: false,
                     success: function(msg){
@@ -137,7 +137,7 @@
                         <li> <a class="waves-effect waves-dark" href="penghuni.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="laporan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
                         <div class="text-center m-t-30">
-                            <a href="#" class="btn waves-effect waves-light btn-danger hidden-md-down">Logout</a>
+                            <a href="logout.php" class="btn waves-effect waves-light btn-danger hidden-md-down">Logout</a>
                         </div>
                     </ul>
                 </nav>

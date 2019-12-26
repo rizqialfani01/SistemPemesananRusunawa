@@ -38,29 +38,6 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
     <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#gedung_A").change(function(){
-            var gedung_A = $("#gedung_A").val();
-                $.ajax({
-                    type: 'POST',
-                    url: "get_lantai_A.php",
-                    data: {gedung_A: gedung_A},
-                    cache: false,
-                    success: function(msg){
-                    $("#lantai_A").html(msg);
-                    }
-                });
-            });
-        });
-    </script>
-    <script type="text/javascript">
-        function selectedRoom(){
-            $(".room").on("click", function() {
-                $(this).toggleClass('selected');
-            });
-        }    
-    </script>
 </head>
 
 <body class="skin-default-dark fixed-layout">
@@ -128,7 +105,7 @@
                         <li> <a class="waves-effect waves-dark" href="penghuni.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="laporan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
                         <div class="text-center m-t-30">
-                            <a href="#" class="btn waves-effect waves-light btn-danger hidden-md-down">Logout</a>
+                            <a href="logout.php" class="btn waves-effect waves-light btn-danger hidden-md-down">Logout</a>
                         </div>
                     </ul>
                 </nav>
