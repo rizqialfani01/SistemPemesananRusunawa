@@ -293,7 +293,7 @@
                                     <div id="lantai_B" class="card-body" style="padding-left: 10px;">
                                     </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedungc">
+                                <div role="tabpanel" class="tab-pane fade" id="gedungc" style="width: 1200px;">
                                     <div class="form-group">
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
@@ -310,7 +310,7 @@
                                     <div id="lantai_C" class="card-body" style="padding-left: 10px;">
                                     </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedungd">
+                                <div role="tabpanel" class="tab-pane fade" id="gedungd" style="width: 1200px;">
                                     <div class="form-group">
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
@@ -326,7 +326,7 @@
                                     <div id="lantai_D" class="card-body" style="padding-left: 10px;">
                                     </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedunge">
+                                <div role="tabpanel" class="tab-pane fade" id="gedunge" style="width: 900px;">
                                     <div class="form-group">
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
