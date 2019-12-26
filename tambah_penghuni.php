@@ -40,26 +40,35 @@
     <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#gedung_A").change(function(){
-            var gedung_A = $("#gedung_A").val();
+            $("#fakultas").change(function(){
+            var fakultas = $("#fakultas").val();
                 $.ajax({
                     type: 'POST',
-                    url: "get_lantai_A.php",
-                    data: {gedung_A: gedung_A},
+                    url: "..php",
+                    data: {id_fakultas: fakultas},
                     cache: false,
                     success: function(msg){
-                    $("#lantai_A").html(msg);
+                    $("#prodi").html(msg);
                     }
                 });
             });
         });
     </script>
     <script type="text/javascript">
-        function selectedRoom(){
-            $(".room").on("click", function() {
-                $(this).toggleClass('selected');
+        $(document).ready(function(){
+            $("#fakultas2").change(function(){
+            var fakultas = $("#fakultas2").val();
+                $.ajax({
+                    type: 'POST',
+                    url: "..php",
+                    data: {id_fakultas: fakultas},
+                    cache: false,
+                    success: function(msg){
+                    $("#prodi2").html(msg);
+                    }
+                });
             });
-        }    
+        });
     </script>
 </head>
 
@@ -124,7 +133,7 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li> <a class="waves-effect waves-dark" href="index.php" aria-expanded="false"><i class="fa fa-home"></i><span class="hide-menu">Beranda</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="kamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Pilih Kamar</span></a></li>
+                        <li class="selected"> <a class="waves-effect waves-dark active" href="kamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Pilih Kamar</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="penghuni.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="laporan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
                         <div class="text-center m-t-30">
@@ -152,13 +161,14 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h4 class="text-themecolor">Daftar Kamar</h4>
+                        <h4 class="text-themecolor">Tambah Data Penghuni</h4>
                     </div>
                     <div class="col-md-7 align-self-center text-right">
                         <div class="d-flex justify-content-end align-items-center">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="javascript:void(0)">Beranda</a></li>
-                                <li class="breadcrumb-item active">Daftar Kamar</li>
+                                <li class="breadcrumb-item"><a href="kamar.php">Pilih Kamar</a></li>
+                                <li class="breadcrumb-item active">Tambah Data Penghuni</li>
                             </ol>
                         </div>
                     </div>
@@ -170,143 +180,15 @@
                 <!-- Yearly Sales -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card oh">
-                            <div class="card-body">
-                                <div class="d-flex m-b-30 align-items-center no-block">
-                                    <h4 class="card-title ">Pilih Kamar</h5>
-                                </div>
-                                <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#gedunga" role="tab" data-toggle="tab">Gedung A</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#gedungb" role="tab" data-toggle="tab">Gedung B</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#gedungc" role="tab" data-toggle="tab">Gedung C</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#gedungd" role="tab" data-toggle="tab">Gedung D</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#gedunge" role="tab" data-toggle="tab">Gedung E</a>
-                                </li>
-                                </ul>
-
-                                <!-- Tab panes -->
-                                <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="gedunga" style="width: 1100px">
-                                    <div class="form-group">
-                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
-                                        <div class="col-sm-2">
-                                            <select id="gedung_A" class="form-control form-control-line">
-                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
-                                                <option value="A0">Semua Lantai</option>
-                                                <option value="A2">Lantai 2</option>
-                                                <option value="A3">Lantai 3</option>
-                                                <option value="A4">Lantai 4</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div id="lantai_A" class="card-body" style="padding-left: 10px;">
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedungb" style="width: 1200px;">
-                                    <div class="form-group">
-                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
-                                        <div class="col-sm-2">
-                                            <select class="form-control form-control-line">
-                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
-                                                <option value="semualantai">Semua Lantai</option>
-                                                <option value="lantai1">Lantai 1</option>
-                                                <option value="lantai2">Lantai 2</option>
-                                                <option value="lantai3">Lantai 3</option>
-                                                <option value="lantai4">Lantai 4</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="card-body" style="padding-left: 10px;">
-                                        <?php
-                                            $server = "localhost";
-                                            $user = "root";
-                                            $password = "";
-                                            $wilayah = "rusunawa";
-                                            $conn = mysqli_connect($server, $user, $password, $wilayah);
-
-                                            $seat = mysqli_query($conn,"SELECT * FROM kamar WHERE lantai='B2'");
-                                            while ($row = mysqli_fetch_assoc($seat)) {
-                                                //echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
-                                                echo "<div class='room available2' id='div-inline' onclick='selectedRoom()'>" . $row['no_kamar'] . "</div>";
-                                            }
-                                        ?>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedungc">
-                                    <div class="form-group">
-                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
-                                        <div class="col-sm-2">
-                                            <select class="form-control form-control-line">
-                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
-                                                <option value="semualantai">Semua Lantai</option>
-                                                <option value="lantai1">Lantai 1</option>
-                                                <option value="lantai2">Lantai 2</option>
-                                                <option value="lantai3">Lantai 3</option>
-                                                <option value="lantai4">Lantai 4</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedungd">
-                                    <div class="form-group">
-                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
-                                        <div class="col-sm-2">
-                                            <select class="form-control form-control-line">
-                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
-                                                <option value="semualantai">Semua Lantai</option>
-                                                <option value="lantai2">Lantai 2</option>
-                                                <option value="lantai3">Lantai 3</option>
-                                                <option value="lantai4">Lantai 4</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedunge">
-                                    <div class="form-group">
-                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
-                                        <div class="col-sm-2">
-                                            <select class="form-control form-control-line">
-                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
-                                                <option value="semualantai">Semua Lantai</option>
-                                                <option value="lantai1">Lantai 1</option>
-                                                <option value="lantai2">Lantai 2</option>
-                                                <option value="lantai3">Lantai 3</option>
-                                                <option value="lantai4">Lantai 4</option>
-                                                <option value="lantai5">Lantai 5</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            <div class="card-body bg-light">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- News -->
-                <!-- ============================================================== -->
-                <div class="row">
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex m-b-30 align-items-center no-block">
-                                    <h4 class="card-title ">Data Penghuni 1</h5>
+                                    <h4 class="card-title ">Penghuni 1</h5>
                                     <div class="ml-auto">
                                         <ul class="list-inline font-12">
-                                            <a class="btn btn-dark btn-circle fa fa-plus" href="tambah_penghuni.php"></a> 
-                                            <a class="btn btn-dark btn-circle fa fa-pencil" href="edit_penghuni.php"></a>
+                                            <a class="btn btn-dark btn-circle fa fa-check"></a>
+                                            <a class="btn btn-dark btn-circle fa fa-close"></a>
                                         </ul>
                                     </div>
                                 </div>
@@ -314,31 +196,67 @@
                                     <div class="form-group">
                                         <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Nama</label>
                                         <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line" readonly="">
+                                            <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3" style="float:left; height: 38px; padding: 10px">NIM</label>
                                         <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="NIM Penghuni" class="form-control form-control-line" readonly="">
+                                            <input type="text" placeholder="NIM Penghuni" class="form-control form-control-line">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3" style="float:left; height: 38px; padding: 10px">No. Telp</label>
                                         <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Nomor Telepon Penghuni" class="form-control form-control-line" readonly="">
+                                            <input type="text" placeholder="Nomor Telepon Penghuni" class="form-control form-control-line">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Departemen</label>
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Fakultas</label>
                                         <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Departemen" class="form-control form-control-line" readonly="">
+                                            <select class="form-control form-control-line" name="fakultas" id="fakultas">
+                                                <option disabled="disabled" selected>Pilih Fakultas</option>
+                                                <!-- Menampilkan Fakultas dari database -->
+                                                <?php
+                                                    $data_prov = $conn->query("SELECT * FROM fakultas ORDER BY nama ASC");
+                                                    while($row = $data_prov->fetch_assoc()) {
+                                                        echo "<option value='".$row['id_fakultas']."'>".$row['nama']."</option>";
+                                                    }
+                                                    $data_prov->close();
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Prodi</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <select class="form-control form-control-line" name="prodi" id="prodi">
+                                                <option disabled="disabled" selected>Silakan Pilih Fakultas Terlebih Dahulu</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Masa Huni</label>
                                         <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Masa Huni" class="form-control form-control-line" readonly="">
+                                            <input type="text" placeholder="Masa Huni" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Biaya</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Biaya Kamar" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Bayar</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Jumlah Bayar Dimuka" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Piutang</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Jumlah Piutang" class="form-control form-control-line">
                                         </div>
                                     </div>
                                 </form>
@@ -349,11 +267,11 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex m-b-30 align-items-center no-block">
-                                    <h4 class="card-title ">Data Penghuni 2</h5>
+                                    <h4 class="card-title ">Penghuni 2</h5>
                                     <div class="ml-auto">
                                         <ul class="list-inline font-12">
-                                            <a class="btn btn-dark btn-circle fa fa-plus" href="tambah_penghuni.php"></a> 
-                                            <a class="btn btn-dark btn-circle fa fa-pencil" href="edit_penghuni.php"></a>
+                                            <a class="btn btn-dark btn-circle fa fa-check"></a>
+                                            <a class="btn btn-dark btn-circle fa fa-close"></a>
                                         </ul>
                                     </div>
                                 </div>
@@ -361,31 +279,67 @@
                                     <div class="form-group">
                                         <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Nama</label>
                                         <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line" readonly="">
+                                            <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3" style="float:left; height: 38px; padding: 10px">NIM</label>
                                         <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="NIM Penghuni" class="form-control form-control-line" readonly="">
+                                            <input type="text" placeholder="NIM Penghuni" class="form-control form-control-line">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3" style="float:left; height: 38px; padding: 10px">No. Telp</label>
                                         <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Nomor Telepon Penghuni" class="form-control form-control-line" readonly="">
+                                            <input type="text" placeholder="Nomor Telepon Penghuni" class="form-control form-control-line">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Departemen</label>
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Fakultas</label>
                                         <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Departemen" class="form-control form-control-line" readonly="">
+                                            <select class="form-control form-control-line" name="fakultas2" id="fakultas2">
+                                                <option disabled="disabled" selected>Pilih Fakultas</option>
+                                                <!-- Menampilkan Fakultas dari database -->
+                                                <?php
+                                                    $data_prov = $conn->query("SELECT * FROM fakultas ORDER BY nama ASC");
+                                                    while($row = $data_prov->fetch_assoc()) {
+                                                        echo "<option value='".$row['id_fakultas']."'>".$row['nama']."</option>";
+                                                    }
+                                                    $data_prov->close();
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Prodi</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <select class="form-control form-control-line" name="prodi2" id="prodi2">
+                                                <option disabled="disabled" selected>Silakan Pilih Fakultas Terlebih Dahulu</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Masa Huni</label>
                                         <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Masa Huni" class="form-control form-control-line" readonly="">
+                                            <input type="text" placeholder="Masa Huni" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Biaya</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Biaya Kamar" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Bayar</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Jumlah Bayar Dimuka" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Piutang</label>
+                                        <div class="col-md-9" style="float:right;">
+                                            <input type="text" placeholder="Jumlah Piutang" class="form-control form-control-line">
                                         </div>
                                     </div>
                                 </form>

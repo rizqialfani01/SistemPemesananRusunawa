@@ -27,6 +27,16 @@
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+    <style>
+        #dataTable_filter{
+            padding-top: 5px;
+            padding-right: 5px;
+        }
+        #dataTable_length{
+            padding-top: 5px;
+        }
+    </style>
+
 
 
 
