@@ -260,7 +260,7 @@
 
                                 <!-- Tab panes -->
                                 <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="gedunga" style="width: 1100px">
+                                <div role="tabpanel" class="tab-pane active" id="gedunga" style="width: 1200px">
                                     <div class="form-group">
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
@@ -326,7 +326,7 @@
                                     <div id="lantai_D" class="card-body" style="padding-left: 10px;">
                                     </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedunge" style="width: 900px;">
+                                <div role="tabpanel" class="tab-pane fade" id="gedunge" style="width: 1200px;">
                                     <div class="form-group">
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
