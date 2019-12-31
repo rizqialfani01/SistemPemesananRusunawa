@@ -244,7 +244,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Alamat Asal</label>
                                         <div class="col-md-8" style="float:right; padding: 10px;">
-                                            <textarea rows="3" class="form-control form-control-line"></textarea>
+                                            <textarea rows="3" placeholder="Alamat Asal Penghuni" class="form-control form-control-line"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -268,7 +268,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Alamat Orang Tua</label>
                                         <div class="col-md-8" style="float:right; padding: 10px;">
-                                            <textarea rows="3" class="form-control form-control-line"></textarea>
+                                            <textarea rows="3" placeholder="Alamat Asal Orang Tua" class="form-control form-control-line"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -315,7 +315,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex m-b-30 align-items-center no-block">
-                                    <h4 class="card-title ">Penghuni 2</h5>
+                                    <h4 class="card-title ">Penghuni 1</h5>
                                     <div class="ml-auto">
                                         <ul class="list-inline font-12">
                                             <a class="btn btn-dark btn-circle fa fa-check"></a>
@@ -375,7 +375,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Alamat Asal</label>
                                         <div class="col-md-8" style="float:right; padding: 10px;">
-                                            <textarea rows="3" class="form-control form-control-line"></textarea>
+                                            <textarea rows="3" placeholder="Alamat Asal Penghuni" class="form-control form-control-line"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -399,7 +399,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Alamat Orang Tua</label>
                                         <div class="col-md-8" style="float:right; padding: 10px;">
-                                            <textarea rows="3" class="form-control form-control-line"></textarea>
+                                            <textarea rows="3" placeholder="Alamat Asal Orang Tua" class="form-control form-control-line"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
