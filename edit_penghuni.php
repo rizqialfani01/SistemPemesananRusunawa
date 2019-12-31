@@ -188,7 +188,6 @@
                                     <div class="ml-auto">
                                         <ul class="list-inline font-12">
                                             <a class="btn btn-dark btn-circle fa fa-check"></a>
-                                            <a class="btn btn-dark btn-circle fa fa-trash"></a>
                                             <a class="btn btn-dark btn-circle fa fa-close"></a>
                                         </ul>
                                     </div>
@@ -244,8 +243,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Alamat Asal</label>
-                                        <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Alamat Asal Penghuni" class="form-control form-control-line">
+                                        <div class="col-md-8" style="float:right; padding: 10px;">
+                                            <textarea rows="3" class="form-control form-control-line"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -268,8 +267,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Alamat Orang Tua</label>
-                                        <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Alamat Orang Tua Penghuni" class="form-control form-control-line">
+                                        <div class="col-md-8" style="float:right; padding: 10px;">
+                                            <textarea rows="3" class="form-control form-control-line"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -279,7 +278,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Tahun Masuk Rusunawa</label>
+                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Tahun Masuk</label>
                                         <div class="col-md-8" style="float:right;">
                                             <input type="text" placeholder="Tahun Masuk Penghuni" class="form-control form-control-line">
                                         </div>
@@ -320,7 +319,6 @@
                                     <div class="ml-auto">
                                         <ul class="list-inline font-12">
                                             <a class="btn btn-dark btn-circle fa fa-check"></a>
-                                            <a class="btn btn-dark btn-circle fa fa-trash"></a>
                                             <a class="btn btn-dark btn-circle fa fa-close"></a>
                                         </ul>
                                     </div>
@@ -376,8 +374,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Alamat Asal</label>
-                                        <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Alamat Asal Penghuni" class="form-control form-control-line">
+                                        <div class="col-md-8" style="float:right; padding: 10px;">
+                                            <textarea rows="3" class="form-control form-control-line"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -400,8 +398,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Alamat Orang Tua</label>
-                                        <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Alamat Orang Tua Penghuni" class="form-control form-control-line">
+                                        <div class="col-md-8" style="float:right; padding: 10px;">
+                                            <textarea rows="3" class="form-control form-control-line"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -411,7 +409,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Tahun Masuk Rusunawa</label>
+                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Tahun Masuk</label>
                                         <div class="col-md-8" style="float:right;">
                                             <input type="text" placeholder="Tahun Masuk Penghuni" class="form-control form-control-line">
                                         </div>
