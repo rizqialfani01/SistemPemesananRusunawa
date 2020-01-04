@@ -201,6 +201,12 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
+                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Nama</label>
+                                        <div class="col-md-8" style="float:right;">
+                                            <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">NIM</label>
                                         <div class="col-md-8" style="float:right;">
                                             <input type="text" placeholder="NIM Penghuni" class="form-control form-control-line">

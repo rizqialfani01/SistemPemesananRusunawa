@@ -123,6 +123,12 @@
             $(".room").on("click", function() {
                 $(this).toggleClass('selected');
             });
+            var x = document.getElementById("myDIV");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
         }
     </script>
 </head>
@@ -354,98 +360,100 @@
                 <!-- ============================================================== -->
                 <!-- News -->
                 <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex m-b-30 align-items-center no-block">
-                                    <h4 class="card-title ">Data Penghuni 1</h5>
-                                    <div class="ml-auto">
-                                        <ul class="list-inline font-12">
-                                            <a class="btn btn-dark btn-circle fa fa-plus" href="tambah_penghuni.php"></a> 
-                                            <a class="btn btn-dark btn-circle fa fa-pencil" href="edit_penghuni.php"></a>
-                                        </ul>
+                <div id="myDIV" style="display: none;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex m-b-30 align-items-center no-block">
+                                        <h4 class="card-title ">Data Penghuni 1</h5>
+                                        <div class="ml-auto">
+                                            <ul class="list-inline font-12">
+                                                <a class="btn btn-dark btn-circle fa fa-plus" href="tambah_penghuni.php"></a> 
+                                                <a class="btn btn-dark btn-circle fa fa-pencil" href="edit_penghuni.php"></a>
+                                            </ul>
+                                        </div>
                                     </div>
+                                    <form class="form-horizontal form-material">
+                                        <div class="form-group">
+                                            <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Nama</label>
+                                            <div class="col-md-9" style="float:right;">
+                                                <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line" readonly="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3" style="float:left; height: 38px; padding: 10px">NIM</label>
+                                            <div class="col-md-9" style="float:right;">
+                                                <input type="text" placeholder="NIM Penghuni" class="form-control form-control-line" readonly="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3" style="float:left; height: 38px; padding: 10px">No. Telp</label>
+                                            <div class="col-md-9" style="float:right;">
+                                                <input type="text" placeholder="Nomor Telepon Penghuni" class="form-control form-control-line" readonly="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Departemen</label>
+                                            <div class="col-md-9" style="float:right;">
+                                                <input type="text" placeholder="Departemen" class="form-control form-control-line" readonly="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Masa Huni</label>
+                                            <div class="col-md-9" style="float:right;">
+                                                <input type="text" placeholder="Masa Huni" class="form-control form-control-line" readonly="">
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
-                                <form class="form-horizontal form-material">
-                                    <div class="form-group">
-                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Nama</label>
-                                        <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line" readonly="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">NIM</label>
-                                        <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="NIM Penghuni" class="form-control form-control-line" readonly="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">No. Telp</label>
-                                        <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Nomor Telepon Penghuni" class="form-control form-control-line" readonly="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Departemen</label>
-                                        <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Departemen" class="form-control form-control-line" readonly="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Masa Huni</label>
-                                        <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Masa Huni" class="form-control form-control-line" readonly="">
-                                        </div>
-                                    </div>
-                                </form>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex m-b-30 align-items-center no-block">
-                                    <h4 class="card-title ">Data Penghuni 2</h5>
-                                    <div class="ml-auto">
-                                        <ul class="list-inline font-12">
-                                            <a class="btn btn-dark btn-circle fa fa-plus" href="tambah_penghuni.php"></a> 
-                                            <a class="btn btn-dark btn-circle fa fa-pencil" href="edit_penghuni.php"></a>
-                                        </ul>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex m-b-30 align-items-center no-block">
+                                        <h4 class="card-title ">Data Penghuni 2</h5>
+                                        <div class="ml-auto">
+                                            <ul class="list-inline font-12">
+                                                <a class="btn btn-dark btn-circle fa fa-plus" href="tambah_penghuni.php"></a> 
+                                                <a class="btn btn-dark btn-circle fa fa-pencil" href="edit_penghuni.php"></a>
+                                            </ul>
+                                        </div>
                                     </div>
+                                    <form class="form-horizontal form-material">
+                                        <div class="form-group">
+                                            <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Nama</label>
+                                            <div class="col-md-9" style="float:right;">
+                                                <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line" readonly="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3" style="float:left; height: 38px; padding: 10px">NIM</label>
+                                            <div class="col-md-9" style="float:right;">
+                                                <input type="text" placeholder="NIM Penghuni" class="form-control form-control-line" readonly="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3" style="float:left; height: 38px; padding: 10px">No. Telp</label>
+                                            <div class="col-md-9" style="float:right;">
+                                                <input type="text" placeholder="Nomor Telepon Penghuni" class="form-control form-control-line" readonly="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Departemen</label>
+                                            <div class="col-md-9" style="float:right;">
+                                                <input type="text" placeholder="Departemen" class="form-control form-control-line" readonly="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Masa Huni</label>
+                                            <div class="col-md-9" style="float:right;">
+                                                <input type="text" placeholder="Masa Huni" class="form-control form-control-line" readonly="">
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
-                                <form class="form-horizontal form-material">
-                                    <div class="form-group">
-                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Nama</label>
-                                        <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line" readonly="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">NIM</label>
-                                        <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="NIM Penghuni" class="form-control form-control-line" readonly="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">No. Telp</label>
-                                        <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Nomor Telepon Penghuni" class="form-control form-control-line" readonly="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Departemen</label>
-                                        <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Departemen" class="form-control form-control-line" readonly="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Masa Huni</label>
-                                        <div class="col-md-9" style="float:right;">
-                                            <input type="text" placeholder="Masa Huni" class="form-control form-control-line" readonly="">
-                                        </div>
-                                    </div>
-                                </form>
                             </div>
                         </div>
                     </div>
