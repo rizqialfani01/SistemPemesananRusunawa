@@ -123,11 +123,12 @@
             $(".room").on("click", function() {
                 $(this).toggleClass('selected');
             });
-            var x = document.getElementById("myDIV");
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
+            var cardPenghuni = document.getElementById("dataPenghuni");
+            if (cardPenghuni.style.display === "none") {
+                cardPenghuni.style.display = "block";
+            } 
+            else {
+                cardPenghuni.style.display = "none";
             }
         }
     </script>
@@ -360,7 +361,7 @@
                 <!-- ============================================================== -->
                 <!-- News -->
                 <!-- ============================================================== -->
-                <div id="myDIV" style="display: none;">
+                <div id="dataPenghuni" style="display: none;">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="card">
