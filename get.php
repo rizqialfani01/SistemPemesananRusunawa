@@ -27,7 +27,7 @@
                 $stmt->execute();
                 $result = $stmt->get_result();
                 while($row = $result->fetch_assoc()) {
-                    echo "<div class='room ". $row['status']." unselected' id='legenda' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
+                    echo "<div class='room ". $row['status']."' id='div-inline' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
                 }
                 $stmt->close();
             }
@@ -37,7 +37,7 @@
                 $stmt->execute();
                 $result = $stmt->get_result();
                 while($row = $result->fetch_assoc()) {
-                    echo "<div class='room ". $row['status']." unselected' id='legenda' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
+                    echo "<div class='room ". $row['status']."' id='div-inline' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
                 }
                 $stmt->close();
             }
@@ -48,7 +48,7 @@
                 $stmt->execute();
                 $result = $stmt->get_result();
                 while($row = $result->fetch_assoc()) {
-                    echo "<div class='room ". $row['status']." unselected' id='legenda' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
+                    echo "<div class='room ". $row['status']."' id='div-inline' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
                 }
                 $stmt->close();
             }
@@ -58,7 +58,7 @@
                 $stmt->execute();
                 $result = $stmt->get_result();
                 while($row = $result->fetch_assoc()) {
-                    echo "<div class='room ". $row['status']." unselected' id='legenda' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
+                    echo "<div class='room ". $row['status']."' id='div-inline' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
                 }
                 $stmt->close();
             }
@@ -69,7 +69,7 @@
                 $stmt->execute();
                 $result = $stmt->get_result();
                 while($row = $result->fetch_assoc()) {
-                    echo "<div class='room ". $row['status']." unselected' id='legenda' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
+                    echo "<div class='room ". $row['status']."' id='div-inline' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
                 }
                 $stmt->close();
             }
@@ -79,7 +79,7 @@
                 $stmt->execute();
                 $result = $stmt->get_result();
                 while($row = $result->fetch_assoc()) {
-                    echo "<div class='room ". $row['status']." unselected' id='legenda' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
+                    echo "<div class='room ". $row['status']."' id='div-inline' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
                 }
                 $stmt->close();
             }
@@ -90,7 +90,7 @@
                 $stmt->execute();
                 $result = $stmt->get_result();
                 while($row = $result->fetch_assoc()) {
-                    echo "<div class='room ". $row['status']." unselected' id='legenda' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
+                    echo "<div class='room ". $row['status']."' id='div-inline' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
                 }
                 $stmt->close();
             }
@@ -100,7 +100,7 @@
                 $stmt->execute();
                 $result = $stmt->get_result();
                 while($row = $result->fetch_assoc()) {
-                    echo "<div class='room ". $row['status']." unselected' id='legenda' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
+                    echo "<div class='room ". $row['status']."' id='div-inline' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
                 }
                 $stmt->close();
             }
@@ -111,7 +111,7 @@
                 $stmt->execute();
                 $result = $stmt->get_result();
                 while($row = $result->fetch_assoc()) {
-                    echo "<div class='room ". $row['status']." unselected' id='legenda' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
+                    echo "<div class='room ". $row['status']."' id='div-inline' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
                 }
                 $stmt->close();
             }
@@ -121,7 +121,7 @@
                 $stmt->execute();
                 $result = $stmt->get_result();
                 while($row = $result->fetch_assoc()) {
-                    echo "<div class='room ". $row['status']." unselected' id='legenda' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
+                    echo "<div class='room ". $row['status']."' id='div-inline' onclick='selectedRoom()'>". $row['no_kamar']."</div>";
                 }
                 $stmt->close();
             }
