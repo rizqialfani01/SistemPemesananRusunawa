@@ -183,13 +183,13 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form-horizontal form-material">
+                                <form class="form-horizontal form-material" action="insert.php">
                                     <div class="d-flex m-b-30 align-items-center no-block">
                                         <h4 class="card-title ">Penghuni 1</h5>
                                         <div class="ml-auto">
                                             <ul class="list-inline font-12">
-                                                <a class="btn btn-dark btn-circle fa fa-check" type="submit"></a>
-                                                <a class="btn btn-dark btn-circle fa fa-close"></a>
+                                                <button class="btn btn-dark btn-circle fa fa-check" type="submit"></button>
+                                                <a class="btn btn-dark btn-circle fa fa-close" href="kamar.php"></a>
                                             </ul>
                                         </div>
                                     </div>
@@ -230,15 +230,29 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Tempat/Tanggal Lahir</label>
+                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Tempat Lahir</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Tempat/Tanggal Lahir Penghuni" class="form-control form-control-line">
+                                            <input type="text" placeholder="Tempat Lahir Penghuni" class="form-control form-control-line" name="tempat_lahir">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Tanggal Lahir</label>
+                                        <div class="col-md-8" style="float:right;">
+                                            <input type="text" placeholder="Tanggal Lahir Penghuni" class="form-control form-control-line" name="tgl_lahir">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Agama</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Agama Penghuni" class="form-control form-control-line" name="agama" required>
+                                            <select class="form-control form-control-line" name="agama">
+                                                <option disabled="disabled" selected>Pilih Agama</option>
+                                                <option value="Islam">Islam</option>
+                                                <option value="Protestan">Kristen Protestan</option>
+                                                <option value="Katolik">Katolik</option>
+                                                <option value="Hindu">Hindu</option>
+                                                <option value="Biddha">Buddha</option>
+                                                <option value="Konghucu">Konghucu</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -280,13 +294,32 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Tahun Masuk</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Tahun Masuk Penghuni" class="form-control form-control-line" name="tahun_masuk" required>
+                                            <select class="form-control form-control-line" name="tahun_masuk">
+                                                <option disabled="disabled" selected>Pilih Tahun</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2024">2024</option>
+                                                <option value="2025">2025</option>
+                                                <option value="2026">2026</option>
+                                                <option value="2027">2027</option>
+                                                <option value="2028">2028</option>
+                                                <option value="2029">2029</option>
+                                                <option value="2030">2030</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Masa Huni</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Masa Huni" class="form-control form-control-line" name="masa_huni" required>
+                                            <select class="form-control form-control-line" name="masa_huni">
+                                                <option disabled="disabled" selected>Pilih Masa Huni</option>
+                                                <option value="1">1 Tahun</option>
+                                                <option value="2">2 Tahun</option>
+                                                <option value="3">3 Tahun</option>
+                                                <option value="4">4 Tahun</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -298,13 +331,13 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Bayar</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Jumlah Bayar Dimuka" class="form-control form-control-line" name="bayar" required>
+                                            <input type="text" placeholder="Jumlah Bayar Dimuka (Tanpa Titik)" class="form-control form-control-line" name="bayar" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Piutang</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Jumlah Piutang" class="form-control form-control-line" name="piutang" required>
+                                            <input type="text" placeholder="Jumlah Piutang (Tanpa Titik)" class="form-control form-control-line" name="piutang" required>
                                         </div>
                                     </div>
                                 </form>
