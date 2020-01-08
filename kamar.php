@@ -120,15 +120,21 @@
     </script>
     <script type="text/javascript">
         function selectedRoom(){
-            $(".room").on("click", function() {
-                $(this).toggleClass('selected');
-            });
-            var cardPenghuni = document.getElementById("dataPenghuni");
-            if (cardPenghuni.style.display === "none") {
-                cardPenghuni.style.display = "block";
-            } 
-            else {
-                cardPenghuni.style.display = "none";
+            if($("#legenda").hasClass("selected")) 
+            {
+                $(".selected").click(function() 
+                {
+                    $(this).removeClass("selected").addClass("unselected");
+                    $(this).click(selectedRoom());
+                });
+            }
+            else if($("#legenda").hasClass("unselected"))
+            {
+                $(".unselected").click(function() 
+                {
+                    $(this).removeClass("unselected").addClass("selected");
+                    $(this).click(selectedRoom());
+                });
             }
         }
     </script>
