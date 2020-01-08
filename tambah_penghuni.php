@@ -322,6 +322,15 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="form-group radio">
+                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Kategori</label>
+                                        <div class="col-md-4" style="float:right;">
+                                            <label><input type="radio" name="kategori"> Non-Bidikmisi</label>
+                                        </div>
+                                        <div class="col-md-4" style="float:right;">
+                                            <label><input type="radio" name="kategori"> Bidikmisi</label>
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Biaya</label>
                                         <div class="col-md-8" style="float:right;">
