@@ -20,6 +20,23 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon1.png">
     <title>Sistem Penyewaan Rusunawa</title>
+
+    <!-- Custom styles for this template -->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    <style>
+        #dataTable_filter{
+            padding-top: 5px;
+            padding-right: 5px;
+        }
+        #dataTable_length{
+            padding-top: 5px;
+        }
+    </style>
+
     <!-- This page CSS -->
     <!-- chartist CSS -->
     <link href="assets/node_modules/morrisjs/morris.css" rel="stylesheet">
@@ -75,7 +92,7 @@
                         <!-- Logo text --><span>
                          <!-- dark Logo text -->
                          <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" width="86" height="40"/>
-                         <!-- Light Logo text -->    
+                         <!-- Light Logo text -->
                          <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
                 </div>
                 <!-- ============================================================== -->
@@ -150,6 +167,46 @@
                     <div class="col-lg-12">
                         <div class="card oh">
                             <div class="card-body">
+                              <div class="table-responsive">
+                                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                  <thead>
+                                      <tr>
+                                      <th>Nama</th>
+                                      <th>Position</th>
+                                      <th>Office</th>
+                                      <th>Age</th>
+                                      <th>Start date</th>
+                                      <th>Salary</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                      <td>Tiger Nixon</td>
+                                      <td>System Architect</td>
+                                      <td>Edinburgh</td>
+                                      <td>61</td>
+                                      <td>2011/04/25</td>
+                                      <td>$320,800</td>
+                                      </tr>
+                                      <tr>
+                                      <td>Garrett Winters</td>
+                                      <td>Accountant</td>
+                                      <td>Tokyo</td>
+                                      <td>63</td>
+                                      <td>2011/07/25</td>
+                                      <td>$170,750</td>
+                                      </tr>
+                                      <tr>
+                                      <td>Ashton Cox</td>
+                                      <td>Junior Technical Author</td>
+                                      <td>San Francisco</td>
+                                      <td>66</td>
+                                      <td>2009/01/12</td>
+                                      <td>$86,000</td>
+                                      </tr>
+                                  </tbody>
+                                  </table>
+                              </div>
                             </div>
                             <div class="card-body bg-light">
                             </div>
@@ -181,6 +238,26 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+
+
+
     <!-- Bootstrap popper Core JavaScript -->
     <script src="assets/node_modules/popper/popper.min.js"></script>
     <script src="assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
