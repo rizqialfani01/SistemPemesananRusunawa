@@ -185,34 +185,44 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>2112011</td>
+                                        <td>222</td>
+                                        <td>Doni Hermawan</td>
+                                        <td>Sementara</td>
+                                        <td>Gaada</td>
+                                        <td></td>
                                         </tr>
                                         <tr>
-                                        <td>Garrett Winters</td>
-                                        <td>Accountant</td>
-                                        <td>Tokyo</td>
-                                        <td>63</td>
-                                        <td>2011/07/25</td>
-                                        <td>$170,750</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>22222</td>
+                                        <td>3333</td>
+                                        <td>Alfani</td>
+                                        <td>Sebulan</td>
+                                        <td>Gaada</td>
+                                        <td></td>
                                         </tr>
                                         <tr>
-                                        <td>Ashton Cox</td>
-                                        <td>Junior Technical Author</td>
-                                        <td>San Francisco</td>
-                                        <td>66</td>
-                                        <td>2009/01/12</td>
-                                        <td>$86,000</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
+                                        <td>3</td>
+                                        <td>3</td>
+                                        <td>4444</td>
+                                        <td>55555</td>
+                                        <td>Arief</td>
+                                        <td>dua bulan</td>
+                                        <td>ada</td>
+                                        <td></td>
+                                        </tr>
+                                        <tr>
+                                        <td>4</td>
+                                        <td>4</td>
+                                        <td>32211</td>
+                                        <td>44432</td>
+                                        <td>Yoga</td>
+                                        <td>lima bulan</td>
+                                        <td>ada</td>
+                                        <td></td>
                                         </tr>
                                     </tbody>
                                     </table>
