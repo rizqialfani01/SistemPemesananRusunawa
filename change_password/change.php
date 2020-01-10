@@ -16,7 +16,7 @@
         if($row == 0){
             header("location: ../change_password?pesan=password_salah");
         }
-        
+
         else{
             if ($_POST['new_password'] == $_POST['confirm_new_password']){
                 $stmt = $conn->prepare("UPDATE admin set password=? WHERE username=? AND password=?");
