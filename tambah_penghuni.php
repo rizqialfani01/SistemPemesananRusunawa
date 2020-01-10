@@ -31,7 +31,6 @@
     <link href="dist/css/style.css" rel="stylesheet">
     <!-- Dashboard 1 Page CSS -->
     <link href="dist/css/pages/dashboard1.css" rel="stylesheet">
-	<link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -39,8 +38,6 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="dist/css/calendar.css" rel="stylesheet">
     <script type="text/javascript">
         $(document).ready(function(){
             $("#fakultas").change(function(){
@@ -73,12 +70,6 @@
             });
         });
     </script>
-    <script type=text/javascript>
-        $(function () {
-            $("#datepicker").datepicker({ dateFormat: "Y-m-d"});
-        });
-    </script>
-
 </head>
 
 <body class="skin-default-dark fixed-layout">
@@ -221,9 +212,9 @@
                                                 <option disabled="disabled" selected>Pilih Fakultas</option>
                                                 <!-- Menampilkan Fakultas dari database -->
                                                 <?php
-                                                    $data_prov = $conn->query("SELECT * FROM fakultas ORDER BY nama ASC");
+                                                    $data_prov = $conn->query("SELECT * FROM fakultas ORDER BY nama_fakultas ASC");
                                                     while($row = $data_prov->fetch_assoc()) {
-                                                        echo "<option value='".$row['id_fakultas']."'>".$row['nama']."</option>";
+                                                        echo "<option value='".$row['id_fakultas']."'>".$row['nama_fakultas']."</option>";
                                                     }
                                                     $data_prov->close();
                                                 ?>
@@ -247,8 +238,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Tanggal Lahir</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input class="form-control form-control-line js-datepicker" type="text" name="tgl_lahir" id="datepicker">
-                                            <i class="zmdi zmdi-calendar-note input-icon-cal js-btn-calendar"></i>
+                                            <input type="text" placeholder="Tanggal Lahir Penghuni" class="form-control form-control-line" name="tgl_lahir">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -391,13 +381,13 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Fakultas</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <select class="form-control form-control-line" name="id_fakultas" id="fakultas">
+                                            <select class="form-control form-control-line" name="fakultas" id="fakultas">
                                                 <option disabled="disabled" selected>Pilih Fakultas</option>
                                                 <!-- Menampilkan Fakultas dari database -->
                                                 <?php
-                                                    $data_prov = $conn->query("SELECT * FROM fakultas ORDER BY fakultas ASC");
+                                                    $data_prov = $conn->query("SELECT * FROM fakultas ORDER BY nama_fakultas ASC");
                                                     while($row = $data_prov->fetch_assoc()) {
-                                                        echo "<option value='".$row['id_fakultas']."'>".$row['fakultas']."</option>";
+                                                        echo "<option value='".$row['id_fakultas']."'>".$row['nama_fakultas']."</option>";
                                                     }
                                                     $data_prov->close();
                                                 ?>
@@ -407,7 +397,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Prodi</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <select class="form-control form-control-line" name="id_prodi" id="prodi">
+                                            <select class="form-control form-control-line" name="prodi" id="prodi">
                                                 <option disabled="disabled" selected>Silakan Pilih Fakultas Terlebih Dahulu</option>
                                             </select>
                                         </div>
@@ -543,10 +533,6 @@
     <script src="assets/node_modules/c3-master/c3.min.js"></script>
     <!-- Chart JS -->
     <script src="dist/js/dashboard1.js"></script>
-	<script src="vendor/datepicker/moment.min.js"></script>
-    <script src="vendor/datepicker/daterangepicker.js"></script>
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js/global.js"></script>
 </body>
 
 </html>
