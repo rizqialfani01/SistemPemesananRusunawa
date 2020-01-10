@@ -45,7 +45,7 @@
             var gedung_A = $("#gedung_A").val();
                 $.ajax({
                     type: 'POST',
-                    url: "get.php?gedung=A",
+                    url: "action/get.php?gedung=A",
                     data: {gedung_A: gedung_A},
                     cache: false,
                     success: function(msg){
@@ -61,7 +61,7 @@
             var gedung_B = $("#gedung_B").val();
                 $.ajax({
                     type: 'POST',
-                    url: "get.php?gedung=B",
+                    url: "action/get.php?gedung=B",
                     data: {gedung_B: gedung_B},
                     cache: false,
                     success: function(msg){
@@ -77,7 +77,7 @@
             var gedung_C = $("#gedung_C").val();
                 $.ajax({
                     type: 'POST',
-                    url: "get.php?gedung=C",
+                    url: "action/get.php?gedung=C",
                     data: {gedung_C: gedung_C},
                     cache: false,
                     success: function(msg){
@@ -93,7 +93,7 @@
             var gedung_D = $("#gedung_D").val();
                 $.ajax({
                     type: 'POST',
-                    url: "get.php?gedung=D",
+                    url: "action/get.php?gedung=D",
                     data: {gedung_D: gedung_D},
                     cache: false,
                     success: function(msg){
@@ -109,7 +109,7 @@
             var gedung_E = $("#gedung_E").val();
                 $.ajax({
                     type: 'POST',
-                    url: "get.php?gedung=E",
+                    url: "action/get.php?gedung=E",
                     data: {gedung_E: gedung_E},
                     cache: false,
                     success: function(msg){
