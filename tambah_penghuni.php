@@ -31,6 +31,7 @@
     <link href="dist/css/style.css" rel="stylesheet">
     <!-- Dashboard 1 Page CSS -->
     <link href="dist/css/pages/dashboard1.css" rel="stylesheet">
+	<link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -38,6 +39,8 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="dist/css/calendar.css" rel="stylesheet">
     <script type="text/javascript">
         $(document).ready(function(){
             $("#fakultas").change(function(){
@@ -70,6 +73,12 @@
             });
         });
     </script>
+    <script type=text/javascript>
+        $(function () {
+            $("#datepicker").datepicker({ dateFormat: "Y-m-d"});
+        });
+    </script>
+
 </head>
 
 <body class="skin-default-dark fixed-layout">
@@ -238,7 +247,8 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Tanggal Lahir</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Tanggal Lahir Penghuni" class="form-control form-control-line" name="tgl_lahir">
+                                            <input class="form-control form-control-line js-datepicker" type="text" name="tgl_lahir" id="datepicker">
+                                            <i class="zmdi zmdi-calendar-note input-icon-cal js-btn-calendar"></i>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -533,6 +543,10 @@
     <script src="assets/node_modules/c3-master/c3.min.js"></script>
     <!-- Chart JS -->
     <script src="dist/js/dashboard1.js"></script>
+	<script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/global.js"></script>
 </body>
 
 </html>
