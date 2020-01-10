@@ -9,8 +9,8 @@
     else {
         if (isset($_GET['insert'])){
             if ($_GET['insert'] == "penghuni"){
-                $stmt = $conn->prepare("INSERT INTO penghuni SET nama=?, nim=?, prodi=?, tempat_lahir=?, tgl_lahir=?, agama=?, id_kota=?, jalan=?, no=?, nama_ortu=?, pekerjaan_ortu=?, alamat_ortu=?, no_ortu=?, tahun_masuk=?");
-                $stmt->bind_param("ssssssisssssi", $_POST['nama'], $_POST['nim'], $_POST['prodi'], $_POST['tempat_lahir'], $_POST['tgl_lahir'], $_POST['agama'], $_POST['id_kota'], $_POST['jalan'], $_POST['nama_ortu'], $_POST['pekerjaan_ortu'], $_POST['alamat_ortu'], $_POST['alamat_ortu'], $_POST['no_ortu'], $_POST['tahun_masuk']);
+                $stmt = $conn->prepare("INSERT INTO penghuni SET id_kamar=?, nama=?, nim=?, id_fakultas=?, id_prodi=?, tempat_lahir=?, tgl_lahir=?, agama=?, alamat=?, no=?, nama_ortu=?, pekerjaan_ortu=?, alamat_ortu=?, no_ortu=?, tahun_masuk=?, masa_huni=?, kategori=?, biaya=?, bayar=?, piutang=?, status=?");
+                $stmt->bind_param("sssssssssssssssisiiis", $_POST['id_kamar'], $_POST['nama'], $_POST['nim'], $_POST['id_fakultas'], $_POST['id_prodi'], $_POST['tempat_lahir'], $_POST['tgl_lahir'], $_POST['agama'], $_POST['alamat'], $_POST['no'], $_POST['nama_ortu'], $_POST['pekerjaan_ortu'], $_POST['alamat_ortu'], $_POST['no_ortu'], $_POST['tahun_masuk'], $_POST['masa_huni'], $_POST['kategori'], $_POST['biaya'], $_POST['bayar'], $_POST['piutang'], $_POST['status']);
                 $stmt->execute();
 
                 if ($stmt){
