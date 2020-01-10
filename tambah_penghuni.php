@@ -193,18 +193,16 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
-                                <form class="form-horizontal form-material">
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Nama</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line">
+                                            <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line" name="nama" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">NIM</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="NIM Penghuni" class="form-control form-control-line">
+                                            <input type="text" placeholder="NIM Penghuni" class="form-control form-control-line" name="nim" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -260,37 +258,37 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Alamat Asal</label>
                                         <div class="col-md-8" style="float:right; padding: 10px;">
-                                            <textarea rows="3" placeholder="Alamat Asal Penghuni" class="form-control form-control-line"></textarea>
+                                            <textarea rows="3" placeholder="Alamat Asal Penghuni" class="form-control form-control-line" name="alamat" required></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">No. Telp</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Nomor Telepon Penghuni" class="form-control form-control-line">
+                                            <input type="text" placeholder="Nomor Telepon Penghuni" class="form-control form-control-line"  name="no" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Nama Orang Tua</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Nama Orang Tua Penghuni" class="form-control form-control-line">
+                                            <input type="text" placeholder="Nama Orang Tua Penghuni" class="form-control form-control-line" name="nama_ortu" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Pekerjaan Orang Tua</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Pekerjaan Orang Tua Penghuni" class="form-control form-control-line">
+                                            <input type="text" placeholder="Pekerjaan Orang Tua Penghuni" class="form-control form-control-line" name="pekerjaan_ortu" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Alamat Orang Tua</label>
                                         <div class="col-md-8" style="float:right; padding: 10px;">
-                                            <textarea rows="3" placeholder="Alamat Asal Orang Tua" class="form-control form-control-line"></textarea>
+                                            <textarea rows="3" placeholder="Alamat Asal Orang Tua" class="form-control form-control-line" name="alamat_ortu" required></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">No. Telp Orang Tua</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Nomor Telepon Orang Tua Penghuni" class="form-control form-control-line">
+                                            <input type="text" placeholder="Nomor Telepon Orang Tua Penghuni" class="form-control form-control-line" name="no_ortu" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -324,10 +322,19 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="form-group radio">
+                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Kategori</label>
+                                        <div class="col-md-4" style="float:right;">
+                                            <label><input type="radio" name="kategori"> Non-Bidikmisi</label>
+                                        </div>
+                                        <div class="col-md-4" style="float:right;">
+                                            <label><input type="radio" name="kategori"> Bidikmisi</label>
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Biaya</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Biaya Kamar" class="form-control form-control-line">
+                                            <input type="text" placeholder="Biaya Kamar" class="form-control form-control-line" name="biaya" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
