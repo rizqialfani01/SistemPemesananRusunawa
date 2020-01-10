@@ -75,7 +75,7 @@
                         <!-- Logo text --><span>
                          <!-- dark Logo text -->
                          <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" width="86" height="40"/>
-                         <!-- Light Logo text -->
+                         <!-- Light Logo text -->    
                          <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
                 </div>
                 <!-- ============================================================== -->
@@ -132,7 +132,6 @@
                     <h1 class="h1 mb-0 text-gray-800" >Selamat Datang di Halaman Pengelola</h1>
                     <br><h1 class="h1 mb-0 text-gray-800" >Rusunawa Universitas Diponegoro</h1>
                 </div>
-                <img />
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
