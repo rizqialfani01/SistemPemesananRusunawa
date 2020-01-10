@@ -15,7 +15,7 @@
             echo "New record inserted successfully";
         }
         else {
-            echo "Error: " . $stmt . "<br>" . $conn->error;
+            echo "Error: $stmt->error";
         }
 
         $stmt->close();

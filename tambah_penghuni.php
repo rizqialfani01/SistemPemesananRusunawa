@@ -216,7 +216,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Fakultas</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <select class="form-control form-control-line" name="fakultas" id="fakultas">
+                                            <select class="form-control form-control-line" name="id_fakultas" id="fakultas">
                                                 <option disabled="disabled" selected>Pilih Fakultas</option>
                                                 <!-- Menampilkan Fakultas dari database -->
                                                 <?php
@@ -232,7 +232,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Prodi</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <select class="form-control form-control-line" name="prodi" id="prodi">
+                                            <select class="form-control form-control-line" name="id_prodi" id="prodi">
                                                 <option disabled="disabled" selected>Silakan Pilih Fakultas Terlebih Dahulu</option>
                                             </select>
                                         </div>
