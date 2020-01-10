@@ -40,7 +40,7 @@
     <![endif]-->
     <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="dist/css/calendar.css" rel="stylesheet">
+    <link href="dist/css/custom.css" rel="stylesheet">
     <script type="text/javascript">
         $(document).ready(function(){
             $("#fakultas").change(function(){

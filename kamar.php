@@ -38,6 +38,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+    <link href="dist/css/custom.css" rel="stylesheet">
     <script type="text/javascript">
         $(document).ready(function(){
             $("#gedung_A").change(function(){
