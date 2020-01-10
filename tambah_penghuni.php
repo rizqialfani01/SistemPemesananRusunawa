@@ -191,7 +191,7 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form-horizontal form-material" action="insert.php">
+                                <form class="form-horizontal form-material" action="action/insert.php" method="POST">
                                     <div class="d-flex m-b-30 align-items-center no-block">
                                         <h4 class="card-title ">Penghuni 1</h5>
                                         <div class="ml-auto">
@@ -334,10 +334,10 @@
                                     <div class="form-group radio">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Kategori</label>
                                         <div class="col-md-4" style="float:right;">
-                                            <label><input type="radio" name="kategori"> Non-Bidikmisi</label>
+                                            <label><input type="radio" name="kategori" value="non_bidikmisi"> Non-Bidikmisi</label>
                                         </div>
                                         <div class="col-md-4" style="float:right;">
-                                            <label><input type="radio" name="kategori"> Bidikmisi</label>
+                                            <label><input type="radio" name="kategori" value="bidikmisi"> Bidikmisi</label>
                                         </div>
                                     </div>
                                     <div class="form-group">
