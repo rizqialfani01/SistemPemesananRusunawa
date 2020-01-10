@@ -40,7 +40,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon1.png">
-        <title>Login - Sistem Pemesanan Rusunawa</title>
+        <title>Ubah Password - Sistem Pemesanan Rusunawa</title>
 
         <!-- Styles -->
         <link href="../login/assets/css/lib/font-awesome.min.css" rel="stylesheet">
