@@ -124,7 +124,7 @@
                         <li> <a class="waves-effect waves-dark" href="penghuni.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="laporan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
                         <div class="text-center m-t-30">
-                            <a href="logout.php" class="btn waves-effect waves-light btn-danger hidden-md-down">Logout</a>
+                            <a href="action/logout.php" class="btn waves-effect waves-light btn-danger hidden-md-down">Logout</a>
                         </div>
                     </ul>
                 </nav>
@@ -173,57 +173,35 @@
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                        <th>No</th>
-                                        <th>ID Kamar</th>
-                                        <th>ID Pendaftaran</th>
-                                        <th>NIM</th>
-                                        <th>Nama Penghuni</th>
-                                        <th>Masa Huni</th>
-                                        <th>Piutang</th>
-                                        <th>Action</th>
+                                            <th>No</th>
+                                            <th>No Kamar</th>
+                                            <th>ID Pendaftaran</th>
+                                            <th>NIM</th>
+                                            <th>Nama Penghuni</th>
+                                            <th>Masa Huni</th>
+                                            <th>Piutang</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>2112011</td>
-                                        <td>222</td>
-                                        <td>Doni Hermawan</td>
-                                        <td>Sementara</td>
-                                        <td>Gaada</td>
-                                        <td></td>
-                                        </tr>
-                                        <tr>
-                                        <td>2</td>
-                                        <td>2</td>
-                                        <td>22222</td>
-                                        <td>3333</td>
-                                        <td>Alfani</td>
-                                        <td>Sebulan</td>
-                                        <td>Gaada</td>
-                                        <td></td>
-                                        </tr>
-                                        <tr>
-                                        <td>3</td>
-                                        <td>3</td>
-                                        <td>4444</td>
-                                        <td>55555</td>
-                                        <td>Arief</td>
-                                        <td>dua bulan</td>
-                                        <td>ada</td>
-                                        <td></td>
-                                        </tr>
-                                        <tr>
-                                        <td>4</td>
-                                        <td>4</td>
-                                        <td>32211</td>
-                                        <td>44432</td>
-                                        <td>Yoga</td>
-                                        <td>lima bulan</td>
-                                        <td>ada</td>
-                                        <td></td>
-                                        </tr>
+                                        <?php
+                                            $no = 1;
+                                            $penghuni = $conn->query("SELECT * FROM penghuni");
+                                            while ($row = $penghuni->fetch_assoc()) {
+                                                echo
+                                                "<tr>
+                                                    <td>".$no++."</td>
+                                                    <td>".$row['id_kamar']."</td>
+                                                    <td>".$row['id']."</td>
+                                                    <td>".$row['nim']."</td>
+                                                    <td>".$row['nama']."</td>
+                                                    <td>".$row['masa_huni']." tahun</td>
+                                                    <td>Rp. ".$row['piutang']."</td>
+                                                    <td></td>
+                                                </tr>";
+                                                
+                                            }
+                                        ?>
                                     </tbody>
                                     </table>
                                 </div>
