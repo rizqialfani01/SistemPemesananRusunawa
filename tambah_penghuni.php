@@ -74,11 +74,6 @@
             });
         });
     </script>
-    <script type=text/javascript>
-        $(function () {
-            $("#datepicker").datepicker({ dateFormat: "Y-m-d"});
-        });
-    </script>
 </head>
 
 <body class="skin-default-dark fixed-layout">
@@ -247,7 +242,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Tanggal Lahir</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input class="form-control form-control-line js-datepicker" type="text" name="tgl_lahir" id="datepicker" readonly>
+                                            <input class="form-control form-control-line js-datepicker" placeholder="Tanggal Lahir Penghuni" type="text" name="tgl_lahir" id="datepicker" readonly>
                                             <i class="zmdi zmdi-calendar-note input-icon-cal js-btn-calendar"></i>
                                         </div>
                                     </div>
