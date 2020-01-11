@@ -297,22 +297,10 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Tahun Masuk</label>
+                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Tanggal Masuk</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <select class="form-control form-control-line" name="tahun_masuk">
-                                                <option disabled="disabled" selected>Pilih Tahun</option>
-                                                <option value="2020">2020</option>
-                                                <option value="2021">2021</option>
-                                                <option value="2022">2022</option>
-                                                <option value="2023">2023</option>
-                                                <option value="2024">2024</option>
-                                                <option value="2025">2025</option>
-                                                <option value="2026">2026</option>
-                                                <option value="2027">2027</option>
-                                                <option value="2028">2028</option>
-                                                <option value="2029">2029</option>
-                                                <option value="2030">2030</option>
-                                            </select>
+                                            <input class="form-control form-control-line js-datepicker" placeholder="Tanggal Masuk Penghuni" type="text" name="tahun_masuk" id="datepicker" readonly>
+                                            <i class="zmdi zmdi-calendar-note input-icon-cal js-btn-calendar"></i>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -329,10 +317,10 @@
                                     </div>
                                     <div class="form-group radio">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Kategori</label>
-                                        <div class="col-md-4" style="float:right;">
+                                        <div class="col-md-4" style="float:right; padding: 10px;">
                                             <label><input type="radio" name="kategori" value="non_bidikmisi"> Non-Bidikmisi</label>
                                         </div>
-                                        <div class="col-md-4" style="float:right;">
+                                        <div class="col-md-4" style="float:right; padding: 10px;">
                                             <label><input type="radio" name="kategori" value="bidikmisi"> Bidikmisi</label>
                                         </div>
                                     </div>
