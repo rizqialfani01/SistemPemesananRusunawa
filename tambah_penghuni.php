@@ -317,10 +317,10 @@
                                     </div>
                                     <div class="form-group radio">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Kategori</label>
-                                        <div class="col-md-4" style="float:right;">
+                                        <div class="col-md-4" style="float:right; padding: 10px;">
                                             <label><input type="radio" name="kategori" value="non_bidikmisi"> Non-Bidikmisi</label>
                                         </div>
-                                        <div class="col-md-4" style="float:right;">
+                                        <div class="col-md-4" style="float:right; padding: 10px;">
                                             <label><input type="radio" name="kategori" value="bidikmisi"> Bidikmisi</label>
                                         </div>
                                     </div>
