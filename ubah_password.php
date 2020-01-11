@@ -1,34 +1,9 @@
 <?php
-    include "../config.php";
+    include "config.php";
 
     session_start();
     if($_SESSION['status']!="login_rusunawa"){
         header("location: login?pesan=belum_login");
-    }
-
-    if (isset($_POST['old_password'])){
-        $stmt = $conn->prepare("SELECT * FROM admin WHERE username=? AND password=?");
-        $stmt->bind_param("ss", $_SESSION['username'], $_POST['old_password']);
-        $stmt->execute();
-
-        if($stmt->num_rows == 0){
-            header("location: change_password?pesan=password_salah");
-        }
-        
-        else{
-            if ($_POST['new_password'] == $_POST['confirm_new_password']){
-                $stmt = $conn->prepare("UPDATE admin set password=? WHERE username=? AND password=?");
-                $stmt->bind_param("sss", $_POST['new_password'], $_SESSION['username'], $_POST['old_password']);
-                $stmt->execute();
-                $stmt->close();
-                header("location: change_password?pesan=password_berhasil_diubah");
-            }
-            else{
-                header("location: change_password?pesan=konfirmasi_password_salah");
-            }
-        }
-
-        $stmt->close();
     }
 ?>
 
@@ -57,7 +32,7 @@
                         <div class="login-content">
                             <div class="login-form">
                                 <h4>Ubah Password</h4>
-                                <form method="POST" action="change.php">
+                                <form method="POST" action="action/update_password.php">
                                     <div class="form-group">
                                         <label>Password Lama</label>
                                         <input type="password" class="form-control" name="old_password" placeholder="Password Lama" required>
