@@ -199,7 +199,7 @@
                                                     <td>Rp. ".$row['piutang']."</td>
                                                     <td></td>
                                                 </tr>";
-                                                
+
                                             }
                                         ?>
                                     </tbody>
