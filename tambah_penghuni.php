@@ -28,6 +28,8 @@
     <link href="assets/icons/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/icons/themify-icons/themify-icons.css" rel="stylesheet">
     <!-- Custom CSS -->
+    <!--<link href="css/main.css" rel="stylesheet">-->
+    <link href="dist/css/custom.css" rel="stylesheet">
     <link href="dist/css/style.css" rel="stylesheet">
     <!-- Dashboard 1 Page CSS -->
     <link href="dist/css/pages/dashboard1.css" rel="stylesheet">
@@ -38,9 +40,8 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="dist/css/custom.css" rel="stylesheet">
+    <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $("#fakultas").change(function(){
@@ -246,7 +247,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Tanggal Lahir</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input class="form-control form-control-line js-datepicker" type="text" name="tgl_lahir" id="datepicker">
+                                            <input class="form-control form-control-line js-datepicker" type="text" name="tgl_lahir" id="datepicker" readonly>
                                             <i class="zmdi zmdi-calendar-note input-icon-cal js-btn-calendar"></i>
                                         </div>
                                     </div>
@@ -541,10 +542,10 @@
     <script src="assets/node_modules/d3/d3.min.js"></script>
     <script src="assets/node_modules/c3-master/c3.min.js"></script>
     <!-- Chart JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="dist/js/dashboard1.js"></script>
 	<script src="vendor/datepicker/moment.min.js"></script>
     <script src="vendor/datepicker/daterangepicker.js"></script>
-    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="js/global.js"></script>
 </body>
 
