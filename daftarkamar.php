@@ -122,7 +122,17 @@
                         <li> <a class="waves-effect waves-dark" href="kamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Pilih Kamar</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="daftarkamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Daftar Kamar</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="penghuni.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="laporan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
+                        <li class="nav-item dropdown">
+                               <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                 <i class="fa fa-money"></i>
+                                 <span>Laporan</span>
+                                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                                   <a class="dropdown-item" href="laporan.php"><i class="fa fa-folder"></i>Laporan Keuangan</a>
+                                   <a class="dropdown-item" href="laporanpiutang.php"><i class="fa fa-folder"></i>Laporan Piutang</a>
+                                   <div class="dropdown-divider"></div>
+                                 </div>
+                               </a>
+                             </li>
                         <div class="text-center m-t-30">
                             <a href="action/logout.php" class="btn waves-effect waves-light btn-danger hidden-md-down">Logout</a>
                         </div>
