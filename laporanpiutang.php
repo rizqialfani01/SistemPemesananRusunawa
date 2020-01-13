@@ -182,12 +182,14 @@
                                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                   <thead>
                                       <tr>
-                                      <th>Nama</th>
-                                      <th>Position</th>
-                                      <th>Office</th>
-                                      <th>Age</th>
-                                      <th>Start date</th>
-                                      <th>Salary</th>
+                                      <th>No</th>
+                                      <th>ID_Penghuni</th>
+                                      <th>ID_Kamar</th>
+                                      <th>Nama Penghuni</th>
+                                      <th>Nomor Handphone</th>
+                                      <th>Biaya</th>
+                                      <th>Terbayar</th>
+                                      <th>Piutang</th>
                                       </tr>
                                   </thead>
                                   <tbody>
@@ -198,6 +200,8 @@
                                       <td>61</td>
                                       <td>2011/04/25</td>
                                       <td>$320,800</td>
+                                      <td></td>
+                                      <td></td>
                                       </tr>
                                       <tr>
                                       <td>Garrett Winters</td>
@@ -206,6 +210,8 @@
                                       <td>63</td>
                                       <td>2011/07/25</td>
                                       <td>$170,750</td>
+                                      <td></td>
+                                      <td></td>
                                       </tr>
                                       <tr>
                                       <td>Ashton Cox</td>
@@ -214,6 +220,8 @@
                                       <td>66</td>
                                       <td>2009/01/12</td>
                                       <td>$86,000</td>
+                                      <td></td>
+                                      <td></td>
                                       </tr>
                                   </tbody>
                                   </table>
