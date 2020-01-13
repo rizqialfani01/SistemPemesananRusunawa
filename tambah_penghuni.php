@@ -273,7 +273,7 @@
                                     <div class="form-group" id="agama" style="display: none">
                                         <div class="col-md-4"></div>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Agama Penghuni" class="form-control form-control-line" name="agama" required>
+                                            <input type="text" placeholder="Agama Penghuni (Lainnya)" class="form-control form-control-line" name="agama" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -334,10 +334,10 @@
                                     <div class="form-group radio">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Kategori</label>
                                         <div class="col-md-4" style="float:right; padding: 10px;">
-                                            <label><input type="radio" name="kategori" value="non_bidikmisi"> Non-Bidikmisi</label>
+                                            <label><input type="radio" name="kategori" value="Non-Bidikmisi"> Non-Bidikmisi</label>
                                         </div>
                                         <div class="col-md-4" style="float:right; padding: 10px;">
-                                            <label><input type="radio" name="kategori" value="bidikmisi"> Bidikmisi</label>
+                                            <label><input type="radio" name="kategori" value="Bidikmisi"> Bidikmisi</label>
                                         </div>
                                     </div>
                                     <div class="form-group">
