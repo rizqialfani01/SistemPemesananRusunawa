@@ -74,6 +74,15 @@
             });
         });
     </script>
+    <script type="text/javascript">
+        function Agama(val){
+            var element = document.getElementById('agama');
+            if (val == 'other')
+                element.style.display = 'block';
+            else
+                element.style.display = 'none';
+        }
+    </script>
 </head>
 
 <body class="skin-default-dark fixed-layout">
@@ -249,7 +258,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Agama</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <select class="form-control form-control-line" name="agama">
+                                            <select class="form-control form-control-line" name="agama" onchange="Agama(this.value)">
                                                 <option disabled="disabled" selected>Pilih Agama</option>
                                                 <option value="Islam">Islam</option>
                                                 <option value="Protestan">Kristen Protestan</option>
@@ -257,7 +266,14 @@
                                                 <option value="Hindu">Hindu</option>
                                                 <option value="Biddha">Buddha</option>
                                                 <option value="Konghucu">Konghucu</option>
+                                                <option value="other">Lainnya</option>
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="agama" style="display: none">
+                                        <div class="col-md-4"></div>
+                                        <div class="col-md-8" style="float:right;">
+                                            <input type="text" placeholder="Agama Penghuni" class="form-control form-control-line" name="agama" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
