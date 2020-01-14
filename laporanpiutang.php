@@ -184,36 +184,33 @@
                                       </tr>
                                   </thead>
                                   <tbody>
-                                      <tr>
-                                      <td>Tiger Nixon</td>
-                                      <td>System Architect</td>
-                                      <td>Edinburgh</td>
-                                      <td>61</td>
-                                      <td>2011/04/25</td>
-                                      <td>$320,800</td>
-                                      <td></td>
-                                      <td></td>
-                                      </tr>
-                                      <tr>
-                                      <td>Garrett Winters</td>
-                                      <td>Accountant</td>
-                                      <td>Tokyo</td>
-                                      <td>63</td>
-                                      <td>2011/07/25</td>
-                                      <td>$170,750</td>
-                                      <td></td>
-                                      <td></td>
-                                      </tr>
-                                      <tr>
-                                      <td>Ashton Cox</td>
-                                      <td>Junior Technical Author</td>
-                                      <td>San Francisco</td>
-                                      <td>66</td>
-                                      <td>2009/01/12</td>
-                                      <td>$86,000</td>
-                                      <td></td>
-                                      <td></td>
-                                      </tr>
+                                    <?php
+                                        $no = 1;
+                                        $penghuni = $conn->query("SELECT * FROM penghuni");
+                                        while ($row = $penghuni->fetch_assoc()) {
+                                            echo
+                                            "<tr>
+                                                <td>".$no++."</td>
+                                                <td>".$row['id_kamar']."</td>
+                                                <td>".$row['id']."</td>
+                                                <td>".$row['nim']."</td>
+                                                <td>".$row['nama']."</td>
+                                                <td>".$row['masa_huni']." tahun</td>
+                                                <td>Rp. ".$row['piutang']."</td>
+                                                <td class='text-center'>
+                                                    <a class='btn btn-sm btn-info' href='edit_penghuni.php?id=".$row['id']."'>
+                                                        <span class='ti-pencil'>
+                                                        </span>Edit
+                                                    </a>
+                                                    <a class='btn btn-sm btn-danger' href='action/delete.php?id=".$row['id']."'>
+                                                        <span class='ti-trash'>
+                                                        </span>Hapus
+                                                    </a>
+                                                </td>
+                                            </tr>";
+
+                                        }
+                                    ?>
                                   </tbody>
                                   </table>
                               </div>
