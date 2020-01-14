@@ -373,7 +373,7 @@
                                         <h4 class="card-title ">Data Penghuni 1</h5>
                                         <div class="ml-auto">
                                             <ul class="list-inline font-12">
-                                                <a class="btn btn-dark btn-circle fa fa-plus" href="tambah_penghuni.php"></a>
+                                                <a class="btn btn-dark btn-circle fa fa-plus" href="tambah_penghuni.php?kamar=B3.54"></a>
                                                 <a class="btn btn-dark btn-circle fa fa-pencil" href="edit_penghuni.php"></a>
                                             </ul>
                                         </div>

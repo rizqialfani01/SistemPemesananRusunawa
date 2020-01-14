@@ -207,6 +207,12 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
+                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">No. Kamar</label>
+                                        <div class="col-md-8" style="float:right;">
+                                            <input type="text" class="form-control form-control-line" name="nama" value="<?php echo $_GET['kamar']; ?>" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Nama</label>
                                         <div class="col-md-8" style="float:right;">
                                             <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line" name="nama" maxlength="200" oninput="this.value = this.value.replace(/[^a-z A-Z ' .]/g, '');" required>
@@ -341,9 +347,18 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Biaya</label>
+                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Harga Sewa Kamar</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Biaya Kamar" class="form-control form-control-line" name="biaya" maxlength="30" oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
+                                            <?php
+                                                $harga = $conn->prepare("SELECT harga FROM kamar INNER JOIN harga ON kamar.lantai=harga.lantai WHERE no_kamar=?");
+                                                $harga->bind_param('s', $_GET['kamar']);
+                                                $harga->execute();
+                                                $result = $harga->get_result();
+                                                $row = $result->fetch_assoc();
+                                                $masa_huni = 12; //dalam bulan
+                                                $harga->close();
+                                            ?>
+                                            <input type="text" class="form-control form-control-line" name="biaya" value="<?php echo number_format($row['harga']*$masa_huni,0,",","."); ?>" disabled>
                                         </div>
                                     </div>
                                     <div class="form-group">
