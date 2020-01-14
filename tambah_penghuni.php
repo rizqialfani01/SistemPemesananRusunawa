@@ -209,13 +209,13 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Nama</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line" name="nama" required>
+                                            <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line" name="nama" maxlength="200" oninput="this.value = this.value.replace(/[^a-z A-Z ' .]/g, '');" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">NIM</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="NIM Penghuni" class="form-control form-control-line" name="nim" required>
+                                            <input type="text" placeholder="NIM Penghuni" class="form-control form-control-line" name="nim" maxlength="50" oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -245,7 +245,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Tempat Lahir</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Tempat Lahir Penghuni" class="form-control form-control-line" name="tempat_lahir">
+                                            <input type="text" placeholder="Tempat Lahir Penghuni" class="form-control form-control-line" name="tempat_lahir" maxlength="100" oninput="this.value = this.value.replace(/[^a-z A-Z ']/g, '');" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -273,43 +273,43 @@
                                     <div class="form-group" id="agama" style="display: none">
                                         <div class="col-md-4"></div>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Agama Penghuni (Lainnya)" class="form-control form-control-line" name="agama" required>
+                                            <input type="text" placeholder="Agama Penghuni (Lainnya)" class="form-control form-control-line" name="agama" maxlength="50" oninput="this.value = this.value.replace(/[^a-z A-Z]/g, '');">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Alamat Asal</label>
                                         <div class="col-md-8" style="float:right; padding: 10px;">
-                                            <textarea rows="3" placeholder="Alamat Asal Penghuni" class="form-control form-control-line" name="alamat" required></textarea>
+                                            <textarea rows="3" placeholder="Alamat Asal Penghuni" class="form-control form-control-line" name="alamat" maxlength="200" required></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">No. Telp</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Nomor Telepon Penghuni" class="form-control form-control-line"  name="no" required>
+                                            <input type="text" placeholder="Nomor Telepon Penghuni" class="form-control form-control-line"  name="no" maxlength="30" oninput="this.value = this.value.replace(/[^0-9 +]/g, '');" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Nama Orang Tua</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Nama Orang Tua Penghuni" class="form-control form-control-line" name="nama_ortu" required>
+                                            <input type="text" placeholder="Nama Orang Tua Penghuni" class="form-control form-control-line" name="nama_ortu" maxlength="200" oninput="this.value = this.value.replace(/[^a-z A-Z ' .]/g, '');" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Pekerjaan Orang Tua</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Pekerjaan Orang Tua Penghuni" class="form-control form-control-line" name="pekerjaan_ortu" required>
+                                            <input type="text" placeholder="Pekerjaan Orang Tua Penghuni" class="form-control form-control-line" name="pekerjaan_ortu" maxlength="200" oninput="this.value = this.value.replace(/[^a-z A-Z ' .]/g, '');" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Alamat Orang Tua</label>
                                         <div class="col-md-8" style="float:right; padding: 10px;">
-                                            <textarea rows="3" placeholder="Alamat Asal Orang Tua" class="form-control form-control-line" name="alamat_ortu" required></textarea>
+                                            <textarea rows="3" placeholder="Alamat Asal Orang Tua" class="form-control form-control-line" name="alamat_ortu" maxlength="200" required></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">No. Telp Orang Tua</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Nomor Telepon Orang Tua Penghuni" class="form-control form-control-line" name="no_ortu" required>
+                                            <input type="text" placeholder="Nomor Telepon Orang Tua Penghuni" class="form-control form-control-line" name="no_ortu" maxlength="30" oninput="this.value = this.value.replace(/[^0-9 +]/g, '');" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -334,7 +334,7 @@
                                     <div class="form-group radio">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Kategori</label>
                                         <div class="col-md-4" style="float:right; padding: 10px;">
-                                            <label><input type="radio" name="kategori" value="Non-Bidikmisi"> Non-Bidikmisi</label>
+                                            <label><input type="radio" name="kategori" value="Non-Bidikmisi" required> Non-Bidikmisi</label>
                                         </div>
                                         <div class="col-md-4" style="float:right; padding: 10px;">
                                             <label><input type="radio" name="kategori" value="Bidikmisi"> Bidikmisi</label>
@@ -343,19 +343,19 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Biaya</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Biaya Kamar" class="form-control form-control-line" name="biaya" required>
+                                            <input type="text" placeholder="Biaya Kamar" class="form-control form-control-line" name="biaya" maxlength="30" oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Bayar</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Jumlah Bayar Dimuka (Tanpa Titik)" class="form-control form-control-line" name="bayar" required>
+                                            <input type="text" placeholder="Jumlah Bayar Dimuka (Tanpa Titik)" class="form-control form-control-line" name="bayar" maxlength="30" oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Piutang</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Jumlah Piutang (Tanpa Titik)" class="form-control form-control-line" name="piutang" required>
+                                            <input type="text" placeholder="Jumlah Piutang (Tanpa Titik)" class="form-control form-control-line" name="piutang" maxlength="30" oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
                                         </div>
                                     </div>
                                 </form>
