@@ -147,6 +147,7 @@
                     <ul id="sidebarnav">
                         <li> <a class="waves-effect waves-dark" href="index.php" aria-expanded="false"><i class="fa fa-home"></i><span class="hide-menu">Beranda</span></a></li>
                         <li class="selected"> <a class="waves-effect waves-dark active" href="kamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Pilih Kamar</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="daftar_harga.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Daftar Harga Kamar</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="penghuni.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="laporan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
                         <div class="text-center m-t-30">
@@ -358,7 +359,7 @@
                                                 $masa_huni = 12; //dalam bulan
                                                 $harga->close();
                                             ?>
-                                            <input type="text" class="form-control form-control-line" name="biaya" value="<?php echo number_format($row['harga']*$masa_huni,0,",","."); ?>" disabled>
+                                            <input type="text" class="form-control form-control-line" name="biaya" value="<?php echo number_format($row['harga']*$masa_huni, 0, ',', '.'); ?>" disabled>
                                         </div>
                                     </div>
                                     <div class="form-group">

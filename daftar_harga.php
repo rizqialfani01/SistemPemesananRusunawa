@@ -149,13 +149,13 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h4 class="text-themecolor">Laporan Keuangan</h4>
+                        <h4 class="text-themecolor">Daftar Harga Kamar</h4>
                     </div>
                     <div class="col-md-7 align-self-center text-right">
                         <div class="d-flex justify-content-end align-items-center">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.php">Beranda</a></li>
-                                <li class="breadcrumb-item active">Laporan Keuangan</li>
+                                <li class="breadcrumb-item active">Daftar Harga Kamar</li>
                             </ol>
                         </div>
                     </div>
@@ -174,39 +174,37 @@
                                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                   <thead>
                                       <tr>
-                                      <th>Nama</th>
-                                      <th>Position</th>
-                                      <th>Office</th>
-                                      <th>Age</th>
-                                      <th>Start date</th>
-                                      <th>Salary</th>
+                                      <th class='text-center'>No</th>
+                                      <th class='text-center'>Gedung</th>
+                                      <th class='text-center'>Lantai</th>
+                                      <th class='text-center'>Harga per Bulan</th>
+                                      <th class='text-center'>Harga per Tahun</th>
+                                      <th class='text-center'>Aksi</th>
                                       </tr>
                                   </thead>
                                   <tbody>
-                                      <tr>
-                                      <td>Tiger Nixon</td>
-                                      <td>System Architect</td>
-                                      <td>Edinburgh</td>
-                                      <td>61</td>
-                                      <td>2011/04/25</td>
-                                      <td>$320,800</td>
-                                      </tr>
-                                      <tr>
-                                      <td>Garrett Winters</td>
-                                      <td>Accountant</td>
-                                      <td>Tokyo</td>
-                                      <td>63</td>
-                                      <td>2011/07/25</td>
-                                      <td>$170,750</td>
-                                      </tr>
-                                      <tr>
-                                      <td>Ashton Cox</td>
-                                      <td>Junior Technical Author</td>
-                                      <td>San Francisco</td>
-                                      <td>66</td>
-                                      <td>2009/01/12</td>
-                                      <td>$86,000</td>
-                                      </tr>
+                                    <?php
+                                        $no = 1;
+                                        //$harga = $conn->query("SELECT kamar.gedung, harga.lantai, harga.harga FROM harga OUTER JOIN kamar ON harga.lantai=kamar.lantai");
+                                        $harga = $conn->query("SELECT * FROM harga");
+                                        while ($row = $harga->fetch_assoc()) {
+                                            echo
+                                            "<tr>
+                                                <td class='text-center'>".$no++."</td>
+                                                <td class='text-center'>Gedung ".$row['gedung']."</td>
+                                                <td class='text-center'>Lantai ".$row['lantai']."</td>
+                                                <td class='text-center'>Rp. ".number_format($row['harga'], 0, ',', '.')."</td>
+                                                <td class='text-center'>Rp. ".number_format($row['harga']*12, 0, ',', '.')."</td>
+                                                <td class='text-center'>
+                                                    <a class='btn btn-sm btn-info' href='edit_harga.php?lantai=".$row['lantai']."'>
+                                                        <span class='ti-pencil'>
+                                                        </span>Edit
+                                                    </a>
+                                                </td>
+                                            </tr>";
+
+                                        }
+                                    ?>
                                   </tbody>
                                   </table>
                               </div>
