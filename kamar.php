@@ -121,17 +121,20 @@
     </script>
     <script type="text/javascript">
         function selectedRoom(){
-            $(".room").on("click", function() {
-                $(this).toggleClass('selected');
-            });
-            var cardPenghuni = document.getElementById("dataPenghuni");
-            if (cardPenghuni.style.display === "none") {
-                cardPenghuni.style.display = "block";
+            var pilihan = document.getElementsByClassName("room");
+            for(var i = 0; i < pilihan.length; i++){
+                pilihan[i].onclick = function(){
+                    var pilih = pilihan[0];
+                    while(pilih){
+                        if (pilih.tagName === "DIV"){
+                            pilih.classList.remove("terpilih");
+                        }
+                        pilih = pilih.nextSibling;
+                    }
+                    this.classList.add("terpilih");
+                };
             }
-            else {
-                cardPenghuni.style.display = "none";
-            }
-        }
+        };
     </script>
 </head>
 
@@ -511,6 +514,8 @@
     <script src="assets/node_modules/c3-master/c3.min.js"></script>
     <!-- Chart JS -->
     <script src="dist/js/dashboard1.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/global.js"></script>
 </body>
 
 </html>

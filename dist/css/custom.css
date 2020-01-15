@@ -7,6 +7,7 @@
   margin: 4px;
   text-align: center;
   line-height: 35px;
+  display: inline-block;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
    -khtml-user-select: none; /* Konqueror HTML */
@@ -15,8 +16,6 @@
           user-select: none; /* Non-prefixed version, currently
                                 supported by Chrome, Opera and Firefox */
 }
-
-#div-inline{float: left; }
 
 .room:hover{
    background-color: #009efb;
@@ -34,8 +33,9 @@
   background-color: #580000;
 }
 
-.selected {
-  background-color: #009efb;
+.terpilih {
+  background-color: #3cb91d;
+  color: black
 }
 
 /*DATEPICKER*/
