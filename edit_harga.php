@@ -5,6 +5,13 @@
     if($_SESSION['status']!="login_rusunawa"){
         header("location: login?pesan=belum_login");
     }
+
+    $stmt = $conn->prepare("SELECT * FROM harga WHERE lantai=?");
+    $stmt->bind_param("s", $_GET['lantai']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $harga = $result->fetch_assoc()
+    
 ?>
 
 <!DOCTYPE html>
@@ -20,23 +27,6 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon1.png">
     <title>Sistem Penyewaan Rusunawa</title>
-
-    <!-- Custom styles for this template -->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
-    <style>
-        #dataTable_filter{
-            padding-top: 5px;
-            padding-right: 5px;
-        }
-        #dataTable_length{
-            padding-top: 5px;
-        }
-    </style>
-
     <!-- This page CSS -->
     <!-- chartist CSS -->
     <link href="assets/node_modules/morrisjs/morris.css" rel="stylesheet">
@@ -45,16 +35,61 @@
     <link href="assets/icons/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/icons/themify-icons/themify-icons.css" rel="stylesheet">
     <!-- Custom CSS -->
+    <!--<link href="css/main.css" rel="stylesheet">-->
+    <link href="dist/css/custom.css" rel="stylesheet">
     <link href="dist/css/style.css" rel="stylesheet">
     <!-- Dashboard 1 Page CSS -->
     <link href="dist/css/pages/dashboard1.css" rel="stylesheet">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+    <![endif]-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#fakultas").change(function(){
+            var fakultas = $("#fakultas").val();
+                $.ajax({
+                    type: 'POST',
+                    url: "action/get.php?prodi=y",
+                    data: {id_fakultas: fakultas},
+                    cache: false,
+                    success: function(msg){
+                    $("#prodi").html(msg);
+                    }
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#fakultas2").change(function(){
+            var fakultas = $("#fakultas2").val();
+                $.ajax({
+                    type: 'POST',
+                    url: "action/get.php?prodi=y",
+                    data: {id_fakultas: fakultas},
+                    cache: false,
+                    success: function(msg){
+                    $("#prodi2").html(msg);
+                    }
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        function Agama(val){
+            var element = document.getElementById('agama');
+            if (val == 'other')
+                element.style.display = 'block';
+            else
+                element.style.display = 'none';
+        }
+    </script>
 </head>
 
 <body class="skin-default-dark fixed-layout">
@@ -92,7 +127,7 @@
                         <!-- Logo text --><span>
                          <!-- dark Logo text -->
                          <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" width="86" height="40"/>
-                         <!-- Light Logo text -->
+                         <!-- Light Logo text -->    
                          <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
                 </div>
                 <!-- ============================================================== -->
@@ -118,12 +153,10 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li> <a class="waves-effect waves-dark" href="index.php" aria-expanded="false"><i class="fa fa-home"></i><span class="hide-menu">Beranda</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="kamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Pilih Kamar</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="daftarkamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Daftar Kamar</span></a></li>
+                        <li class="selected"> <a class="waves-effect waves-dark active" href="kamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Pilih Kamar</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="daftar_harga.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Daftar Harga Kamar</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="penghuni.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="laporan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
-                        <li> <a class="waves-effect waves-dark" href="laporanpiutang.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Piutang</a></li>
                         <div class="text-center m-t-30">
                             <a href="action/logout.php" class="btn waves-effect waves-light btn-danger hidden-md-down">Logout</a>
                         </div>
@@ -149,13 +182,14 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h4 class="text-themecolor">Daftar Harga Kamar</h4>
+                        <h4 class="text-themecolor">Edit Harga Kamar</h4>
                     </div>
                     <div class="col-md-7 align-self-center text-right">
                         <div class="d-flex justify-content-end align-items-center">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.php">Beranda</a></li>
-                                <li class="breadcrumb-item active">Daftar Harga Kamar</li>
+                                <li class="breadcrumb-item"><a href="kamar.php">Pilih Kamar</a></li>
+                                <li class="breadcrumb-item active">Tambah Data Penghuni</li>
                             </ol>
                         </div>
                     </div>
@@ -167,49 +201,32 @@
                 <!-- Yearly Sales -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card oh">
+                    <div class="col-md-6">
+                        <div class="card">
                             <div class="card-body">
-                              <div class="table-responsive">
-                                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                  <thead>
-                                      <tr>
-                                      <th class='text-center'>No</th>
-                                      <th class='text-center'>Gedung</th>
-                                      <th class='text-center'>Lantai</th>
-                                      <th class='text-center'>Harga per Bulan</th>
-                                      <th class='text-center'>Harga per Tahun</th>
-                                      <th class='text-center'>Aksi</th>
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                    <?php
-                                        $no = 1;
-                                        //$harga = $conn->query("SELECT kamar.gedung, harga.lantai, harga.harga FROM harga OUTER JOIN kamar ON harga.lantai=kamar.lantai");
-                                        $harga = $conn->query("SELECT * FROM harga");
-                                        while ($row = $harga->fetch_assoc()) {
-                                            echo
-                                            "<tr>
-                                                <td class='text-center'>".$no++."</td>
-                                                <td class='text-center'>Gedung ".$row['gedung']."</td>
-                                                <td class='text-center'>Lantai ".$row['lantai']."</td>
-                                                <td class='text-center'>Rp. ".number_format($row['harga'], 0, ',', '.')."</td>
-                                                <td class='text-center'>Rp. ".number_format($row['harga']*12, 0, ',', '.')."</td>
-                                                <td class='text-center'>
-                                                    <a class='btn btn-sm btn-info' href='edit_harga.php?gedung=".$row['gedung']."&lantai=".$row['lantai']."'>
-                                                        <span class='ti-pencil'>
-                                                        </span>Edit
-                                                    </a>
-                                                </td>
-                                            </tr>";
-
-                                        }
-                                    ?>
-                                  </tbody>
-                                  </table>
-                              </div>
-                            </div>
-                            <div class="card-body bg-light">
+                                <form class="form-horizontal form-material" action="action/update_harga.php?lantai=<?php echo $_GET['lantai']; ?>" method="POST">
+                                    <div class="d-flex m-b-30 align-items-center no-block">
+                                        <h4 class="card-title ">Gedung <?php echo $_GET['gedung']; ?> Lantai <?php echo $_GET['lantai']; ?></h5>
+                                        <div class="ml-auto">
+                                            <ul class="list-inline font-12">
+                                                <button class="btn btn-dark btn-circle fa fa-check" type="submit"></button>
+                                                <a class="btn btn-dark btn-circle fa fa-close" href="daftar_harga.php"></a>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Harga Awal (per Bulan)</label>
+                                        <div class="col-md-8" style="float:right;">
+                                            <input type="text" class="form-control form-control-line" value="Rp. <?php echo number_format($harga['harga'], 0, ',', '.'); ?>" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Harga Baru (per Bulan)</label>
+                                        <div class="col-md-8" style="float:right;">
+                                            <input type="text" placeholder="Harga Baru" class="form-control form-control-line" name="harga" maxlength="30" oninput="this.value = this.value.replace(/[^0-9 .]/g, '');" required>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -239,26 +256,6 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
-
-
-
     <!-- Bootstrap popper Core JavaScript -->
     <script src="assets/node_modules/popper/popper.min.js"></script>
     <script src="assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -281,7 +278,11 @@
     <script src="assets/node_modules/d3/d3.min.js"></script>
     <script src="assets/node_modules/c3-master/c3.min.js"></script>
     <!-- Chart JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="dist/js/dashboard1.js"></script>
+	<script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+    <script src="js/global.js"></script>
 </body>
 
 </html>
