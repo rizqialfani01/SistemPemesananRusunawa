@@ -192,22 +192,13 @@
                                             echo
                                             "<tr>
                                                 <td>".$no++."</td>
-                                                <td>".$row['id_kamar']."</td>
                                                 <td>".$row['id']."</td>
+                                                <td>".$row['id_kamar']."</td>
                                                 <td>".$row['nim']."</td>
                                                 <td>".$row['nama']."</td>
-                                                <td>".$row['masa_huni']." tahun</td>
+                                                <td>Rp. ".$row['biaya']."</td>
+                                                <td>Rp. ".$row['bayar']."</td>
                                                 <td>Rp. ".$row['piutang']."</td>
-                                                <td class='text-center'>
-                                                    <a class='btn btn-sm btn-info' href='edit_penghuni.php?id=".$row['id']."'>
-                                                        <span class='ti-pencil'>
-                                                        </span>Edit
-                                                    </a>
-                                                    <a class='btn btn-sm btn-danger' href='action/delete.php?id=".$row['id']."'>
-                                                        <span class='ti-trash'>
-                                                        </span>Hapus
-                                                    </a>
-                                                </td>
                                             </tr>";
 
                                         }
