@@ -170,44 +170,39 @@
                     <div class="col-lg-12">
                         <div class="card oh">
                             <div class="card-body">
-                              <div class="table-responsive">
-                                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                  <thead>
-                                      <tr>
-                                      <th class='text-center'>No</th>
-                                      <th class='text-center'>Gedung</th>
-                                      <th class='text-center'>Lantai</th>
-                                      <th class='text-center'>Harga per Bulan</th>
-                                      <th class='text-center'>Harga per Tahun</th>
-                                      <th class='text-center'>Aksi</th>
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                    <?php
-                                        $no = 1;
-                                        //$harga = $conn->query("SELECT kamar.gedung, harga.lantai, harga.harga FROM harga OUTER JOIN kamar ON harga.lantai=kamar.lantai");
-                                        $harga = $conn->query("SELECT * FROM harga");
-                                        while ($row = $harga->fetch_assoc()) {
-                                            echo
-                                            "<tr>
-                                                <td class='text-center'>".$no++."</td>
-                                                <td class='text-center'>Gedung ".$row['gedung']."</td>
-                                                <td class='text-center'>Lantai ".$row['lantai']."</td>
-                                                <td class='text-center'>Rp. ".number_format($row['harga'], 0, ',', '.')."</td>
-                                                <td class='text-center'>Rp. ".number_format($row['harga']*12, 0, ',', '.')."</td>
-                                                <td class='text-center'>
-                                                    <a class='btn btn-sm btn-info' href='edit_harga.php?gedung=".$row['gedung']."&lantai=".$row['lantai']."'>
-                                                        <span class='ti-pencil'>
-                                                        </span>Edit
-                                                    </a>
-                                                </td>
-                                            </tr>";
+                                <div class="table-responsive" id="tabel_harga">
+                                    <table class="table table-bordered" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                            <th class='text-center'>No</th>
+                                            <th class='text-center'>Gedung</th>
+                                            <th class='text-center'>Lantai</th>
+                                            <th class='text-center'>Harga per Bulan</th>
+                                            <th class='text-center'>Harga per Tahun</th>
+                                            <th class='text-center'>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                $no = 1;
+                                                //$harga = $conn->query("SELECT kamar.gedung, harga.lantai, harga.harga FROM harga OUTER JOIN kamar ON harga.lantai=kamar.lantai");
+                                                $harga = $conn->query("SELECT * FROM harga");
+                                                while ($row = $harga->fetch_assoc()) {
+                                                    echo
+                                                    "<tr>
+                                                        <td class='text-center'>".$no++."</td>
+                                                        <td class='text-center'>Gedung ".$row['gedung']."</td>
+                                                        <td class='text-center'>Lantai ".$row['lantai']."</td>
+                                                        <td class='text-center'>Rp. ".number_format($row['harga'], 0, ',', '.')."</td>
+                                                        <td class='text-center'>Rp. ".number_format($row['harga']*12, 0, ',', '.')."</td>
+                                                        <td class='text-center'><input type='button' class='btn btn-sm btn-info edit_data' value='Edit' name='edit' id='".$row['lantai']."'/></td>
+                                                    </tr>";
 
-                                        }
-                                    ?>
-                                  </tbody>
-                                  </table>
-                              </div>
+                                                }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                             <div class="card-body bg-light">
                             </div>
@@ -236,6 +231,50 @@
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
+    
+    <!-- Edit Popup Form -->
+    <div id="edit_data_Modal" class="modal fade">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <form class="form-horizontal form-material" method="POST" id="update_form">
+                        <div class="d-flex m-b-30 align-items-center no-block">
+                            <h4 class="card-title ">Gedung </h5>
+                            <div class="ml-auto">
+                                <ul class="list-inline font-12">
+                                    <button type="submit" class="btn btn-dark btn-circle fa fa-check" name="update" id="update"></button>
+                                    <button type="button" class="btn btn-dark btn-circle fa fa-close" data-dismiss="modal"></button>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-6" style="float:left; height: 38px; padding: 10px">Harga Awal (per Bulan)</label>
+                            <div class="col-md-6" style="float:right;">
+                                <input type="text" class="form-control form-control-line" name="lantai" id="lantai" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-6" style="float:left; height: 38px; padding: 10px">Harga Awal (per Bulan)</label>
+                            <div class="col-md-6" style="float:right;">
+                                <input type="text" class="form-control form-control-line" id="harga" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-6" style="float:left; height: 38px; padding: 10px">Harga Baru (per Bulan)</label>
+                            <div class="col-md-6" style="float:right;">
+                                <input type="text" placeholder="Harga Baru" class="form-control form-control-line" name="harga" id="harga" maxlength="30" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>  
+
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
@@ -282,6 +321,43 @@
     <script src="assets/node_modules/c3-master/c3.min.js"></script>
     <!-- Chart JS -->
     <script src="dist/js/dashboard1.js"></script>
+    
+    <script>
+    $(document).ready(function(){
+        $(document).on('click', '.edit_data', function(){
+            var lantai = $(this).attr("id");
+            $.ajax({
+                url:"action/get_harga.php",
+                method:"POST",
+                data:{lantai:lantai},
+                dataType:"json",
+                success:function(data){
+                    $('#gedung').val(data.gedung);
+                    $('#lantai').val(data.lantai);
+                    $('#harga').val(data.harga);
+                    $('#harga').val(data.harga);
+                    $('#edit_data_Modal').modal('show');
+                }
+            });
+        });
+        $('#update_form').on("submit", function(event){
+            event.preventDefault();
+            $.ajax({
+                url:"action/update_harga.php",
+                method:"POST",
+                data:$('#update_form').serialize(),
+                // beforeSend:function(){
+                //     $('#insert').val("Memperbarui");
+                // },
+                success:function(data){
+                    $('#update_form')[0].reset();
+                    $('#edit_data_Modal').modal('hide');
+                    $('#tabel_harga').html(data);
+                }
+            });
+        });
+    });
+    </script>
 </body>
 
 </html>
