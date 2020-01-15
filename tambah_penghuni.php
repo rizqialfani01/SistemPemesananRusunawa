@@ -351,27 +351,27 @@
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Harga Sewa Kamar</label>
                                         <div class="col-md-8" style="float:right;">
                                             <?php
-                                                $harga = $conn->prepare("SELECT harga FROM kamar INNER JOIN harga ON kamar.lantai=harga.lantai WHERE no_kamar=?");
-                                                $harga->bind_param('s', $_GET['kamar']);
-                                                $harga->execute();
-                                                $result = $harga->get_result();
+                                                $q_harga = $conn->prepare("SELECT harga FROM kamar INNER JOIN harga ON kamar.lantai=harga.lantai WHERE no_kamar=?");
+                                                $q_harga->bind_param('s', $_GET['kamar']);
+                                                $q_harga->execute();
+                                                $result = $q_harga->get_result();
                                                 $row = $result->fetch_assoc();
                                                 $masa_huni = 12; //dalam bulan
-                                                $harga->close();
+                                                $q_harga->close();
                                             ?>
-                                            <input type="text" class="form-control form-control-line" name="biaya" value="<?php echo number_format($row['harga']*$masa_huni, 0, ',', '.'); ?>" disabled>
+                                            <input type="text" class="form-control form-control-line" name="biaya" value="<?php echo number_format($row['harga']*$masa_huni, 0, ',', '.'); ?>" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Bayar</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Jumlah Bayar Dimuka (Tanpa Titik)" class="form-control form-control-line" name="bayar" maxlength="30" oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
+                                            <input type="text" placeholder="Jumlah Bayar Dimuka (Tanpa Titik)" class="form-control form-control-line" name="bayar" maxlength="30" oninput="this.value = this.value.replace(/[^0-9 .]/g, '');" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Piutang</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Jumlah Piutang (Tanpa Titik)" class="form-control form-control-line" name="piutang" maxlength="30" oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
+                                            <input type="text" placeholder="Jumlah Piutang (Tanpa Titik)" class="form-control form-control-line" name="piutang" maxlength="30" oninput="this.value = this.value.replace(/[^0-9 .]/g, '');" required>
                                         </div>
                                     </div>
                                 </form>
