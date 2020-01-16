@@ -210,7 +210,6 @@
                                                       <button type='button' class='btn btn-sm btn-danger ti-trash deletebtn'>Delete</button>
                                                     </td>
                                                 </tr>";
-
                                             }
                                         ?>
                                     </tbody>
@@ -259,12 +258,12 @@
 
                         <form action="delete.php" method="POST">
                             <div class="modal-body">
-                              <input type="hidden" name="update_id" id="update_id" />
+                              <input type="hidden" name="delete_id" id="delete_id">
                               <h4>Apakah Yakin Ingin Menghapus Data Ini?</h4>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                              <button type="submit" name="updatedata" class="btn btn-primary">Ya, Hapus Sekarang</button>
+                              <button type="submit" name="deletedata" class="btn btn-primary">Ya, Hapus Sekarang</button>
                             </div>
                         </form>
                     </div>
@@ -321,7 +320,14 @@
     $(document).ready(function(){
         $('.deletebtn').on('click', function(){
             $('#deletemodal').modal('show');
+              $tr= $(this).closest('tr');
 
+              var data = $tr.children("td").map(function(){
+                return $(this).text();
+              }).get();
+
+              console.log(data);
+              $('#delete_id').val(data[0]);
         });
     });
     </script>
