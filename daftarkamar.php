@@ -256,7 +256,7 @@
                           </button>
                       </div>
 
-                        <form action="delete.php" method="POST">
+                        <form action="action/delete.php" method="POST">
                             <div class="modal-body">
                               <input type="hidden" name="delete_id" id="delete_id">
                               <h4>Apakah Yakin Ingin Menghapus Data Ini?</h4>
