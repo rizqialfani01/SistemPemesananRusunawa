@@ -182,7 +182,8 @@
                                             <th>Nama Penghuni</th>
                                             <th>Masa Huni</th>
                                             <th>Piutang</th>
-                                            <th>Aksi</th>
+                                            <th>Edit</th>
+                                            <th>Hapus</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -204,10 +205,9 @@
                                                             <span class='ti-pencil'>
                                                             </span>Edit
                                                         </a>
-                                                        <a class='btn btn-sm btn-danger' href='action/delete.php?id=".$row['id']."'>
-                                                            <span class='ti-trash'>
-                                                            </span>Hapus
-                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                      <button type='button' class='btn btn-sm btn-danger ti-trash deletebtn'>Delete</button>
                                                     </td>
                                                 </tr>";
 
@@ -245,6 +245,32 @@
     <!-- End Wrapper -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
+
+    <!-- Delete Popup Form -->
+          <div id="deletemodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Delete Data Kamar</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+
+                        <form action="delete.php" method="POST">
+                            <div class="modal-body">
+                              <input type="hidden" name="update_id" id="update_id" />
+                              <h4>Apakah Yakin Ingin Menghapus Data Ini?</h4>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                              <button type="submit" name="updatedata" class="btn btn-primary">Ya, Hapus Sekarang</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
     <!-- All Jquery -->
     <!-- ============================================================== -->
 
@@ -290,6 +316,15 @@
     <script src="assets/node_modules/c3-master/c3.min.js"></script>
     <!-- Chart JS -->
     <script src="dist/js/dashboard1.js"></script>
+
+    <script>
+    $(document).ready(function(){
+        $('.deletebtn').on('click', function(){
+            $('#deletemodal').modal('show');
+
+        });
+    });
+    </script>
 </body>
 
 </html>
