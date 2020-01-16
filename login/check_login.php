@@ -7,7 +7,6 @@
 	$stmt->execute();
 	$result = $stmt->get_result();
 	$row = $result->fetch_assoc();
-	//$admin = $result->fetch_assoc();
 
 	if ($row > 0){
 		$_SESSION['nama'] = $row['nama'];
