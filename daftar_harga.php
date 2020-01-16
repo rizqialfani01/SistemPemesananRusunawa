@@ -241,7 +241,7 @@
                 <div class="card-body">
                     <form class="form-horizontal form-material" method="POST" id="update_form">
                         <div class="d-flex m-b-30 align-items-center no-block">
-                            <h4 class="card-title ">Gedung </h5>
+                            <h4 class="card-title ">Edit Harga</h5>
                             <div class="ml-auto">
                                 <ul class="list-inline font-12">
                                     <button type="submit" class="btn btn-dark btn-circle fa fa-check" name="update" id="update"></button>
@@ -250,21 +250,27 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-6" style="float:left; height: 38px; padding: 10px">Harga Awal (per Bulan)</label>
+                            <label class="col-md-6" style="float:left; height: 38px; padding: 10px">Gedung</label>
                             <div class="col-md-6" style="float:right;">
-                                <input type="text" class="form-control form-control-line" name="lantai" id="lantai" disabled>
+                                <input type="text" class="form-control form-control-line" name="gedung" id="gedung" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-6" style="float:left; height: 38px; padding: 10px">Lantai</label>
+                            <div class="col-md-6" style="float:right;">
+                                <input type="text" class="form-control form-control-line" name="lantai" id="lantai" readonly>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-6" style="float:left; height: 38px; padding: 10px">Harga Awal (per Bulan)</label>
                             <div class="col-md-6" style="float:right;">
-                                <input type="text" class="form-control form-control-line" id="harga" disabled>
+                                <input type="text" class="form-control form-control-line" id="harga_awal" readonly>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-6" style="float:left; height: 38px; padding: 10px">Harga Baru (per Bulan)</label>
                             <div class="col-md-6" style="float:right;">
-                                <input type="text" placeholder="Harga Baru" class="form-control form-control-line" name="harga" id="harga" maxlength="30" required>
+                                <input type="text" placeholder="Harga Baru" class="form-control form-control-line" name="harga" id="harga_baru" maxlength="30" required>
                             </div>
                         </div>
                     </form>
@@ -334,8 +340,8 @@
                 success:function(data){
                     $('#gedung').val(data.gedung);
                     $('#lantai').val(data.lantai);
-                    $('#harga').val(data.harga);
-                    $('#harga').val(data.harga);
+                    $('#harga_awal').val(data.harga);
+                    $('#harga_baru').val(data.harga);
                     $('#edit_data_Modal').modal('show');
                 }
             });
