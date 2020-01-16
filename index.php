@@ -132,8 +132,9 @@
                 <!-- ============================================================== -->
                 <!-- Page Heading -->
                 <div class="blog-title" style="text-align: center; padding: 100px">
-                    <h1 class="h1 mb-0 text-gray-800" >Selamat Datang di Halaman Pengelola</h1>
-                    <br><h1 class="h1 mb-0 text-gray-800" >Rusunawa Universitas Diponegoro</h1>
+                    <h1 class="h1 mb-0 text-gray-800" >Selamat Datang, <?php echo $_SESSION['nama']; ?>.</h1>
+                    <br><h1 class="h1 mb-0 text-gray-800" >Anda Bedada di Halaman Pengelola</h1>
+                    <br><h1 class="h1 mb-0 text-gray-800" >Rusunawa Universitas Diponegoro.</h1>
                 </div>
             </div>
             <!-- ============================================================== -->
