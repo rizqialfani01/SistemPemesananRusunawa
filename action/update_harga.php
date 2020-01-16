@@ -14,7 +14,6 @@
         $stmt->bind_param("iss", $harga, $_POST['gedung'], $_POST['lantai']);
 
         if ($stmt->execute()){
-            //$output .= "<label class='text-success'>Harga Berhasil Diperbarui</label>";
             $no = 1;
             $harga = $conn->query("SELECT * FROM harga");
             $output .= "
@@ -50,7 +49,6 @@
             ";
         }
         else {
-            //$output .= "<label class='text-danger'>Harga Berhasil Diperbarui</label>";
             $no = 1;
             $harga = $conn->query("SELECT * FROM harga");
             $output .= "
