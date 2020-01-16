@@ -119,23 +119,6 @@
             });
         });
     </script>
-    <script type="text/javascript">
-        function selectedRoom(){
-            var pilihan = document.getElementsByClassName("room");
-            for(var i = 0; i < pilihan.length; i++){
-                pilihan[i].onclick = function(){
-                    var pilih = pilihan[0];
-                    while(pilih){
-                        if (pilih.tagName === "DIV"){
-                            pilih.classList.remove("terpilih");
-                        }
-                        pilih = pilih.nextSibling;
-                    }
-                    this.classList.add("terpilih");
-                };
-            }
-        };
-    </script>
 </head>
 
 <body class="skin-default-dark fixed-layout">
