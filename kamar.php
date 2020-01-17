@@ -257,12 +257,11 @@
 
                                 <!-- Tab panes -->
                                 <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="gedunga" style="width: 1200px">
+                                <div role="tabpanel" class="tab-pane active" id="gedunga" style="width: 1100px">
                                     <div class="form-group">
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
                                             <select id="gedung_A" class="form-control form-control-line">
-                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
                                                 <option value="A0">Semua Lantai</option>
                                                 <option value="A2">Lantai 2</option>
                                                 <option value="A3">Lantai 3</option>
@@ -271,6 +270,15 @@
                                         </div>
                                     </div>
                                     <div id="lantai_A" class="card-body" style="padding-left: 10px;">
+                                        <?php
+                                            $stmt = $conn->prepare("SELECT * FROM kamar WHERE gedung='A'");
+                                            $stmt->execute();
+                                            $result = $stmt->get_result();
+                                            while($row = $result->fetch_assoc()) {
+                                                echo "<div class='room ".$row['status']."' id='".$row['no_kamar']."'>".$row['no_kamar']."</div>";
+                                            }
+                                            $stmt->close();
+                                        ?>
                                     </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane fade" id="gedungb" style="width: 1200px;">
@@ -323,7 +331,7 @@
                                     <div id="lantai_D" class="card-body" style="padding-left: 10px;">
                                     </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedunge" style="width: 1200px;">
+                                <div role="tabpanel" class="tab-pane fade" id="gedunge" style="width: 900px;">
                                     <div class="form-group">
                                         <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                         <div class="col-sm-2">
@@ -499,6 +507,24 @@
     <script src="dist/js/dashboard1.js"></script>
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="js/global.js"></script>
+<script>
+        var pilihan = document.getElementsByClassName("room");
+        for(var i = 0; i < pilihan.length; i++){
+            pilihan[i].onclick = function(){
+                var pilih = pilihan[0];
+                while(pilih){
+                    if (pilih.tagName === "DIV"){
+                        //remove class terpilih
+                        pilih.classList.remove("terpilih");
+                    }
+                    //pilih class terpilih yang baru
+                    pilih = pilih.nextSibling;
+                }
+                this.classList.add("terpilih");
+                document.getElementById('dataPenghuni').style.display = "block";
+            };
+        }
+</script>
 </body>
 
 </html>
