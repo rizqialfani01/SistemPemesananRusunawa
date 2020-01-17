@@ -195,7 +195,7 @@
                                                         <td class='text-center'>Lantai ".$row['lantai']."</td>
                                                         <td class='text-center'>Rp. ".number_format($row['harga'], 0, ',', '.')."</td>
                                                         <td class='text-center'>Rp. ".number_format($row['harga']*12, 0, ',', '.')."</td>
-                                                        <td class='text-center'><input type='button' class='btn btn-sm btn-info edit_data' value='Edit' name='edit' id='".$row['lantai']."'/></td>
+                                                        <td class='text-center'><input type='button' class='btn btn-sm btn-info edit_harga' value='Edit' name='edit' id='".$row['lantai']."'/></td>
                                                     </tr>";
 
                                                 }
@@ -233,7 +233,7 @@
     <!-- ============================================================== -->
     
     <!-- Edit Popup Form -->
-    <div id="edit_data_Modal" class="modal fade">
+    <div id="edit_harga_Modal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="col-md-12">
@@ -330,7 +330,7 @@
     
     <script>
     $(document).ready(function(){
-        $(document).on('click', '.edit_data', function(){
+        $('.edit_harga').on('click', function(){
             var lantai = $(this).attr("id");
             $.ajax({
                 url:"action/get_harga.php",
@@ -342,7 +342,7 @@
                     $('#lantai').val(data.lantai);
                     $('#harga_awal').val(data.harga);
                     $('#harga_baru').val(data.harga);
-                    $('#edit_data_Modal').modal('show');
+                    $('#edit_harga_Modal').modal('show');
                 }
             });
         });
@@ -357,7 +357,7 @@
                 // },
                 success:function(data){
                     $('#update_form')[0].reset();
-                    $('#edit_data_Modal').modal('hide');
+                    $('#edit_harga_Modal').modal('hide');
                     $('#tabel_harga').html(data);
                 }
             });

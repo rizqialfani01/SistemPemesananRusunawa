@@ -8,7 +8,7 @@
 
     else {
         $stmt = $conn->prepare("DELETE FROM penghuni WHERE id=?");
-        $stmt->bind_param("i", $_GET['id']);
+        $stmt->bind_param("i", $_POST['id_penghuni']);
         $stmt->execute();
 
         if ($stmt->affected_rows == 1){

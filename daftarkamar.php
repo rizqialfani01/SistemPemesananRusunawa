@@ -207,7 +207,7 @@
                                                         </a>
                                                     </td>
                                                     <td>
-                                                      <button type='button' class='btn btn-sm btn-danger ti-trash deletebtn'>Delete</button>
+                                                      <button type='button' class='btn btn-sm btn-danger ti-trash hapus_penghuni' id='".$row['id']."'>Delete</button>
                                                     </td>
                                                 </tr>";
                                             }
@@ -246,29 +246,28 @@
     <!-- ============================================================== -->
 
     <!-- Delete Popup Form -->
-          <div id="deletemodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Delete Data Kamar</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div id="deletemodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Hapus Penghuni</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
-                          </button>
-                      </div>
-
-                        <form action="action/delete.php" method="POST">
-                            <div class="modal-body">
-                              <input type="hidden" name="delete_id" id="delete_id">
-                              <h4>Apakah Yakin Ingin Menghapus Data Ini?</h4>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                              <button type="submit" name="deletedata" class="btn btn-primary">Ya, Hapus Sekarang</button>
-                            </div>
-                        </form>
+                        </button>
                     </div>
+                    <form method="POST" action="action/delete_penghuni.php">
+                        <div class="modal-body">
+                            <input type="hidden" name="id_penghuni" id="id_penghuni">
+                            <h4>Apakah Anda yakin ingin menghapus data ini?</h4>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">Tidak</button>
+                            <button type="submit" class="btn btn-danger">Hapus</button>
+                        </div>
+                    </form>
                 </div>
             </div>
+        </div>
     </div>
     <!-- All Jquery -->
     <!-- ============================================================== -->
@@ -318,16 +317,10 @@
 
     <script>
     $(document).ready(function(){
-        $('.deletebtn').on('click', function(){
+        $('.hapus_penghuni').on('click', function(){
+            var id_penghuni = $(this).attr("id");
             $('#deletemodal').modal('show');
-              $tr= $(this).closest('tr');
-
-              var data = $tr.children("td").map(function(){
-                return $(this).text();
-              }).get();
-
-              console.log(data);
-              $('#delete_id').val(data[0]);
+            $('#id_penghuni').val(id_penghuni);
         });
     });
     </script>
