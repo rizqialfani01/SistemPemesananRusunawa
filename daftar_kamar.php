@@ -55,6 +55,16 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
     <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+    
+    <script>
+    $(document).ready(function(){
+        $('.hapus_penghuni').on('click', function(){
+            var id_penghuni = $(this).attr("id");
+            $('#deletemodal').modal('show');
+            $('#id_penghuni').val(id_penghuni);
+        });
+    });
+    </script>
 </head>
 
 <body class="skin-default-dark fixed-layout">
@@ -120,11 +130,11 @@
                     <ul id="sidebarnav">
                         <li> <a class="waves-effect waves-dark" href="index.php" aria-expanded="false"><i class="fa fa-home"></i><span class="hide-menu">Beranda</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="kamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Pilih Kamar</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="daftarkamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Daftar Kamar</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="daftar_kamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Daftar Kamar</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="daftar_harga.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Daftar Harga Kamar</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="penghuni.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="laporan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
-                        <li> <a class="waves-effect waves-dark" href="laporanpiutang.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Piutang</a></li>
+                        <li> <a class="waves-effect waves-dark" href="daftar_penghuni.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="laporan_keuangan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
+                        <li> <a class="waves-effect waves-dark" href="laporan_piutang.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Piutang</a></li>
                         <div class="text-center m-t-30">
                             <a href="action/logout.php" class="btn waves-effect waves-light btn-danger hidden-md-down">Logout</a>
                         </div>
@@ -150,13 +160,13 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h4 class="text-themecolor">Daftar Penghuni</h4>
+                        <h4 class="text-themecolor">Daftar Kamar</h4>
                     </div>
                     <div class="col-md-7 align-self-center text-right">
                         <div class="d-flex justify-content-end align-items-center">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.php">Beranda</a></li>
-                                <li class="breadcrumb-item active">Daftar Penghuni</li>
+                                <li class="breadcrumb-item active">Daftar Kamar</li>
                             </ol>
                         </div>
                     </div>
@@ -175,49 +185,43 @@
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
+                                            <th>No</th>
+                                            <th>No Kamar</th>
+                                            <th>ID Pendaftaran</th>
+                                            <th>NIM</th>
+                                            <th>Nama Penghuni</th>
+                                            <th>Masa Huni</th>
+                                            <th>Piutang</th>
+                                            <th>Edit</th>
+                                            <th>Hapus</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
-                                        <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
-                                        </tr>
-                                        <tr>
-                                        <td>Garrett Winters</td>
-                                        <td>Accountant</td>
-                                        <td>Tokyo</td>
-                                        <td>63</td>
-                                        <td>2011/07/25</td>
-                                        <td>$170,750</td>
-                                        </tr>
-                                        <tr>
-                                        <td>Ashton Cox</td>
-                                        <td>Junior Technical Author</td>
-                                        <td>San Francisco</td>
-                                        <td>66</td>
-                                        <td>2009/01/12</td>
-                                        <td>$86,000</td>
-                                        </tr>
+                                        <?php
+                                            $no = 1;
+                                            $penghuni = $conn->query("SELECT * FROM penghuni");
+                                            while ($row = $penghuni->fetch_assoc()) {
+                                                echo
+                                                "<tr>
+                                                    <td>".$no++."</td>
+                                                    <td>".$row['id_kamar']."</td>
+                                                    <td>".$row['id']."</td>
+                                                    <td>".$row['nim']."</td>
+                                                    <td>".$row['nama']."</td>
+                                                    <td>".$row['masa_huni']." tahun</td>
+                                                    <td>Rp. ".$row['piutang']."</td>
+                                                    <td class='text-center'>
+                                                        <a class='btn btn-sm btn-info' href='edit_daftar_penghuni.php?id=".$row['id']."'>
+                                                            <span class='ti-pencil'>
+                                                            </span>Edit
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                      <button type='button' class='btn btn-sm btn-danger ti-trash hapus_penghuni' id='".$row['id']."'>Delete</button>
+                                                    </td>
+                                                </tr>";
+                                            }
+                                        ?>
                                     </tbody>
                                     </table>
                                 </div>
@@ -250,6 +254,30 @@
     <!-- End Wrapper -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
+
+    <!-- Delete Popup Form -->
+    <div id="deletemodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Hapus Penghuni</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="POST" action="action/delete_daftar_penghuni.php">
+                    <div class="modal-body">
+                        <input type="hidden" name="id_penghuni" id="id_penghuni">
+                        <h4>Apakah Anda yakin ingin menghapus data ini?</h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Tidak</button>
+                        <button type="submit" class="btn btn-danger">Hapus</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <!-- All Jquery -->
     <!-- ============================================================== -->
 
@@ -295,6 +323,7 @@
     <script src="assets/node_modules/c3-master/c3.min.js"></script>
     <!-- Chart JS -->
     <script src="dist/js/dashboard1.js"></script>
+
 </body>
 
 </html>

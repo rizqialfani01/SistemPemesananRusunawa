@@ -13,7 +13,7 @@
 
         if ($stmt->affected_rows == 1){
             //echo "New record deleted successfully";
-            header('location: ../daftarkamar.php');
+            header('location: ../daftar_penghuni.php');
         }
         else {
             echo "Error: $stmt->error";

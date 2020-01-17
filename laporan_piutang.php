@@ -119,11 +119,11 @@
                     <ul id="sidebarnav">
                         <li> <a class="waves-effect waves-dark" href="index.php" aria-expanded="false"><i class="fa fa-home"></i><span class="hide-menu">Beranda</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="kamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Pilih Kamar</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="daftarkamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Daftar Kamar</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="daftar_kamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Daftar Kamar</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="daftar_harga.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Daftar Harga Kamar</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="penghuni.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="laporan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
-                        <li> <a class="waves-effect waves-dark" href="laporanpiutang.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Piutang</a></li>
+                        <li> <a class="waves-effect waves-dark" href="daftar_penghuni.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="laporan_keuangan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
+                        <li> <a class="waves-effect waves-dark" href="laporan_piutang.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Piutang</a></li>
                         <div class="text-center m-t-30">
                             <a href="action/logout.php" class="btn waves-effect waves-light btn-danger hidden-md-down">Logout</a>
                         </div>
@@ -165,49 +165,45 @@
                 <!-- ============================================================== -->
                 <!-- ============================================================== -->
                 <!-- Yearly Sales -->
-                <!-- ============================================================== -->
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card oh">
                             <div class="card-body">
-                              <div class="table-responsive">
-                                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                  <thead>
-                                      <tr>
-                                      <th>No</th>
-                                      <th>ID_Penghuni</th>
-                                      <th>ID_Kamar</th>
-                                      <th>Nama Penghuni</th>
-                                      <th>Nomor Handphone</th>
-                                      <th>Biaya</th>
-                                      <th>Terbayar</th>
-                                      <th>Piutang</th>
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                    <?php
-                                        $no = 1;
-                                        $penghuni = $conn->query("SELECT * FROM penghuni");
-                                        while ($row = $penghuni->fetch_assoc()) {
-                                            echo
-                                            "<tr>
-                                                <td>".$no++."</td>
-                                                <td>".$row['id']."</td>
-                                                <td>".$row['id_kamar']."</td>
-                                                <td>".$row['nim']."</td>
-                                                <td>".$row['nama']."</td>
-                                                <td>Rp. ".$row['biaya']."</td>
-                                                <td>Rp. ".$row['bayar']."</td>
-                                                <td>Rp. ".$row['piutang']."</td>
-                                            </tr>";
-
-                                        }
-                                    ?>
-                                  </tbody>
-                                  </table>
-                              </div>
-                            </div>
-                            <div class="card-body bg-light">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th class='text-center'>No.</th>
+                                                <th class='text-center'>No. Kamar</th>
+                                                <th class='text-center'>Nama</th>
+                                                <th class='text-center'>NIM</th>
+                                                <th class='text-center'>No. HP</th>
+                                                <th class='text-center'>Biaya</th>
+                                                <th class='text-center'>Bayar</th>
+                                                <th class='text-center'>Piutang</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                $no = 1;
+                                                $penghuni = $conn->query("SELECT * FROM penghuni");
+                                                while ($row = $penghuni->fetch_assoc()) {
+                                                    echo
+                                                    "<tr>
+                                                        <td class='text-center'>".$no++."</td>
+                                                        <td class='text-center'>".$row['id_kamar']."</td>
+                                                        <td>".$row['nama']."</td>
+                                                        <td class='text-center'>".$row['nim']."</td>
+                                                        <td>".$row['no']."</td>
+                                                        <td>Rp. ".number_format($row['biaya'], 0, ',', '.')."</td>
+                                                        <td>Rp. ".number_format($row['bayar'], 0, ',', '.')."</td>
+                                                        <td>Rp. ".number_format($row['piutang'], 0, ',', '.')."</td>
+                                                    </tr>";
+                                                }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>

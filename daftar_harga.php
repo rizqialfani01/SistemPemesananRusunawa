@@ -119,11 +119,11 @@
                     <ul id="sidebarnav">
                         <li> <a class="waves-effect waves-dark" href="index.php" aria-expanded="false"><i class="fa fa-home"></i><span class="hide-menu">Beranda</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="kamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Pilih Kamar</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="daftarkamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Daftar Kamar</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="daftar_kamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Daftar Kamar</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="daftar_harga.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Daftar Harga Kamar</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="penghuni.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="laporan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
-                        <li> <a class="waves-effect waves-dark" href="laporanpiutang.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Piutang</a></li>
+                        <li> <a class="waves-effect waves-dark" href="daftar_penghuni.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="laporan_keuangan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
+                        <li> <a class="waves-effect waves-dark" href="laporan_piutang.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Piutang</a></li>
                         <div class="text-center m-t-30">
                             <a href="action/logout.php" class="btn waves-effect waves-light btn-danger hidden-md-down">Logout</a>
                         </div>
@@ -174,7 +174,7 @@
                                     <table class="table table-bordered" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                            <th class='text-center'>No</th>
+                                            <th class='text-center'>No.</th>
                                             <th class='text-center'>Gedung</th>
                                             <th class='text-center'>Lantai</th>
                                             <th class='text-center'>Harga per Bulan</th>
@@ -195,7 +195,12 @@
                                                         <td class='text-center'>Lantai ".$row['lantai']."</td>
                                                         <td class='text-center'>Rp. ".number_format($row['harga'], 0, ',', '.')."</td>
                                                         <td class='text-center'>Rp. ".number_format($row['harga']*12, 0, ',', '.')."</td>
-                                                        <td class='text-center'><input type='button' class='btn btn-sm btn-info edit_harga' value='Edit' name='edit' id='".$row['lantai']."'/></td>
+                                                        <td class='text-center'>
+                                                            <button class='btn btn-sm btn-info edit_harga' id='".$row['lantai']."'>
+                                                                <span class='ti-pencil'>
+                                                                </span>Edit Harga
+                                                            </button>
+                                                        </td>
                                                     </tr>";
 
                                                 }
@@ -203,8 +208,6 @@
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
-                            <div class="card-body bg-light">
                             </div>
                         </div>
                     </div>

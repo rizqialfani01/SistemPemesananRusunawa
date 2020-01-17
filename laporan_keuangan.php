@@ -98,7 +98,6 @@
                 <!-- ============================================================== -->
                 <!-- End Logo -->
                 <!-- ============================================================== -->
-                </div>
             </nav>
         </header>
         <!-- ============================================================== -->
@@ -120,11 +119,11 @@
                     <ul id="sidebarnav">
                         <li> <a class="waves-effect waves-dark" href="index.php" aria-expanded="false"><i class="fa fa-home"></i><span class="hide-menu">Beranda</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="kamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Pilih Kamar</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="daftarkamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Daftar Kamar</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="daftar_kamar.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Daftar Kamar</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="daftar_harga.php" aria-expanded="false"><i class="fa fa-th"></i><span class="hide-menu">Daftar Harga Kamar</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="penghuni.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="laporan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
-                        <li> <a class="waves-effect waves-dark" href="laporanpiutang.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Piutang</a></li>
+                        <li> <a class="waves-effect waves-dark" href="daftar_penghuni.php" aria-expanded="false"><i class="fa fa-users"></i><span class="hide-menu">Daftar Penghuni</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="laporan_keuangan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
+                        <li> <a class="waves-effect waves-dark" href="laporan_piutang.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Piutang</a></li>
                         <div class="text-center m-t-30">
                             <a href="action/logout.php" class="btn waves-effect waves-light btn-danger hidden-md-down">Logout</a>
                         </div>
@@ -150,13 +149,13 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h4 class="text-themecolor">Daftar Kamar</h4>
+                        <h4 class="text-themecolor">Laporan Keuangan</h4>
                     </div>
                     <div class="col-md-7 align-self-center text-right">
                         <div class="d-flex justify-content-end align-items-center">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.php">Beranda</a></li>
-                                <li class="breadcrumb-item active">Daftar Kamar</li>
+                                <li class="breadcrumb-item active">Laporan Keuangan</li>
                             </ol>
                         </div>
                     </div>
@@ -173,50 +172,39 @@
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>No Kamar</th>
-                                            <th>ID Pendaftaran</th>
-                                            <th>NIM</th>
-                                            <th>Nama Penghuni</th>
-                                            <th>Masa Huni</th>
-                                            <th>Piutang</th>
-                                            <th>Edit</th>
-                                            <th>Hapus</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                            $no = 1;
-                                            $penghuni = $conn->query("SELECT * FROM penghuni");
-                                            while ($row = $penghuni->fetch_assoc()) {
-                                                echo
-                                                "<tr>
-                                                    <td>".$no++."</td>
-                                                    <td>".$row['id_kamar']."</td>
-                                                    <td>".$row['id']."</td>
-                                                    <td>".$row['nim']."</td>
-                                                    <td>".$row['nama']."</td>
-                                                    <td>".$row['masa_huni']." tahun</td>
-                                                    <td>Rp. ".$row['piutang']."</td>
-                                                    <td class='text-center'>
-                                                        <a class='btn btn-sm btn-info' href='edit_penghuni.php?id=".$row['id']."'>
-                                                            <span class='ti-pencil'>
-                                                            </span>Edit
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                      <button type='button' class='btn btn-sm btn-danger ti-trash hapus_penghuni' id='".$row['id']."'>Delete</button>
-                                                    </td>
-                                                </tr>";
-                                            }
-                                        ?>
-                                    </tbody>
+                                        <thead>
+                                            <tr>
+                                                <th class='text-center'>No.</th>
+                                                <th class='text-center'>No. Kamar</th>
+                                                <th class='text-center'>Nama</th>
+                                                <th class='text-center'>NIM</th>
+                                                <th class='text-center'>No. HP</th>
+                                                <th class='text-center'>Biaya</th>
+                                                <th class='text-center'>Bayar</th>
+                                                <th class='text-center'>Piutang</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                $no = 1;
+                                                $penghuni = $conn->query("SELECT * FROM penghuni");
+                                                while ($row = $penghuni->fetch_assoc()) {
+                                                    echo
+                                                    "<tr>
+                                                        <td class='text-center'>".$no++."</td>
+                                                        <td class='text-center'>".$row['id_kamar']."</td>
+                                                        <td>".$row['nama']."</td>
+                                                        <td class='text-center'>".$row['nim']."</td>
+                                                        <td>".$row['no']."</td>
+                                                        <td>Rp. ".number_format($row['biaya'], 0, ',', '.')."</td>
+                                                        <td>Rp. ".number_format($row['bayar'], 0, ',', '.')."</td>
+                                                        <td>Rp. ".number_format($row['piutang'], 0, ',', '.')."</td>
+                                                    </tr>";
+                                                }
+                                            ?>
+                                        </tbody>
                                     </table>
                                 </div>
-                            </div>
-                            <div class="card-body bg-light">
                             </div>
                         </div>
                     </div>
@@ -244,31 +232,6 @@
     <!-- End Wrapper -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
-
-    <!-- Delete Popup Form -->
-        <div id="deletemodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Hapus Penghuni</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form method="POST" action="action/delete_penghuni.php">
-                        <div class="modal-body">
-                            <input type="hidden" name="id_penghuni" id="id_penghuni">
-                            <h4>Apakah Anda yakin ingin menghapus data ini?</h4>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-success" data-dismiss="modal">Tidak</button>
-                            <button type="submit" class="btn btn-danger">Hapus</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- All Jquery -->
     <!-- ============================================================== -->
 
@@ -314,16 +277,6 @@
     <script src="assets/node_modules/c3-master/c3.min.js"></script>
     <!-- Chart JS -->
     <script src="dist/js/dashboard1.js"></script>
-
-    <script>
-    $(document).ready(function(){
-        $('.hapus_penghuni').on('click', function(){
-            var id_penghuni = $(this).attr("id");
-            $('#deletemodal').modal('show');
-            $('#id_penghuni').val(id_penghuni);
-        });
-    });
-    </script>
 </body>
 
 </html>
