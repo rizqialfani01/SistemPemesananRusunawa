@@ -64,7 +64,21 @@
                 $('#id_penghuni').val(id_penghuni);
             });
         });
+
+        $(document).on('click', '.view_data', function(){
+            var id_penghuni = $(this).attr("id");
+            $.ajax({
+                url: "action/detail_penghuni.php",
+                method: "POST",
+                data: {id_penghuni: id_penghuni},
+                success: function(data){
+                    $('#detail_penghuni').html(data);
+                    $('#dataModal').modal('show');
+                }
+            });
+        });
     </script>
+
 </head>
 
 <body class="skin-default-dark fixed-layout">
@@ -212,6 +226,10 @@
                                                         <td>".$row['nama_ortu']."</td>
                                                         <td>".$row['no_ortu']."</td>
                                                         <td class='text-center'>
+                                                            <button class='btn btn-sm btn-success view_data' id='".$row['id']."'>
+                                                                <span class='ti-info-alt'>
+                                                                </span>Detail
+                                                            </button>
                                                             <a class='btn btn-sm btn-info' href='edit_penghuni.php?id=".$row['id']."'>
                                                                 <span class='ti-pencil'>
                                                                 </span>Edit
@@ -253,7 +271,26 @@
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
-    
+
+    <!-- Detail Popup -->
+    <div id="dataModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Detail Penghuni</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="detail_penghuni">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Delete Popup Form -->
     <div id="delete_confirm" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
