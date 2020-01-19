@@ -212,10 +212,10 @@
                                                         <td>".$row['nama_ortu']."</td>
                                                         <td>".$row['no_ortu']."</td>
                                                         <td class='text-center'>
-                                                            <button class='btn btn-sm btn-info' href='edit_penghuni.php?id=".$row['id']."'>
+                                                            <a class='btn btn-sm btn-info' href='edit_penghuni.php?id=".$row['id']."'>
                                                                 <span class='ti-pencil'>
                                                                 </span>Edit
-                                                            </button>
+                                                            </a>
                                                             <button class='btn btn-sm btn-danger hapus_penghuni' id='".$row['id']."'>
                                                                 <span class='ti-trash'>
                                                                 </span>Hapus
@@ -259,7 +259,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Hapus Penghuni</h5>
+                    <h4 class="modal-title" id="exampleModalLabel">Hapus Penghuni</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -267,11 +267,11 @@
                 <form method="POST" action="action/delete_penghuni.php">
                     <div class="modal-body">
                         <input type="hidden" name="id_penghuni" id="id_penghuni">
-                        <h4>Apakah Anda yakin ingin menghapus data ini?</h4>
+                        <h5>Apakah Anda yakin ingin menghapus data penghuni ini?</h5>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-dismiss="modal">Tidak</button>
-                        <button type="submit" class="btn btn-danger">Hapus</button>
+                        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Tidak</button>
+                        <button type="submit" class="btn btn-sm btn-danger">Ya, Hapus</button>
                     </div>
                 </form>
             </div>

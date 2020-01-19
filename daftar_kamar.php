@@ -211,7 +211,7 @@
                                                     <td>".$row['masa_huni']." tahun</td>
                                                     <td>Rp. ".$row['piutang']."</td>
                                                     <td class='text-center'>
-                                                        <a class='btn btn-sm btn-info' href='edit_daftar_penghuni.php?id=".$row['id']."'>
+                                                        <a class='btn btn-sm btn-info' href='edit_penghuni.php?id=".$row['id']."'>
                                                             <span class='ti-pencil'>
                                                             </span>Edit
                                                         </a>

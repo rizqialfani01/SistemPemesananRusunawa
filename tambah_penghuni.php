@@ -197,7 +197,7 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
-                                <form class="form-horizontal form-material" action="action/insert.php" method="POST">
+                                <form class="form-horizontal form-material" action="action/insert_penghuni.php" method="POST">
                                     <div class="d-flex m-b-30 align-items-center no-block">
                                         <h4 class="card-title ">Penghuni 1</h5>
                                         <div class="ml-auto">
