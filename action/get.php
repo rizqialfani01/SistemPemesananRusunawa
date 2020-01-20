@@ -137,22 +137,26 @@
         $(".room").click(function () {
             $(".room").removeClass("terpilih");
             $(this).addClass("terpilih");
+            document.getElementById("dataPenghuni").style.display = "block";
+            $('#nama').val('Belum ada penghuni');
+            $('#nim').val('Belum ada penghuni');
+            $('#no').val('Belum ada penghuni');
+            $('#prodi').val('Belum ada penghuni');
+            $('#masa_huni').val('Belum ada penghuni');
             var no_kamar = $(this).attr("id");
             $.ajax({
-                url: "detail_penghuni.php",
+                url: "action/detail_kamar.php",
                 method: "POST",
                 data: {no_kamar: no_kamar},
+                dataType: "json",
                 success: function(data){
                     $('#nama').val(data.nama);
                     $('#nim').val(data.nim);
                     $('#no').val(data.no);
-                    $('#prodi').val(data.prodi);
+                    $('#prodi').val(data.nama_prodi);
                     $('#masa_huni').val(data.masa_huni);
-                    //$('#dataModal').modal('show');
-                    document.getElementById("dataPenghuni").style.display = "block";
                 }
             });
-            
         });
     });
 </script>
