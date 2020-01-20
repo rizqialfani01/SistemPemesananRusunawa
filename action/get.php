@@ -133,20 +133,10 @@
 ?>
 
 <script>
-        var pilihan = document.getElementsByClassName("room");
-        for(var i = 0; i < pilihan.length; i++){
-            pilihan[i].onclick = function(){
-                var pilih = pilihan[0];
-                while(pilih){
-                    if (pilih.tagName === "DIV"){
-                        //remove class terpilih
-                        pilih.classList.remove("terpilih");
-                    }
-                    //pilih class terpilih yang baru
-                    pilih = pilih.nextSibling;
-                }
-                this.classList.add("terpilih");
-                document.getElementById('dataPenghuni').style.display = "block";
-            };
-        }
+    $(document).ready(function() {
+        $(".room").click(function () {
+            $(".room").removeClass("terpilih");
+            $(this).addClass("terpilih");     
+        });
+    });
 </script>
