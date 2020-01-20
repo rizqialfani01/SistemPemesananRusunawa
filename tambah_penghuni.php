@@ -219,7 +219,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">No. Kamar</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" class="form-control form-control-line" name="nama" value="<?php echo $_GET['kamar']; ?>" disabled>
+                                            <input type="text" class="form-control form-control-line" name="no_kamar" value="<?php echo $_GET['kamar']; ?>" disabled>
                                         </div>
                                     </div>
                                     <div class="form-group">

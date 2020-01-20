@@ -138,11 +138,6 @@
             $(".room").removeClass("terpilih");
             $(this).addClass("terpilih");
             document.getElementById("dataPenghuni").style.display = "block";
-            $('#nama').val('Belum ada penghuni');
-            $('#nim').val('Belum ada penghuni');
-            $('#no').val('Belum ada penghuni');
-            $('#prodi').val('Belum ada penghuni');
-            $('#masa_huni').val('Belum ada penghuni');
             var no_kamar = $(this).attr("id");
             $.ajax({
                 url: "action/detail_kamar.php",
@@ -150,11 +145,24 @@
                 data: {no_kamar: no_kamar},
                 dataType: "json",
                 success: function(data){
-                    $('#nama').val(data.nama);
-                    $('#nim').val(data.nim);
-                    $('#no').val(data.no);
-                    $('#prodi').val(data.nama_prodi);
-                    $('#masa_huni').val(data.masa_huni);
+                    if(!data) {
+                        $('#tambah_penghuni').attr("href", "tambah_penghuni.php?kamar=" + no_kamar);
+                        $('#edit_penghuni').removeAttr("href");
+                        $('#nama').val('Belum ada penghuni');
+                        $('#nim').val('Belum ada penghuni');
+                        $('#no').val('Belum ada penghuni');
+                        $('#prodi').val('Belum ada penghuni');
+                        $('#masa_huni').val('Belum ada penghuni');
+                    }
+                    else {
+                        $('#tambah_penghuni').removeAttr("href");
+                        $('#edit_penghuni').attr("href", "edit_penghuni.php?id=" + data.id);
+                        $('#nama').val(data.nama);
+                        $('#nim').val(data.nim);
+                        $('#no').val(data.no);
+                        $('#prodi').val(data.nama_prodi);
+                        $('#masa_huni').val(data.masa_huni + " Tahun");
+                    }
                 }
             });
         });
