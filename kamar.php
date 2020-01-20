@@ -119,6 +119,15 @@
             });
         });
     </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.logout').on('click', function(){
+                var action = "logout";
+                $('#logout_confirm').modal('show');
+                $('#action').val(action);
+            });
+        });
+    </script>
 </head>
 
 <body class="skin-default-dark fixed-layout">
@@ -189,7 +198,7 @@
                         <li> <a class="waves-effect waves-dark" href="laporan_keuangan.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Keuangan</a></li>
                         <li> <a class="waves-effect waves-dark" href="laporan_piutang.php" aria-expanded="false"><i class="fa fa-money"></i><span class="hide-menu"></span>Laporan Piutang</a></li>
                         <div class="text-center m-t-30">
-                            <a href="action/logout.php" class="btn waves-effect waves-light btn-danger hidden-md-down">Logout</a>
+                            <button class="btn waves-effect waves-light btn-danger hidden-md-down logout">Logout</button>
                         </div>
                     </ul>
                 </nav>
@@ -471,6 +480,31 @@
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
+
+    <!-- Logout Popup -->
+    <div id="logout_confirm" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Logout</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="POST" action="action/logout.php">
+                    <div class="modal-body">
+                        <input type="hidden" name="action" id="action">
+                        <h5>Apakah Anda yakin ingin keluar dari sistem?</h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Tidak</button>
+                        <button type="submit" class="btn btn-sm btn-danger">Ya, Keluar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
