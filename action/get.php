@@ -28,7 +28,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."' id='legenda'>". $row['no_kamar']."</div>";
+                        echo "<div class='room ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -38,7 +38,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."'  id='legenda'>". $row['no_kamar']."</div>";
+                        echo "<div class='room ". $row['status']."'  id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -49,7 +49,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."' id='legenda'>". $row['no_kamar']."</div>";
+                        echo "<div class='room ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -59,7 +59,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."' id='legenda'>". $row['no_kamar']."</div>";
+                        echo "<div class='room ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -70,7 +70,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."' id='legenda'>". $row['no_kamar']."</div>";
+                        echo "<div class='room ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -80,7 +80,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."' id='legenda'>". $row['no_kamar']."</div>";
+                        echo "<div class='room ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -91,7 +91,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."' id='legenda'>". $row['no_kamar']."</div>";
+                        echo "<div class='room ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -101,7 +101,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."' id='legenda'>". $row['no_kamar']."</div>";
+                        echo "<div class='room ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -112,7 +112,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."' id='legenda'>". $row['no_kamar']."</div>";
+                        echo "<div class='room ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -122,7 +122,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."' id='legenda'>". $row['no_kamar']."</div>";
+                        echo "<div class='room ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -137,7 +137,22 @@
         $(".room").click(function () {
             $(".room").removeClass("terpilih");
             $(this).addClass("terpilih");
-            document.getElementById("dataPenghuni").style.display = "block";
+            var no_kamar = $(this).attr("id");
+            $.ajax({
+                url: "detail_penghuni.php",
+                method: "POST",
+                data: {no_kamar: no_kamar},
+                success: function(data){
+                    $('#nama').val(data.nama);
+                    $('#nim').val(data.nim);
+                    $('#no').val(data.no);
+                    $('#prodi').val(data.prodi);
+                    $('#masa_huni').val(data.masa_huni);
+                    //$('#dataModal').modal('show');
+                    document.getElementById("dataPenghuni").style.display = "block";
+                }
+            });
+            
         });
     });
 </script>

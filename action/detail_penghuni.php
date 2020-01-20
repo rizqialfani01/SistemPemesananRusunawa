@@ -103,5 +103,14 @@
             echo $output;
             $stmt->close();
         }
+        else if (isset($_POST['no_kamar'])){
+            $stmt = $conn->prepare("SELECT * FROM penghuni INNER JOIN prodi ON penghuni.id_prodi=prodi.id_prodi INNER JOIN fakultas ON penghuni.id_fakultas=fakultas.id_fakultas WHERE id_kamar=?");
+            $stmt->bind_param("s", $_POST['no_kamar']);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $row = $result->fetch_array();
+            echo json_encode($row);
+            $stmt->close();
+        }
     }
 ?>
