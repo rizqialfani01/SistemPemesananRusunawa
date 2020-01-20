@@ -136,7 +136,8 @@
     $(document).ready(function() {
         $(".room").click(function () {
             $(".room").removeClass("terpilih");
-            $(this).addClass("terpilih");     
+            $(this).addClass("terpilih");
+            document.getElementById("dataPenghuni").style.display = "block";
         });
     });
 </script>
