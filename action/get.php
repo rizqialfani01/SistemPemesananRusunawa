@@ -127,6 +127,27 @@
                     $stmt->close();
                 }
             }
+            else if ($_GET['gedung'] == 'F'){
+                if ($_POST['gedung_F'] == 'F0'){
+                    $stmt = $conn->prepare("SELECT * FROM kamar WHERE gedung='F'");
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    while($row = $result->fetch_assoc()) {
+                        echo "<div class='kamar'><div class='penghuni ". $row['status']."' id=".$row['no_kamar']."></div></div>";
+                    }
+                    $stmt->close();
+                }
+                else {
+                    $stmt = $conn->prepare("SELECT * FROM kamar WHERE lantai=?");
+                    $stmt->bind_param("s", $_POST['gedung_F']);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    while($row = $result->fetch_assoc()) {
+                        echo "<div class='kamar'><div class='penghuni ". $row['status']."' id=".$row['no_kamar']."></div></div>";
+                    }
+                    $stmt->close();
+                }
+            }
         }
     }
 

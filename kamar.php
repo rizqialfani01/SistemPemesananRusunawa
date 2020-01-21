@@ -121,6 +121,22 @@
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
+            $("#gedung_F").change(function(){
+            var gedung_F = $("#gedung_F").val();
+                $.ajax({
+                    type: 'POST',
+                    url: "action/get.php?gedung=F",
+                    data: {gedung_F: gedung_F},
+                    cache: false,
+                    success: function(msg){
+                    $("#lantai_F").html(msg);
+                    }
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
             $('.logout').on('click', function(){
                 var action = "logout";
                 $('#logout_confirm').modal('show');
@@ -128,6 +144,50 @@
             });
         });
     </script>
+    <style>
+        .kamar {
+            display: inline-block;
+            margin: 0 4px 0px 4px;
+        }
+
+        .kamar .penghuni {
+            border-radius: 0;
+            margin-right: -3px;
+            margin-left: -3px;
+        }
+
+        .kamar .penghuni:first-child {
+            border-radius: 4px 0 0 4px;
+        }
+
+
+        .kamar .penghuni:nth-child(2) {
+            border-radius: 0 4px 4px 0;
+        }
+
+        .kamar .penghuni:only-child {
+            border-radius: 4px;
+        }
+
+        .penghuni {
+            background: teal;
+            color: #FFF;
+            width: 32px;
+            height: 34px;
+            border-radius: 4px;
+            position: relative;
+            text-align: center;
+            line-height: 35px;
+            display: inline-block;
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Old versions of Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                    user-select: none; /* Non-prefixed version, currently
+                                            supported by Chrome, Opera and Firefox */
+        }
+    </style>
 </head>
 
 <body class="skin-default-dark fixed-layout">
@@ -262,94 +322,115 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#gedunge" role="tab" data-toggle="tab">Gedung E</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#gedungf" role="tab" data-toggle="tab">Gedung F</a>
+                                </li>
                                 </ul>
 
                                 <!-- Tab panes -->
                                 <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="gedunga" style="width: 1200px">
-                                    <div class="form-group">
-                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
-                                        <div class="col-sm-2">
-                                            <select id="gedung_A" class="form-control form-control-line">
-                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
-                                                <option value="A0">Semua Lantai</option>
-                                                <option value="A2">Lantai 2</option>
-                                                <option value="A3">Lantai 3</option>
-                                                <option value="A4">Lantai 4</option>
-                                            </select>
+                                    <div role="tabpanel" class="tab-pane active" id="gedunga" style="width: 1200px">
+                                        <div class="form-group">
+                                            <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
+                                            <div class="col-sm-2">
+                                                <select id="gedung_A" class="form-control form-control-line">
+                                                    <option disabled="disabled" selected="selected">Pilih Lantai</option>
+                                                    <option value="A0">Semua Lantai</option>
+                                                    <option value="A2">Lantai 2</option>
+                                                    <option value="A3">Lantai 3</option>
+                                                    <option value="A4">Lantai 4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div id="lantai_A" class="card-body" style="padding-left: 10px;">
                                         </div>
                                     </div>
-                                    <div id="lantai_A" class="card-body" style="padding-left: 10px;">
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedungb" style="width: 1200px;">
-                                    <div class="form-group">
-                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
-                                        <div class="col-sm-2">
-                                            <select id="gedung_B" class="form-control form-control-line">
-                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
-                                                <option value="B0">Semua Lantai</option>
-                                                <option value="B1">Lantai 1</option>
-                                                <option value="B2">Lantai 2</option>
-                                                <option value="B3">Lantai 3</option>
-                                                <option value="B4">Lantai 4</option>
-                                            </select>
+                                    <div role="tabpanel" class="tab-pane fade" id="gedungb" style="width: 1200px;">
+                                        <div class="form-group">
+                                            <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
+                                            <div class="col-sm-2">
+                                                <select id="gedung_B" class="form-control form-control-line">
+                                                    <option disabled="disabled" selected="selected">Pilih Lantai</option>
+                                                    <option value="B0">Semua Lantai</option>
+                                                    <option value="B1">Lantai 1</option>
+                                                    <option value="B2">Lantai 2</option>
+                                                    <option value="B3">Lantai 3</option>
+                                                    <option value="B4">Lantai 4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div id="lantai_B" class="card-body" style="padding-left: 10px;">
                                         </div>
                                     </div>
-                                    <div id="lantai_B" class="card-body" style="padding-left: 10px;">
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedungc" style="width: 1200px;">
-                                    <div class="form-group">
-                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
-                                        <div class="col-sm-2">
-                                            <select id="gedung_C" class="form-control form-control-line">
-                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
-                                                <option value="C0">Semua Lantai</option>
-                                                <option value="C1">Lantai 1</option>
-                                                <option value="C2">Lantai 2</option>
-                                                <option value="C3">Lantai 3</option>
-                                                <option value="C4">Lantai 4</option>
-                                            </select>
+                                    <div role="tabpanel" class="tab-pane fade" id="gedungc" style="width: 1200px;">
+                                        <div class="form-group">
+                                            <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
+                                            <div class="col-sm-2">
+                                                <select id="gedung_C" class="form-control form-control-line">
+                                                    <option disabled="disabled" selected="selected">Pilih Lantai</option>
+                                                    <option value="C0">Semua Lantai</option>
+                                                    <option value="C1">Lantai 1</option>
+                                                    <option value="C2">Lantai 2</option>
+                                                    <option value="C3">Lantai 3</option>
+                                                    <option value="C4">Lantai 4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div id="lantai_C" class="card-body" style="padding-left: 10px;">
                                         </div>
                                     </div>
-                                    <div id="lantai_C" class="card-body" style="padding-left: 10px;">
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedungd" style="width: 1200px;">
-                                    <div class="form-group">
-                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
-                                        <div class="col-sm-2">
-                                            <select id="gedung_D" class="form-control form-control-line">
-                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
-                                                <option value="D0">Semua Lantai</option>
-                                                <option value="D2">Lantai 2</option>
-                                                <option value="D3">Lantai 3</option>
-                                                <option value="D4">Lantai 4</option>
-                                            </select>
+                                    <div role="tabpanel" class="tab-pane fade" id="gedungd" style="width: 1200px;">
+                                        <div class="form-group">
+                                            <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
+                                            <div class="col-sm-2">
+                                                <select id="gedung_D" class="form-control form-control-line">
+                                                    <option disabled="disabled" selected="selected">Pilih Lantai</option>
+                                                    <option value="D0">Semua Lantai</option>
+                                                    <option value="D2">Lantai 2</option>
+                                                    <option value="D3">Lantai 3</option>
+                                                    <option value="D4">Lantai 4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div id="lantai_D" class="card-body" style="padding-left: 10px;">
                                         </div>
                                     </div>
-                                    <div id="lantai_D" class="card-body" style="padding-left: 10px;">
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane fade" id="gedunge" style="width: 1200px;">
-                                    <div class="form-group">
-                                        <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
-                                        <div class="col-sm-2">
-                                            <select id="gedung_E" class="form-control form-control-line">
-                                                <option disabled="disabled" selected="selected">Pilih Lantai</option>
-                                                <option value="E0">Semua Lantai</option>
-                                                <option value="E1">Lantai 1</option>
-                                                <option value="E2">Lantai 2</option>
-                                                <option value="E3">Lantai 3</option>
-                                                <option value="E4">Lantai 4</option>
-                                                <option value="E5">Lantai 5</option>
-                                            </select>
+                                    <div role="tabpanel" class="tab-pane fade" id="gedunge" style="width: 1200px;">
+                                        <div class="form-group">
+                                            <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
+                                            <div class="col-sm-2">
+                                                <select id="gedung_E" class="form-control form-control-line">
+                                                    <option disabled="disabled" selected="selected">Pilih Lantai</option>
+                                                    <option value="E0">Semua Lantai</option>
+                                                    <option value="E1">Lantai 1</option>
+                                                    <option value="E2">Lantai 2</option>
+                                                    <option value="E3">Lantai 3</option>
+                                                    <option value="E4">Lantai 4</option>
+                                                    <option value="E5">Lantai 5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div id="lantai_E" class="card-body" style="padding-left: 10px;">
                                         </div>
                                     </div>
-                                    <div id="lantai_E" class="card-body" style="padding-left: 10px;">
+                                    <div role="tabpanel" class="tab-pane fade" id="gedungf" style="width: 1200px;">
+                                        <div class="form-group">
+                                            <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
+                                            <div class="col-sm-2">
+                                                <select id="gedung_F" class="form-control form-control-line">
+                                                    <option disabled="disabled" selected="selected">Pilih Lantai</option>
+                                                    <option value="F0">Semua Lantai</option>
+                                                    <option value="F1">Lantai 1</option>
+                                                    <option value="F2">Lantai 2</option>
+                                                    <option value="F3">Lantai 3</option>
+                                                    <option value="F4">Lantai 4</option>
+                                                    <option value="F5">Lantai 5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div id="lantai_F" class="card-body" style="padding-left: 10px;">                                           
+                                        </div>
                                     </div>
-                                </div>
                                 </div>
                             </div>
                             <div class="card-body bg-light">
