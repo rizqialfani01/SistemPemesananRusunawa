@@ -227,7 +227,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">No. Kamar</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" class="form-control form-control-line" name="no_kamar" value="<?php if(isset($_GET['id'])) echo $row['id_kamar'] ?>" required>
+                                            <input type="text" class="form-control form-control-line" name="no_kamar" value="<?php if(isset($_GET['id'])) echo $row['no_kamar'] ?>" required>
                                         </div>
                                     </div>
                                     <div class="form-group">

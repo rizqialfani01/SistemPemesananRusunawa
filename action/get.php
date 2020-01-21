@@ -139,8 +139,10 @@
             $(this).addClass("terpilih");
             document.getElementById("dataPenghuni").style.display = "block";
             var no_kamar = $(this).attr("id");
+            $('#no_kamar').val(no_kamar);
+            $('#no_kamar2').val(no_kamar);
             $.ajax({
-                url: "action/detail_kamar.php",
+                url: "action/detail_kamar.php?penghuni=1",
                 method: "POST",
                 data: {no_kamar: no_kamar},
                 dataType: "json",
@@ -162,6 +164,32 @@
                         $('#no').val(data.no);
                         $('#prodi').val(data.nama_prodi);
                         $('#masa_huni').val(data.masa_huni + " Tahun");
+                    }
+                }
+            });
+            $.ajax({
+                url: "action/detail_kamar.php?penghuni=2",
+                method: "POST",
+                data: {no_kamar: no_kamar},
+                dataType: "json",
+                success: function(data){
+                    if(!data) {
+                        $('#tambah_penghuni2').attr("href", "tambah_penghuni.php?kamar=" + no_kamar);
+                        $('#edit_penghuni2').removeAttr("href");
+                        $('#nama2').val('Belum ada penghuni');
+                        $('#nim2').val('Belum ada penghuni');
+                        $('#no2').val('Belum ada penghuni');
+                        $('#prodi2').val('Belum ada penghuni');
+                        $('#masa_huni2').val('Belum ada penghuni');
+                    }
+                    else {
+                        $('#tambah_penghuni2').removeAttr("href");
+                        $('#edit_penghuni2').attr("href", "edit_penghuni.php?id=" + data.id);
+                        $('#nama2').val(data.nama);
+                        $('#nim2').val(data.nim);
+                        $('#no2').val(data.no);
+                        $('#prodi2').val(data.nama_prodi);
+                        $('#masa_huni2').val(data.masa_huni + " Tahun");
                     }
                 }
             });

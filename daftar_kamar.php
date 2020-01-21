@@ -214,7 +214,7 @@
                                                 echo
                                                 "<tr>
                                                     <td>".$no++."</td>
-                                                    <td>".$row['id_kamar']."</td>
+                                                    <td>".$row['no_kamar']."</td>
                                                     <td>".$row['id']."</td>
                                                     <td>".$row['nim']."</td>
                                                     <td>".$row['nama']."</td>

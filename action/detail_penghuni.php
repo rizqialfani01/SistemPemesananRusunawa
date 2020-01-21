@@ -21,7 +21,7 @@
             $output .= '
                     <tr>
                         <td width="30%"><label>No. Kamar</label></td>
-                        <td width="70%">'.$row["id_kamar"].'</td>
+                        <td width="70%">'.$row["no_kamar"].'</td>
                     </tr>
                     <tr>
                         <td width="30%"><label>Nama</label></td>

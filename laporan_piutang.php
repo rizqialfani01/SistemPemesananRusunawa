@@ -201,7 +201,7 @@
                                                     echo
                                                     "<tr>
                                                         <td class='text-center'>".$no++."</td>
-                                                        <td class='text-center'>".$row['id_kamar']."</td>
+                                                        <td class='text-center'>".$row['no_kamar']."</td>
                                                         <td>".$row['nama']."</td>
                                                         <td class='text-center'>".$row['nim']."</td>
                                                         <td>".$row['no']."</td>

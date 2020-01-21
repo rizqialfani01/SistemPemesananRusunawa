@@ -376,6 +376,12 @@
                                     </div>
                                     <form class="form-horizontal form-material">
                                         <div class="form-group">
+                                            <label class="col-md-3" style="float:left; height: 38px; padding: 10px">No. Kamar</label>
+                                            <div class="col-md-9" style="float:right;">
+                                                <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line" id="no_kamar" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
                                             <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Nama</label>
                                             <div class="col-md-9" style="float:right;">
                                                 <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line" id="nama" readonly>
@@ -388,7 +394,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3" style="float:left; height: 38px; padding: 10px">No. Telp</label>
+                                            <label class="col-md-3" style="float:left; height: 38px; padding: 10px">No. HP</label>
                                             <div class="col-md-9" style="float:right;">
                                                 <input type="text" placeholder="Nomor Telepon Penghuni" class="form-control form-control-line" id="no" readonly>
                                             </div>
@@ -416,40 +422,46 @@
                                         <h4 class="card-title ">Data Penghuni 2</h5>
                                         <div class="ml-auto">
                                             <ul class="list-inline font-12">
-                                                <a class="btn btn-dark btn-circle fa fa-plus" href="tambah_penghuni.php"></a>
-                                                <a class="btn btn-dark btn-circle fa fa-pencil" href="edit_penghuni.php"></a>
+                                                <a class="btn btn-dark btn-circle fa fa-plus" id="tambah_penghuni2"></a>
+                                                <a class="btn btn-dark btn-circle fa fa-pencil" id="edit_penghuni2"></a>
                                             </ul>
                                         </div>
                                     </div>
                                     <form class="form-horizontal form-material">
                                         <div class="form-group">
+                                            <label class="col-md-3" style="float:left; height: 38px; padding: 10px">No. Kamar</label>
+                                            <div class="col-md-9" style="float:right;">
+                                                <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line" id="no_kamar2" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
                                             <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Nama</label>
                                             <div class="col-md-9" style="float:right;">
-                                                <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line" readonly="">
+                                                <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line" id="nama2" readonly>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3" style="float:left; height: 38px; padding: 10px">NIM</label>
                                             <div class="col-md-9" style="float:right;">
-                                                <input type="text" placeholder="NIM Penghuni" class="form-control form-control-line" readonly="">
+                                                <input type="text" placeholder="NIM Penghuni" class="form-control form-control-line" id="nim2" readonly>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3" style="float:left; height: 38px; padding: 10px">No. Telp</label>
+                                            <label class="col-md-3" style="float:left; height: 38px; padding: 10px">No. HP</label>
                                             <div class="col-md-9" style="float:right;">
-                                                <input type="text" placeholder="Nomor Telepon Penghuni" class="form-control form-control-line" readonly="">
+                                                <input type="text" placeholder="Nomor Telepon Penghuni" class="form-control form-control-line" id="no2" readonly>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Departemen</label>
+                                            <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Prodi</label>
                                             <div class="col-md-9" style="float:right;">
-                                                <input type="text" placeholder="Departemen" class="form-control form-control-line" readonly="">
+                                                <input type="text" placeholder="Prodi" class="form-control form-control-line" id="prodi2" readonly>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3" style="float:left; height: 38px; padding: 10px">Masa Huni</label>
                                             <div class="col-md-9" style="float:right;">
-                                                <input type="text" placeholder="Masa Huni" class="form-control form-control-line" readonly="">
+                                                <input type="text" placeholder="Masa Huni" class="form-control form-control-line" id="masa_huni2" readonly>
                                             </div>
                                         </div>
                                     </form>
