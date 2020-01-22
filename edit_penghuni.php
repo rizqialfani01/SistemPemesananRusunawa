@@ -265,8 +265,11 @@
                                                 <option disabled="disabled" selected>Silakan Pilih Fakultas Terlebih Dahulu</option>
                                                 <!-- Menampilkan Prodi dari database -->
                                                 <?php
-                                                    $prodi = $conn->query("SELECT * FROM prodi ORDER BY nama_prodi ASC");
-                                                    while($row_prodi = $prodi->fetch_assoc()) { ?>
+                                                    $prodi = $conn->prepare("SELECT * FROM prodi WHERE id_fakultas=? ORDER BY nama_prodi ASC");
+                                                    $prodi->bind_param("i", $row['id_fakultas']);
+                                                    $prodi->execute();
+                                                    $result = $prodi->get_result();
+                                                    while($row_prodi = $result->fetch_assoc()) { ?>
                                                         <option value="<?php echo $row_prodi['id_prodi'] ?>" <?php if ($row_prodi['id_prodi'] == $row['id_prodi']) echo 'selected' ?> ><?php echo $row_prodi['nama_prodi'] ?></option>
                                                     <?php }
                                                     $prodi->close();
