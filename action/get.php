@@ -133,7 +133,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='kamar'><div class='penghuni ". $row['status']."' id=".$row['no_kamar']."></div></div>";
+                        echo "<div class='kamar'><div class='penghuni ". $row['status']."' id=".$row['no_kamar']."></div><div class='penghuni ". $row['status']."' id=".$row['no_kamar']."></div><span>".$row['no_kamar']."</span></div>";
                     }
                     $stmt->close();
                 }
@@ -143,7 +143,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='kamar'><div class='penghuni ". $row['status']."' id=".$row['no_kamar']."></div></div>";
+                        echo "<div class='kamar'><div class='penghuni ". $row['status']."' id=".$row['no_kamar']."></div><div class='penghuni ". $row['status']."' id=".$row['no_kamar']."></div><span>".$row['no_kamar']."</span></div>";
                     }
                     $stmt->close();
                 }
