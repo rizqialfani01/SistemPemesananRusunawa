@@ -158,7 +158,7 @@
         $(".room").click(function () {
             $(".room").removeClass("terpilih");
             $(this).addClass("terpilih");
-            document.getElementById("dataPenghuni").style.display = "block";
+            document.getElementById("dataPenghuni1").style.display = "block";
             var no_kamar = $(this).attr("id");
             $('#no_kamar').val(no_kamar);
             $('#no_kamar2').val(no_kamar);
@@ -169,7 +169,8 @@
                 dataType: "json",
                 success: function(data){
                     if(!data) {
-                        $('#tambah_penghuni').attr("href", "tambah_penghuni.php?kamar=" + no_kamar);
+                        document.getElementById("dataPenghuni2").style.display = "none";
+                        $('#tambah_penghuni').attr("href", "tambah_penghuni.php?kamar=" + no_kamar + "&status=Penghuni 1");
                         $('#edit_penghuni').removeAttr("href");
                         $('#nama').val('Belum ada penghuni');
                         $('#nim').val('Belum ada penghuni');
@@ -178,6 +179,12 @@
                         $('#masa_huni').val('Belum ada penghuni');
                     }
                     else {
+                        if (data.isi_kamar == '1') {
+                            document.getElementById("dataPenghuni2").style.display = "none"; // tidak tampil
+                        }
+                        else {
+                            document.getElementById("dataPenghuni2").style.display = "block";
+                        }
                         $('#tambah_penghuni').removeAttr("href");
                         $('#edit_penghuni').attr("href", "edit_penghuni.php?id=" + data.id);
                         $('#nama').val(data.nama);
@@ -195,7 +202,7 @@
                 dataType: "json",
                 success: function(data){
                     if(!data) {
-                        $('#tambah_penghuni2').attr("href", "tambah_penghuni.php?kamar=" + no_kamar);
+                        $('#tambah_penghuni2').attr("href", "tambah_penghuni.php?kamar=" + no_kamar + "&status=Penghuni 2");
                         $('#edit_penghuni2').removeAttr("href");
                         $('#nama2').val('Belum ada penghuni');
                         $('#nim2').val('Belum ada penghuni');

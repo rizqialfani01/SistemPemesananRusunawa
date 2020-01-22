@@ -397,9 +397,9 @@
                 <!-- ============================================================== -->
                 <!-- News -->
                 <!-- ============================================================== -->
-                <div id="dataPenghuni" style="display: none;">
+                <div>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6" id="dataPenghuni1" style="display: none;">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex m-b-30 align-items-center no-block">
@@ -452,7 +452,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6" id="dataPenghuni2" style="display: none;">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex m-b-30 align-items-center no-block">

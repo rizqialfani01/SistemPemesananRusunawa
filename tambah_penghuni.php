@@ -216,6 +216,7 @@
                                             </ul>
                                         </div>
                                     </div>
+                                    <input type="hidden" class="form-control form-control-line" name="status" value="<?php echo $_GET['status']; ?>">
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">No. Kamar</label>
                                         <div class="col-md-8" style="float:right;">
@@ -381,137 +382,6 @@
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Piutang</label>
                                         <div class="col-md-8" style="float:right;">
                                             <input type="text" placeholder="Jumlah Piutang (Tanpa Titik)" class="form-control form-control-line" name="piutang" maxlength="30" oninput="this.value = this.value.replace(/[^0-9 .]/g, '');" required>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex m-b-30 align-items-center no-block">
-                                    <h4 class="card-title ">Penghuni 1</h5>
-                                    <div class="ml-auto">
-                                        <ul class="list-inline font-12">
-                                            <a class="btn btn-dark btn-circle fa fa-check"></a>
-                                            <a class="btn btn-dark btn-circle fa fa-close"></a>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <form class="form-horizontal form-material">
-                                    <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Nama</label>
-                                        <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Nama Penghuni" class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">NIM</label>
-                                        <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="NIM Penghuni" class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Fakultas</label>
-                                        <div class="col-md-8" style="float:right;">
-                                            <select class="form-control form-control-line" name="fakultas" id="fakultas">
-                                                <option disabled="disabled" selected>Pilih Fakultas</option>
-                                                <!-- Menampilkan Fakultas dari database -->
-                                                <?php
-                                                    $data_prov = $conn->query("SELECT * FROM fakultas ORDER BY nama_fakultas ASC");
-                                                    while($row = $data_prov->fetch_assoc()) {
-                                                        echo "<option value='".$row['id_fakultas']."'>".$row['nama_fakultas']."</option>";
-                                                    }
-                                                    $data_prov->close();
-                                                ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Prodi</label>
-                                        <div class="col-md-8" style="float:right;">
-                                            <select class="form-control form-control-line" name="prodi" id="prodi">
-                                                <option disabled="disabled" selected>Silakan Pilih Fakultas Terlebih Dahulu</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Tempat/Tanggal Lahir</label>
-                                        <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Tempat/Tanggal Lahir Penghuni" class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Agama</label>
-                                        <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Agama Penghuni" class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Alamat Asal</label>
-                                        <div class="col-md-8" style="float:right; padding: 10px;">
-                                            <textarea rows="3" placeholder="Alamat Asal Penghuni" class="form-control form-control-line"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">No. Telp</label>
-                                        <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Nomor Telepon Penghuni" class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Nama Orang Tua</label>
-                                        <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Nama Orang Tua Penghuni" class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Pekerjaan Orang Tua</label>
-                                        <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Pekerjaan Orang Tua Penghuni" class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Alamat Orang Tua</label>
-                                        <div class="col-md-8" style="float:right; padding: 10px;">
-                                            <textarea rows="3" placeholder="Alamat Asal Orang Tua" class="form-control form-control-line"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">No. Telp Orang Tua</label>
-                                        <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Nomor Telepon Orang Tua Penghuni" class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Tahun Masuk</label>
-                                        <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Tahun Masuk Penghuni" class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Masa Huni</label>
-                                        <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Masa Huni" class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Biaya</label>
-                                        <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Biaya Kamar" class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Bayar</label>
-                                        <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Jumlah Bayar Dimuka" class="form-control form-control-line">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Piutang</label>
-                                        <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Jumlah Piutang" class="form-control form-control-line">
                                         </div>
                                     </div>
                                 </form>
