@@ -1,87 +1,6 @@
-.kamar {
-  float: left;
-  margin: 4px;
-}
-
-.kamar .penghuni {
-  position: relative;
-  border-radius: 0;
-}
-
-.kamar .penghuni:first-child {
-  border-radius: 4px 0 0 4px;
-}
-
-
-.kamar .penghuni:nth-child(2) {
-  border-radius: 0 4px 4px 0;
-}
-
-.kamar .penghuni:only-child {
-  border-radius: 4px;
-}
-
-.kamar span{
-  position: absolute;
-  width: 64px;
-  text-align: center;
-  margin-block-start: 7px;
-  margin-left: -64px;
-  pointer-events: none;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-      -moz-user-select: none; /* Old versions of Firefox */
-      -ms-user-select: none; /* Internet Explorer/Edge */
-          user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Opera and Firefox */
-
-}
-
-.penghuni {
-  color: #4a4e4d;
-  width: 32px;
-  height: 34px;
-  border-radius: 4px;
-  position: relative;
-  text-align: center;
-  line-height: 35px;
-  float: left;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-      -moz-user-select: none; /* Old versions of Firefox */
-      -ms-user-select: none; /* Internet Explorer/Edge */
-          user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Opera and Firefox */
-}
-
-.penghuni:hover{
-  background-color: #f37736;;
-}
-
-.kosong {
-  box-shadow: 0 0 0 2px #f37736 inset;
-}
-
-.terisi1 {
-  background-color: #42b549;
-}
-
-.terisi2 {
-  background-color: #0e9aa7;
-}
-
-.piutang {
-  box-shadow: 0 0 0 2px #b10f0f inset;
-}
-
-.terpilih {
-  background-color: #f37736;;
-}
-
 /*DENAH KAMAR*/
 .room{
+  color: #4a4e4d;
   width: 64px;
   height: 34px;
   border-radius: 4px;
@@ -100,24 +19,24 @@
 }
 
 .room:hover{
-   background-color: #009efb;
+  background-color: #1ba0e2;
+  box-shadow: 0 0 0 0;
 }
 
-.available2 {
-  background: #D8D8D8;
+.kosong {
+  box-shadow: 0 0 0 2px #1ba0e2 inset;
 }
 
-.available1 {
-  background-color: #c23b22;
+.terisi1 {
+  background-color: #d40a0a;
 }
 
-.available0 {
-  background-color: #580000;
+.terisi2 {
+  background-color: #23bd2d;
 }
 
 .terpilih {
-  background-color: #3cb91d;
-  color: black
+  background-color: #1ba0e2;
 }
 
 /*DATEPICKER*/
