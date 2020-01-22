@@ -219,7 +219,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">No. Kamar</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" class="form-control form-control-line" name="no_kamar" value="<?php echo $_GET['kamar']; ?>" disabled>
+                                            <input type="text" class="form-control form-control-line" name="no_kamar" value="<?php echo $_GET['kamar']; ?>" readonly>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -289,7 +289,7 @@
                                     <div class="form-group" id="agama" style="display: none">
                                         <div class="col-md-4"></div>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" placeholder="Agama Penghuni (Lainnya)" class="form-control form-control-line" name="agama" maxlength="50" oninput="this.value = this.value.replace(/[^a-z A-Z]/g, '');">
+                                            <input type="text" placeholder="Agama Penghuni (Lainnya)" class="form-control form-control-line" name="agama_lainnya" maxlength="50" oninput="this.value = this.value.replace(/[^a-z A-Z]/g, '');">
                                         </div>
                                     </div>
                                     <div class="form-group">
