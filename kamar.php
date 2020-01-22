@@ -38,7 +38,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
-    <link href="dist/css/custom.css" rel="stylesheet">
+    <link type="text/css" href="dist/css/custom.css" rel="stylesheet" />
     <script type="text/javascript">
         $(document).ready(function(){
             $("#gedung_A").change(function(){
@@ -144,47 +144,6 @@
             });
         });
     </script>
-    <style>
-        .kamar {
-            float: left;
-            margin: 4px;
-        }
-
-        .kamar .penghuni {
-            border-radius: 0;
-        }
-
-        .kamar .penghuni:first-child {
-            border-radius: 4px 0 0 4px;
-        }
-
-
-        .kamar .penghuni:nth-child(2) {
-            border-radius: 0 4px 4px 0;
-        }
-
-        .kamar .penghuni:only-child {
-            border-radius: 4px;
-        }
-
-        .penghuni {
-            background: teal;
-            color: #FFF;
-            width: 64px;
-            height: 34px;
-            border-radius: 4px;
-            position: relative;
-            text-align: center;
-            line-height: 35px;
-            -webkit-touch-callout: none; /* iOS Safari */
-            -webkit-user-select: none; /* Safari */
-            -khtml-user-select: none; /* Konqueror HTML */
-                -moz-user-select: none; /* Old versions of Firefox */
-                -ms-user-select: none; /* Internet Explorer/Edge */
-                    user-select: none; /* Non-prefixed version, currently
-                                            supported by Chrome, Opera and Firefox */
-        }
-    </style>
 </head>
 
 <body class="skin-default-dark fixed-layout">

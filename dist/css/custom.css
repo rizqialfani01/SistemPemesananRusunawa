@@ -1,3 +1,63 @@
+.kamar {
+  float: left;
+  margin: 4px;
+}
+
+.kamar .penghuni {
+  border-radius: 0;
+}
+
+.kamar .penghuni:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+
+.kamar .penghuni:nth-child(2) {
+  border-radius: 0 4px 4px 0;
+}
+
+.kamar .penghuni:only-child {
+  border-radius: 4px;
+}
+
+.penghuni {
+  color: #FFF;
+  width: 64px;
+  height: 34px;
+  border-radius: 4px;
+  position: relative;
+  text-align: center;
+  line-height: 35px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+.penghuni:hover{
+background-color: #009efb;
+}
+
+.available2 {
+background: #D8D8D8;
+}
+
+.available1 {
+background-color: #c23b22;
+}
+
+.available0 {
+background-color: #580000;
+}
+
+.terpilih {
+background-color: #3cb91d;
+color: black
+}
+
 /*DENAH KAMAR*/
 .room{
   width: 64px;
