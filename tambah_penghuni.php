@@ -45,30 +45,14 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $("#fakultas").change(function(){
-            var fakultas = $("#fakultas").val();
+                var fakultas = $("#fakultas").val();
                 $.ajax({
                     type: 'POST',
-                    url: "action/get.php?prodi=y",
+                    url: "action/get_prodi.php",
                     data: {id_fakultas: fakultas},
                     cache: false,
                     success: function(msg){
                     $("#prodi").html(msg);
-                    }
-                });
-            });
-        });
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#fakultas2").change(function(){
-            var fakultas = $("#fakultas2").val();
-                $.ajax({
-                    type: 'POST',
-                    url: "action/get.php?prodi=y",
-                    data: {id_fakultas: fakultas},
-                    cache: false,
-                    success: function(msg){
-                    $("#prodi2").html(msg);
                     }
                 });
             });
@@ -208,7 +192,7 @@
                             <div class="card-body">
                                 <form class="form-horizontal form-material" action="action/insert_penghuni.php" method="POST">
                                     <div class="d-flex m-b-30 align-items-center no-block">
-                                        <h4 class="card-title ">Penghuni 1</h5>
+                                        <h4 class="card-title "><?php if (isset ($_GET['status'])) echo $_GET['status'] ?></h4>
                                         <div class="ml-auto">
                                             <ul class="list-inline font-12">
                                                 <button class="btn btn-dark btn-circle fa fa-check" type="submit"></button>
@@ -216,20 +200,20 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <input type="hidden" class="form-control form-control-line" name="status" value="<?php echo $_GET['status']; ?>">
+                                    <input type="hidden" class="form-control form-control-line" name="status" value="<?php if (isset ($_GET['status'])) echo $_GET['status'] ?>">
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">No. Kamar</label>
                                         <div class="col-md-8" style="float:right;">
-                                            <input type="text" class="form-control form-control-line" name="no_kamar" value="<?php echo $_GET['kamar']; ?>" readonly>
+                                            <input type="text" class="form-control form-control-line" name="no_kamar" value="<?php if (isset ($_GET['kamar'])) echo $_GET['kamar'] ?>" readonly>
                                         </div>
                                     </div>
                                     <div class="form-group radio">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Isi Kamar</label>
                                         <div class="col-md-4" style="float:right; padding: 10px;">
-                                            <label><input type="radio" name="isi_kamar" value="1" required> Sendiri</label>
+                                            <label><input type="radio" name="isi_kamar" value="1" <?php if (isset ($_GET['status']) == 'Penghuni 2') echo "disabled" ?> required> Sendiri</label>
                                         </div>
                                         <div class="col-md-4" style="float:right; padding: 10px;">
-                                            <label><input type="radio" name="isi_kamar" value="2"> Berdua</label>
+                                            <label><input type="radio" name="isi_kamar" value="2" <?php if (isset ($_GET['status']) == 'Penghuni 2') echo "checked" ?>> Berdua</label>
                                         </div>
                                     </div>
                                     <div class="form-group">

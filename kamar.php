@@ -42,7 +42,7 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $("#gedung_A").change(function(){
-            var gedung_A = $("#gedung_A").val();
+                var gedung_A = $("#gedung_A").val();
                 $.ajax({
                     type: 'POST',
                     url: "action/get.php?gedung=A",
@@ -52,13 +52,13 @@
                     $("#lantai_A").html(msg);
                     }
                 });
-            });
+            }).trigger("change");
         });
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
             $("#gedung_B").change(function(){
-            var gedung_B = $("#gedung_B").val();
+                var gedung_B = $("#gedung_B").val();
                 $.ajax({
                     type: 'POST',
                     url: "action/get.php?gedung=B",
@@ -68,13 +68,13 @@
                     $("#lantai_B").html(msg);
                     }
                 });
-            });
+            }).trigger("change");;
         });
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
             $("#gedung_C").change(function(){
-            var gedung_C = $("#gedung_C").val();
+                var gedung_C = $("#gedung_C").val();
                 $.ajax({
                     type: 'POST',
                     url: "action/get.php?gedung=C",
@@ -84,13 +84,13 @@
                     $("#lantai_C").html(msg);
                     }
                 });
-            });
+            }).trigger("change");;
         });
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
             $("#gedung_D").change(function(){
-            var gedung_D = $("#gedung_D").val();
+                var gedung_D = $("#gedung_D").val();
                 $.ajax({
                     type: 'POST',
                     url: "action/get.php?gedung=D",
@@ -100,13 +100,13 @@
                     $("#lantai_D").html(msg);
                     }
                 });
-            });
+            }).trigger("change");;
         });
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
             $("#gedung_E").change(function(){
-            var gedung_E = $("#gedung_E").val();
+                var gedung_E = $("#gedung_E").val();
                 $.ajax({
                     type: 'POST',
                     url: "action/get.php?gedung=E",
@@ -116,13 +116,13 @@
                     $("#lantai_E").html(msg);
                     }
                 });
-            });
+            }).trigger("change");;
         });
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
             $("#gedung_F").change(function(){
-            var gedung_F = $("#gedung_F").val();
+                var gedung_F = $("#gedung_F").val();
                 $.ajax({
                     type: 'POST',
                     url: "action/get.php?gedung=F",
@@ -132,7 +132,7 @@
                     $("#lantai_F").html(msg);
                     }
                 });
-            });
+            }).trigger("change");;
         });
     </script>
     <script type="text/javascript">
@@ -285,12 +285,11 @@
 
                                 <!-- Tab panes -->
                                 <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane active" id="gedunga" style="width: 1200px">
+                                    <div role="tabpanel" class="tab-pane active" id="gedunga" style="width: 1100px">
                                         <div class="form-group">
                                             <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                             <div class="col-sm-2">
                                                 <select id="gedung_A" class="form-control form-control-line">
-                                                    <option disabled="disabled" selected="selected">Pilih Lantai</option>
                                                     <option value="A0">Semua Lantai</option>
                                                     <option value="A2">Lantai 2</option>
                                                     <option value="A3">Lantai 3</option>
@@ -306,7 +305,6 @@
                                             <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                             <div class="col-sm-2">
                                                 <select id="gedung_B" class="form-control form-control-line">
-                                                    <option disabled="disabled" selected="selected">Pilih Lantai</option>
                                                     <option value="B0">Semua Lantai</option>
                                                     <option value="B1">Lantai 1</option>
                                                     <option value="B2">Lantai 2</option>
@@ -323,7 +321,6 @@
                                             <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                             <div class="col-sm-2">
                                                 <select id="gedung_C" class="form-control form-control-line">
-                                                    <option disabled="disabled" selected="selected">Pilih Lantai</option>
                                                     <option value="C0">Semua Lantai</option>
                                                     <option value="C1">Lantai 1</option>
                                                     <option value="C2">Lantai 2</option>
@@ -340,7 +337,6 @@
                                             <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                             <div class="col-sm-2">
                                                 <select id="gedung_D" class="form-control form-control-line">
-                                                    <option disabled="disabled" selected="selected">Pilih Lantai</option>
                                                     <option value="D0">Semua Lantai</option>
                                                     <option value="D2">Lantai 2</option>
                                                     <option value="D3">Lantai 3</option>
@@ -351,12 +347,11 @@
                                         <div id="lantai_D" class="card-body" style="padding-left: 10px;">
                                         </div>
                                     </div>
-                                    <div role="tabpanel" class="tab-pane fade" id="gedunge" style="width: 1200px;">
+                                    <div role="tabpanel" class="tab-pane fade" id="gedunge" style="width: 900px;">
                                         <div class="form-group">
                                             <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                             <div class="col-sm-2">
                                                 <select id="gedung_E" class="form-control form-control-line">
-                                                    <option disabled="disabled" selected="selected">Pilih Lantai</option>
                                                     <option value="E0">Semua Lantai</option>
                                                     <option value="E1">Lantai 1</option>
                                                     <option value="E2">Lantai 2</option>
@@ -374,7 +369,6 @@
                                             <label class="col-sm-2" style="margin-top: 20px;">Pilih Lantai</label>
                                             <div class="col-sm-2">
                                                 <select id="gedung_F" class="form-control form-control-line">
-                                                    <option disabled="disabled" selected="selected">Pilih Lantai</option>
                                                     <option value="F0">Semua Lantai</option>
                                                     <option value="F1">Lantai 1</option>
                                                     <option value="F2">Lantai 2</option>

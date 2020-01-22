@@ -7,21 +7,7 @@
     }
     
     else {
-        if (isset($_GET['prodi'])){
-            if ($_GET['prodi'] == 'y'){
-                echo "<option disabled='disabled' selected='selected'>Pilih Prodi</option>";
-            
-                $stmt = $conn->prepare("SELECT * FROM prodi WHERE id_fakultas=? ORDER BY nama_prodi ASC");
-                $stmt->bind_param("i", $_POST['id_fakultas']);
-                $stmt->execute();
-                $result = $stmt->get_result();
-                while($row = $result->fetch_assoc()) {
-                    echo "<option value='".$row['id_prodi']."'>".$row['nama_prodi']."</option>";
-                }
-                $stmt->close();
-            }
-        }
-        else if (isset($_GET['gedung'])){
+        if (isset($_GET['gedung'])){
             if ($_GET['gedung'] == 'A'){
                 if ($_POST['gedung_A'] == 'A0'){
                     $stmt = $conn->prepare("SELECT * FROM kamar WHERE gedung='A'");

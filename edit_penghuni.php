@@ -52,30 +52,14 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $("#fakultas").change(function(){
-            var fakultas = $("#fakultas").val();
+                var fakultas = $("#fakultas").val();
                 $.ajax({
                     type: 'POST',
-                    url: "action/get.php?prodi=y",
+                    url: "action/get_prodi.php",
                     data: {id_fakultas: fakultas},
                     cache: false,
                     success: function(msg){
                     $("#prodi").html(msg);
-                    }
-                });
-            });
-        });
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#fakultas2").change(function(){
-            var fakultas = $("#fakultas2").val();
-                $.ajax({
-                    type: 'POST',
-                    url: "action/get.php?prodi=y",
-                    data: {id_fakultas: fakultas},
-                    cache: false,
-                    success: function(msg){
-                    $("#prodi2").html(msg);
                     }
                 });
             });
