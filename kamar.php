@@ -146,14 +146,12 @@
     </script>
     <style>
         .kamar {
-            display: inline-block;
-            margin: 0 4px 0px 4px;
+            float: left;
+            margin: 4px;
         }
 
         .kamar .penghuni {
             border-radius: 0;
-            margin-right: -3px;
-            margin-left: -3px;
         }
 
         .kamar .penghuni:first-child {
@@ -172,13 +170,12 @@
         .penghuni {
             background: teal;
             color: #FFF;
-            width: 32px;
+            width: 64px;
             height: 34px;
             border-radius: 4px;
             position: relative;
             text-align: center;
             line-height: 35px;
-            display: inline-block;
             -webkit-touch-callout: none; /* iOS Safari */
             -webkit-user-select: none; /* Safari */
             -khtml-user-select: none; /* Konqueror HTML */
