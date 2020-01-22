@@ -14,7 +14,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
+                        echo "<div class='kamar ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -24,7 +24,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."'  id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
+                        echo "<div class='kamar ". $row['status']."'  id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -35,7 +35,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
+                        echo "<div class='kamar ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -45,7 +45,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
+                        echo "<div class='kamar ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -56,7 +56,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
+                        echo "<div class='kamar ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -66,7 +66,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
+                        echo "<div class='kamar ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -77,7 +77,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
+                        echo "<div class='kamar ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -87,7 +87,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
+                        echo "<div class='kamar ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -98,7 +98,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
+                        echo "<div class='kamar ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -108,7 +108,7 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     while($row = $result->fetch_assoc()) {
-                        echo "<div class='room ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
+                        echo "<div class='kamar ". $row['status']."' id=".$row['no_kamar'].">". $row['no_kamar']."</div>";
                     }
                     $stmt->close();
                 }
@@ -141,8 +141,8 @@
 
 <script>
     $(document).ready(function() {
-        $(".room").click(function () {
-            $(".room").removeClass("terpilih");
+        $(".kamar").click(function () {
+            $(".kamar").removeClass("terpilih");
             $(this).addClass("terpilih");
             document.getElementById("dataPenghuni1").style.display = "block";
             var no_kamar = $(this).attr("id");

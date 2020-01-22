@@ -1,5 +1,5 @@
 /*DENAH KAMAR*/
-.room{
+.kamar{
   color: #4a4e4d;
   width: 64px;
   height: 34px;
@@ -18,7 +18,7 @@
                                 supported by Chrome, Opera and Firefox */
 }
 
-.room:hover{
+.kamar:hover{
   background-color: #1ba0e2;
   box-shadow: 0 0 0 0;
 }
@@ -28,15 +28,20 @@
 }
 
 .terisi1 {
-  background-color: #d40a0a;
+  background-color: #ffbc34;
+  color: #444645;
 }
 
 .terisi2 {
-  background-color: #23bd2d;
+  background-color: #df193d;
 }
 
 .terpilih {
   background-color: #1ba0e2;
+}
+
+.piutang{
+  box-shadow: 0 0 0 2px #615255 inset;
 }
 
 /*DATEPICKER*/
