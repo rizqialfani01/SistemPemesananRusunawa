@@ -39,7 +39,7 @@
 }
 
 .penghuni {
-  color: #FFF;
+  color: #4a4e4d;
   width: 32px;
   height: 34px;
   border-radius: 4px;
@@ -57,24 +57,27 @@
 }
 
 .penghuni:hover{
-background-color: #009efb;
+  background-color: #f37736;;
 }
 
-.available2 {
-background: #D8D8D8;
+.kosong {
+  box-shadow: 0 0 0 2px #f37736 inset;
 }
 
-.available1 {
-background-color: #c23b22;
+.terisi1 {
+  background-color: #42b549;
 }
 
-.available0 {
-background-color: #580000;
+.terisi2 {
+  background-color: #0e9aa7;
+}
+
+.piutang {
+  box-shadow: 0 0 0 2px #b10f0f inset;
 }
 
 .terpilih {
-background-color: #3cb91d;
-color: black
+  background-color: #f37736;;
 }
 
 /*DENAH KAMAR*/
