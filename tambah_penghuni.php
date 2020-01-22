@@ -223,6 +223,15 @@
                                             <input type="text" class="form-control form-control-line" name="no_kamar" value="<?php echo $_GET['kamar']; ?>" readonly>
                                         </div>
                                     </div>
+                                    <div class="form-group radio">
+                                        <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Isi Kamar</label>
+                                        <div class="col-md-4" style="float:right; padding: 10px;">
+                                            <label><input type="radio" name="isi_kamar" value="1" required> Sendiri</label>
+                                        </div>
+                                        <div class="col-md-4" style="float:right; padding: 10px;">
+                                            <label><input type="radio" name="isi_kamar" value="2"> Berdua</label>
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Nama</label>
                                         <div class="col-md-8" style="float:right;">
@@ -351,10 +360,10 @@
                                     <div class="form-group radio">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Kategori</label>
                                         <div class="col-md-4" style="float:right; padding: 10px;">
-                                            <label><input type="radio" name="kategori" value="Non-Bidikmisi" required> Non-Bidikmisi</label>
+                                            <label><input type="radio" name="kategori" value="Bidikmisi"> Bidikmisi</label>
                                         </div>
                                         <div class="col-md-4" style="float:right; padding: 10px;">
-                                            <label><input type="radio" name="kategori" value="Bidikmisi"> Bidikmisi</label>
+                                            <label><input type="radio" name="kategori" value="Non-Bidikmisi" required> Non-Bidikmisi</label>
                                         </div>
                                     </div>
                                     <div class="form-group">
