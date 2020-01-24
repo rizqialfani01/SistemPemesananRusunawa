@@ -210,10 +210,10 @@
                                     <div class="form-group radio">
                                         <label class="col-md-4" style="float:left; height: 38px; padding: 10px">Isi Kamar</label>
                                         <div class="col-md-4" style="float:right; padding: 10px;">
-                                            <label><input type="radio" name="isi_kamar" value="1" <?php if (isset ($_GET['status']) == 'Penghuni 2') echo "disabled" ?> required> Sendiri</label>
+                                            <label><input type="radio" name="isi_kamar" value="1" <?php if (isset ($_GET['status']) && $_GET['status'] == 'Penghuni 2') echo "disabled" ?> required> Sendiri</label>
                                         </div>
                                         <div class="col-md-4" style="float:right; padding: 10px;">
-                                            <label><input type="radio" name="isi_kamar" value="2" <?php if (isset ($_GET['status']) == 'Penghuni 2') echo "checked" ?>> Berdua</label>
+                                            <label><input type="radio" name="isi_kamar" value="2" <?php if (isset ($_GET['status']) && $_GET['status'] == 'Penghuni 2') echo "checked" ?>> Berdua</label>
                                         </div>
                                     </div>
                                     <div class="form-group">
