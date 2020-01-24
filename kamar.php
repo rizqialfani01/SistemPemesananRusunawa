@@ -384,6 +384,28 @@
                                 </div>
                             </div>
                             <div class="card-body bg-light">
+                                <div class="legenda">
+                                    <div class="satu-legenda">
+                                        <div class="legenda-kosong"></div>
+                                        <span>Belum Berpenghuni</span>
+                                    </div>
+                                    <div class="satu-legenda">
+                                        <div class="legenda-terisi1"></div>
+                                        <span>Terdapat 1 Penghuni</span>
+                                    </div>
+                                    <div class="satu-legenda">
+                                        <div class="legenda-terisi2"></div>
+                                        <span>Terdapat 2 Penghuni</span>
+                                    </div>
+                                    <div class="satu-legenda">
+                                        <div class="legenda-piutang"></div>
+                                        <span>Terdapat Piutang</span>
+                                    </div>
+                                    <div class="satu-legenda">
+                                        <div class="legenda-terpilih"></div>
+                                        <span>Sedang Dipilih</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
